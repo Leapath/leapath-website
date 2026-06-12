@@ -187,16 +187,10 @@
 }
 
 /* ---- Steps / How It Works ---- */
-/* The premium card design (lines 3615+) supersedes the old flow layout.
-   Hide the horizontal arrow connectors when steps wrap to 2- or 1-column,
-   and strip the old outer padding so the card's own padding governs. */
-@media (max-width: 1200px) {
-  .step::after { display: none; }
-  .step { padding: 0; text-align: left; }
-}
-@media (max-width: 640px) {
-  /* Single column — remove top margin on steps grid so it doesn't look too spaced */
-  .steps { margin-top: 2.5rem; }
+/* Suppress the legacy arrow from the old .step::after rule in styles.css.
+   Only suppress at > 680px since ≤ 680px uses ::after for the vertical connector. */
+@media (min-width: 681px) {
+  .steps > .step::after { content: none; display: none; }
 }
 
 /* ---- Very small phones (≤ 360px) ---- */
