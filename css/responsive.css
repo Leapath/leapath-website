@@ -65,3 +65,146 @@
   .region-banner__icon { width: 18px; height: 18px; font-size: 0.65rem; }
   .region-banner__change { font-size: 0.74rem; }
 }
+
+/* ============================================================
+   PHONE SCREEN — GLOBAL RESPONSIVE FIXES (≤ 480px)
+   Addresses overflow, cramped padding, and layout issues on
+   narrow phone viewports (375 px – 480 px).
+============================================================ */
+@media (max-width: 480px) {
+
+  /* ---- Container: give a little more side space ---- */
+  .container { width: min(1200px, 100% - 2rem); }
+
+  /* ---- Navigation ---- */
+  .nav { padding: 0 1rem; }
+  /* Keep Request Demo / Apply Now visible but smaller */
+  .nav__cta .btn-primary {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* ---- Hero ---- */
+  .hero__inner { padding: 2rem 0.25rem; }
+  /* Eyebrow pill: allow wrapping, reduce letter-spacing */
+  .hero__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.75rem;
+    text-align: center;
+    white-space: normal;
+  }
+  /* CTA row: stack buttons, make them full-width */
+  .hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .hero__ctas .btn {
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+  }
+  .hero__cta-microcopy { font-size: 0.75rem; }
+
+  /* ---- Section padding ---- */
+  .section { padding: 3rem 0; }
+
+  /* ---- Contact / Demo form ---- */
+  /* Reduce card padding so inputs aren't cramped */
+  .contact-form { padding: 1.25rem 1rem; }
+
+  /* Stack form-actions vertically; full-width submit button */
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+  }
+  .form-note { max-width: 100%; }
+
+  /* Demo bridge */
+  .demo-bridge { padding: 1rem; margin-bottom: 1.75rem; }
+  .demo-bridge__items { gap: 0.85rem; }
+  /* Prevent flex text children from overflowing their item */
+  .demo-bridge__item > div { min-width: 0; overflow-wrap: break-word; }
+  .demo-bridge__h, .demo-bridge__b { overflow-wrap: break-word; word-break: break-word; }
+
+  /* ---- CTA / Partnership panels ---- */
+  .cta-panel { padding: 1.5rem 1.25rem; }
+  .contact-aside .cta-panel { padding: 1.5rem 1.25rem; }
+
+  /* Contact direct: stack label + email on small screens */
+  .contact-direct { padding: 1.25rem; }
+  .contact-direct__list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  /* ---- Trust strip ---- */
+  .form-trust-strip { gap: 0.6rem 1rem; }
+
+  /* ---- Analytics ---- */
+  /* Metric cards: single column on very small screens */
+  .metric-row { grid-template-columns: 1fr; }
+  .metric-card { padding: 1.25rem 1rem; text-align: left; }
+  .metric-card__value { font-size: 1.8rem; }
+
+  /* ---- For Colleges / Students split visual ---- */
+  .split__visual { min-height: 220px; padding: 1.25rem; }
+  .mini-dash-name { width: 80px; font-size: 0.78rem; }
+  .mini-dash-row { gap: 0.6rem; }
+
+  /* ---- Why-now / transformation ---- */
+  .why-now-card { padding: 1.25rem; }
+  .moat-assertion { padding: 1rem; font-size: 0.88rem; }
+
+  /* ---- Case mini ---- */
+  .case-mini { padding: 1.25rem; }
+
+  /* ---- Onboard steps ---- */
+  .onboard-step { padding: 1.5rem 1.25rem 1.25rem; }
+
+  /* ---- Analytics section ---- */
+  .analytics-chart { padding: 1.25rem; }
+  .risk-panel { padding: 1.25rem; }
+  /* Stack donut + legend vertically on narrow screens */
+  .risk-donut-wrap { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  /* Chart header: wrap legend below title */
+  .chart-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+  /* ---- Footer ---- */
+  footer { padding: 2.5rem 0 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: 0.35rem; text-align: center; }
+}
+
+/* ---- Steps / How It Works ---- */
+/* The premium card design (lines 3615+) supersedes the old flow layout.
+   Hide the horizontal arrow connectors when steps wrap to 2- or 1-column,
+   and strip the old outer padding so the card's own padding governs. */
+@media (max-width: 1200px) {
+  .step::after { display: none; }
+  .step { padding: 0; text-align: left; }
+}
+@media (max-width: 640px) {
+  /* Single column — remove top margin on steps grid so it doesn't look too spaced */
+  .steps { margin-top: 2.5rem; }
+}
+
+/* ---- Very small phones (≤ 360px) ---- */
+@media (max-width: 360px) {
+  .container { width: min(1200px, 100% - 1.5rem); }
+  .nav { padding: 0 0.75rem; }
+  .nav__cta .btn-primary { padding: 0.4rem 0.7rem; font-size: 0.75rem; }
+  .contact-form { padding: 1rem 0.85rem; }
+  .hero__headline { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .display-2 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+}
