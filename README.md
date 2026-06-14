@@ -1,4 +1,4 @@
-# Leapath — Static Site
+# Leapath — Static Site 
 
 Modular static architecture, deployable to Vercel / Netlify / any static host.
 
