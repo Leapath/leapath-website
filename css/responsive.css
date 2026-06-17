@@ -1,10 +1,16 @@
 /* ============================================================
    responsive.css
    --------------------------------------------------------------
-   Page-level breakpoint refinements for the new modular pages
-   (partnership, legal, region modal). Component-scoped media
+   Page-level breakpoint refinements. Component-scoped media
    queries stay in styles.css next to their component.
 ============================================================ */
+
+/* ============================================================
+   GLOBAL — prevent horizontal overflow on every viewport
+============================================================ */
+html {
+  overflow-x: hidden;
+}
 
 /* ---------- Partnership page ---------- */
 @media (max-width: 720px) {
@@ -67,34 +73,101 @@
 }
 
 /* ============================================================
-   PHONE SCREEN — GLOBAL RESPONSIVE FIXES (≤ 480px)
-   Addresses overflow, cramped padding, and layout issues on
-   narrow phone viewports (375 px – 480 px).
+   TABLET — HERO & LAYOUT (600 px – 900 px)
+   Covers iPads, large phones in landscape, small laptops.
 ============================================================ */
-@media (max-width: 480px) {
+@media (max-width: 900px) and (min-width: 601px) {
 
-  /* ---- Container: give a little more side space ---- */
+  /* Hero: give some breathing room */
+  .hero__inner { padding: 3rem 1.5rem 4.5rem; }
+
+  /* Eyebrow: block-level with max-width so long text wraps cleanly on tablets */
+  .hero__eyebrow {
+    display: flex;
+    width: fit-content;
+    max-width: calc(100% - 3rem);
+    margin-inline: auto;
+    white-space: normal;
+    line-height: 1.55;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Audience cards: already 1-col from styles.css; centre + cap width */
+  .hero__audience {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  /* Section padding slightly tighter */
+  .section { padding: 4.5rem 0; }
+
+  /* Contact grid: stack on tablets */
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form { padding: 2rem 1.5rem; }
+
+  /* CTA panels: less padding */
+  .cta-panel { padding: 2rem 1.75rem; }
+
+  /* Analytics chart header: wrap on narrow tablets */
+  .chart-header { flex-wrap: wrap; gap: 0.5rem; }
+
+  /* Footer: 2-col grid */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-grid > nav:nth-of-type(4) { grid-column: auto; }
+}
+
+/* ============================================================
+   PHONE SCREEN — GLOBAL RESPONSIVE FIXES (≤ 600px)
+   Addresses overflow, cramped padding, and layout issues on
+   narrow phone viewports (375 px – 600 px).
+============================================================ */
+@media (max-width: 600px) {
+
+  /* ---- Container ---- */
   .container { width: min(1200px, 100% - 2rem); }
 
   /* ---- Navigation ---- */
   .nav { padding: 0 1rem; }
-  /* Keep Request Demo / Apply Now visible but smaller */
-  .nav__cta .btn-primary {
-    padding: 0.45rem 0.9rem;
-    font-size: 0.8rem;
-    white-space: nowrap;
-  }
 
   /* ---- Hero ---- */
-  .hero__inner { padding: 2rem 0.25rem; }
-  /* Eyebrow pill: allow wrapping, reduce letter-spacing */
+  .hero__inner { padding: 2rem 0.75rem 3rem; }
+
+  /* Eyebrow pill: switch to block-level flex so max-width + centering work correctly.
+     The pill width shrinks to fit content up to max-width, then text wraps inside it. */
   .hero__eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.04em;
-    padding: 0.3rem 0.75rem;
-    text-align: center;
+    display: flex;
+    width: fit-content;
+    max-width: calc(100% - 1.5rem);
+    margin-inline: auto;
     white-space: normal;
+    line-height: 1.55;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.85rem;
+    margin-bottom: 1.5rem;
   }
+
+  /* Headline + sub copy: scale with viewport; break-word ensures the italic
+     <em> gradient text never overflows on very narrow phones */
+  .hero__headline {
+    font-size: clamp(1.75rem, 7.2vw, 3.2rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .hero__punch {
+    font-size: clamp(1rem, 4.2vw, 1.3rem);
+    overflow-wrap: break-word;
+  }
+  .hero__sub {
+    font-size: clamp(0.88rem, 3.8vw, 1rem);
+    overflow-wrap: break-word;
+  }
+
   /* CTA row: stack buttons, make them full-width */
   .hero__ctas {
     flex-direction: column;
@@ -109,14 +182,22 @@
   }
   .hero__cta-microcopy { font-size: 0.75rem; }
 
+  /* Audience cards: cap width, centre */
+  .hero__audience {
+    max-width: 100%;
+    margin-top: 2.5rem;
+  }
+  .hero__aud-card {
+    padding: 1rem 1rem;
+    gap: 12px;
+  }
+  .hero__aud-icon { width: 44px; height: 44px; flex-shrink: 0; }
+
   /* ---- Section padding ---- */
   .section { padding: 3rem 0; }
 
   /* ---- Contact / Demo form ---- */
-  /* Reduce card padding so inputs aren't cramped */
   .contact-form { padding: 1.25rem 1rem; }
-
-  /* Stack form-actions vertically; full-width submit button */
   .form-actions {
     flex-direction: column;
     align-items: stretch;
@@ -133,7 +214,6 @@
   /* Demo bridge */
   .demo-bridge { padding: 1rem; margin-bottom: 1.75rem; }
   .demo-bridge__items { gap: 0.85rem; }
-  /* Prevent flex text children from overflowing their item */
   .demo-bridge__item > div { min-width: 0; overflow-wrap: break-word; }
   .demo-bridge__h, .demo-bridge__b { overflow-wrap: break-word; word-break: break-word; }
 
@@ -141,7 +221,7 @@
   .cta-panel { padding: 1.5rem 1.25rem; }
   .contact-aside .cta-panel { padding: 1.5rem 1.25rem; }
 
-  /* Contact direct: stack label + email on small screens */
+  /* Contact direct */
   .contact-direct { padding: 1.25rem; }
   .contact-direct__list li {
     flex-direction: column;
@@ -153,9 +233,8 @@
   .form-trust-strip { gap: 0.6rem 1rem; }
 
   /* ---- Analytics ---- */
-  /* Metric cards: single column on very small screens */
-  .metric-row { grid-template-columns: 1fr; }
-  .metric-card { padding: 1.25rem 1rem; text-align: left; }
+  .metric-row { grid-template-columns: 1fr 1fr; }
+  .metric-card { padding: 1.25rem 1rem; }
   .metric-card__value { font-size: 1.8rem; }
 
   /* ---- For Colleges / Students split visual ---- */
@@ -176,21 +255,52 @@
   /* ---- Analytics section ---- */
   .analytics-chart { padding: 1.25rem; }
   .risk-panel { padding: 1.25rem; }
-  /* Stack donut + legend vertically on narrow screens */
   .risk-donut-wrap { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
-  /* Chart header: wrap legend below title */
   .chart-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
   /* ---- Footer ---- */
   footer { padding: 2.5rem 0 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 0.35rem; text-align: center; }
 }
 
 /* ---- Steps / How It Works ---- */
-/* Suppress the legacy arrow from the old .step::after rule in styles.css.
-   Only suppress at > 680px since ≤ 680px uses ::after for the vertical connector. */
 @media (min-width: 681px) {
   .steps > .step::after { content: none; display: none; }
+}
+
+/* ============================================================
+   SMALL PHONE (≤ 480px) — additional tightening
+============================================================ */
+@media (max-width: 480px) {
+
+  /* Nav: tighter */
+  .nav__cta .btn-primary {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Hero: tightest layout */
+  .hero__inner { padding: 1.75rem 0.5rem 3rem; }
+  .hero__eyebrow {
+    display: flex;
+    width: fit-content;
+    max-width: calc(100% - 1rem);
+    margin-inline: auto;
+    font-size: 0.64rem;
+    letter-spacing: 0.03em;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .hero__headline {
+    font-size: clamp(1.75rem, 7.5vw, 2.8rem);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Metric cards: single column */
+  .metric-row { grid-template-columns: 1fr; }
 }
 
 /* ---- Very small phones (≤ 360px) ---- */
@@ -199,6 +309,11 @@
   .nav { padding: 0 0.75rem; }
   .nav__cta .btn-primary { padding: 0.4rem 0.7rem; font-size: 0.75rem; }
   .contact-form { padding: 1rem 0.85rem; }
-  .hero__headline { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero__headline { font-size: clamp(1.6rem, 7.5vw, 2.4rem); }
   .display-2 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .hero__eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.65rem;
+  }
 }
