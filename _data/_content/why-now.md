@@ -1,0 +1,21 @@
+---
+slug: "why-now"
+label: "Why Now"
+heading: "Placement season is getting harder. Every year."
+subheading: "Hiring bars are climbing while cohort sizes are growing. TPOs are being asked to do more, with less time, and defend results to leadership with data they don't currently have."
+urgency: "Colleges that can't measure readiness early are losing top recruiters silently — and placement outcomes are no longer predictable without structured visibility."
+conclusion: "The institutions that move first will own a structured <strong>readiness data layer</strong> their peers don't have — and that compounds, year over year, into better placement outcomes and stronger employer relationships."
+cards:
+  - stat: "~50%"
+    claim: "of Indian graduates are considered employable for industry roles."
+    source: "India Skills Report & NASSCOM, recent editions"
+  - stat: "3×"
+    claim: "rise in role-specific skill requirements over the last 5 years — especially in tech, data, and AI."
+    source: "Cross-referenced from public JD analysis"
+  - stat: "14 wks"
+    claim: "average runway between when gaps become visible and when recruitment season begins."
+    source: "Most TPOs find out too late to intervene"
+  - stat: "0"
+    claim: "structured signals most placement cells have on individual student readiness before drives begin."
+    source: "Excel sheets ≠ intelligence"
+---

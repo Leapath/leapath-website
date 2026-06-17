@@ -1,0 +1,24 @@
+{% assign ob = site.content | where: "slug", "onboarding" | first %}
+{% assign onboarding_steps = site.onboarding_steps | sort: "name" %}
+<section id="get-started" class="section section--mid" aria-labelledby="get-started-heading">
+  <div class="container">
+
+    <div class="text-center reveal" style="max-width: 760px; margin-inline: auto;">
+      <div class="section-label" style="justify-content: center;"><span class="label">{{ ob.label }}</span></div>
+      <h2 class="display-2" id="get-started-heading">{{ ob.heading }}</h2>
+      <p class="subheading mt-sm" style="margin-inline: auto; text-align: center;">{{ ob.subheading }}</p>
+    </div>
+
+    <div class="onboard-steps reveal">
+      {% for step in onboarding_steps %}
+      <div class="onboard-step">
+        <div class="onboard-step__num" aria-hidden="true">{{ step.num }}</div>
+        <h3 class="onboard-step__title">{{ step.title }}</h3>
+        <p class="onboard-step__body">{{ step.content }}</p>
+        <div class="onboard-step__time">{{ step.time }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

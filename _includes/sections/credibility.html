@@ -1,0 +1,36 @@
+{% assign cr = site.content | where: "slug", "credibility" | first %}
+<section class="credibility-strip" aria-label="What grounds the platform">
+  <div class="container">
+    <div class="credibility-strip__inner">
+
+      <div class="credibility-strip__item reveal">
+        <div class="credibility-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l4-8 5 16 4-12 5 8"/></svg>
+        </div>
+        <div class="credibility-strip__text">{{ cr.items[0] }}</div>
+      </div>
+
+      <div class="credibility-strip__item reveal reveal-delay-1">
+        <div class="credibility-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="7"/><path d="M15 15l5 5"/></svg>
+        </div>
+        <div class="credibility-strip__text">{{ cr.items[1] }}</div>
+      </div>
+
+      <div class="credibility-strip__item reveal reveal-delay-2">
+        <div class="credibility-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7"/></svg>
+        </div>
+        <div class="credibility-strip__text">{{ cr.items[2] }}</div>
+      </div>
+
+      <div class="credibility-strip__item reveal reveal-delay-3">
+        <div class="credibility-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h10M4 18h16"/></svg>
+        </div>
+        <div class="credibility-strip__text">{{ cr.items[3] }}</div>
+      </div>
+
+    </div>
+  </div>
+</section>

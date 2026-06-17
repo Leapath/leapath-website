@@ -1,0 +1,31 @@
+{% assign hiw = site.content | where: "slug", "how-it-works" | first %}
+{% assign steps = site.steps | sort: "name" %}
+<section id="how" class="section section--mid" aria-labelledby="how-heading">
+  <div class="container">
+
+    <div class="text-center reveal">
+      <div class="section-label" style="justify-content: center;"><span class="label">{{ hiw.label }}</span></div>
+      <h2 class="display-2" id="how-heading">{{ hiw.heading }}</h2>
+      <p class="subheading mt-sm" style="margin-inline: auto; text-align: center;">{{ hiw.subheading }}</p>
+    </div>
+
+    <div class="steps mt-lg">
+      {% for step in steps %}
+      <div class="step reveal{% if forloop.index0 != 0 %} reveal-delay-{{ forloop.index0 }}{% endif %}">
+        <div class="step__content">
+          <span class="step__tag">{{ step.tag }}</span>
+          <h3 class="step__title">{{ step.title }}</h3>
+          <p class="step__desc">{{ step.content }}</p>
+        </div>
+        <div class="step__axis">
+          <div class="step__node">{{ step.num }}</div>
+        </div>
+        <div class="step__media">
+          <img src="{{ step.image }}" alt="{{ step.image_alt }}">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

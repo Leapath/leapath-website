@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<main>
+  <div class="container">
+    <section class="legal-page" aria-labelledby="legal-title">
+      <header class="legal-header">
+        <h1 id="legal-title">{{ page.page_title }}</h1>
+        <p class="legal-meta"><strong>Effective Date:</strong> {{ page.effective_date }} &middot; <strong>Last Updated:</strong> {{ page.last_updated }}</p>
+      </header>
+      {{ content }}
+    </section>
+  </div>
+</main>

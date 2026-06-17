@@ -1,0 +1,32 @@
+{% assign pr = site.content | where: "slug", "product" | first %}
+{% assign product_cards = site.product_cards | sort: "name" %}
+<section id="product" class="section section--dark" aria-labelledby="product-heading">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label"><span class="label">{{ pr.label }}</span></div>
+      <h2 class="display-2" id="product-heading">{{ pr.heading }}</h2>
+      <p class="subheading mt-sm">{{ pr.subheading }}</p>
+    </div>
+
+    <div class="grid-4 mt-lg">
+      {% for card in product_cards %}
+      <article class="product-card reveal reveal-delay-{{ forloop.index }}">
+        <div class="product-card__icon" aria-hidden="true">{{ card.icon }}</div>
+        <h3 class="product-card__title">{{ card.title }}</h3>
+        <p class="product-card__body">{{ card.content }}</p>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="grid-4 mt-lg" style="border-top: 1px solid rgba(255,255,255,0.07); padding-top: 3rem;">
+      {% for stat in pr.stats %}
+      <div class="stat-block reveal reveal-delay-{{ forloop.index0 }}">
+        <div class="stat-block__num">{{ stat.num }}</div>
+        <div class="stat-block__label">{{ stat.label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

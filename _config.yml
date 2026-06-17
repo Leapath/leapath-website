@@ -1,0 +1,49 @@
+title: Leapath
+description: Placement Intelligence Platform for Colleges & TPOs
+url: "https://www.leapath.tech"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+permalink: /:path:output_ext
+
+# All collections live under _data/ for clean organisation
+collections_dir: _data
+
+collections:
+  content:
+    output: false
+  product_cards:
+    output: false
+  steps:
+    output: false
+  training_cards:
+    output: false
+  powers_cards:
+    output: false
+  insight_cards:
+    output: false
+  testimonial_cards:
+    output: false
+  onboarding_steps:
+    output: false
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Sitemap settings (jekyll-sitemap)
+sitemap:
+  file: "/sitemap.xml"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - package-lock.json
+  - components/
+  - node_modules/
+  - .bundle/
+  - vendor/

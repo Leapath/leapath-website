@@ -1,0 +1,28 @@
+{% assign tr = site.content | where: "slug", "training" | first %}
+{% assign training_cards = site.training_cards | sort: "name" %}
+<section id="training" class="section section--mid" aria-labelledby="training-heading">
+  <div class="container">
+
+    <div class="reveal">
+      <div class="section-label"><span class="label">{{ tr.label }}</span></div>
+      <h2 class="display-2" id="training-heading">{{ tr.heading }}</h2>
+      <p class="subheading mt-sm">{{ tr.subheading }}</p>
+    </div>
+
+    <div class="grid-3 mt-lg" style="grid-template-columns: repeat(3, 1fr);">
+      {% for card in training_cards %}
+      <article class="training-card reveal reveal-delay-{{ forloop.index0 | modulo: 3 | plus: 1 }}">
+        <div class="training-card__tag">{{ card.tag }}</div>
+        <h3 class="training-card__title">{{ card.title }}</h3>
+        <p class="training-card__body">{{ card.content }}</p>
+        <div class="training-card__meta">{{ card.meta }}</div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <p class="reveal mt-md" style="text-align:center; color:var(--slate); font-size:0.92rem; max-width:720px; margin-left:auto; margin-right:auto;">
+      {{ tr.conclusion }}
+    </p>
+
+  </div>
+</section>

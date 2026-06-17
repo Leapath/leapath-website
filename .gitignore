@@ -1,0 +1,12 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.jekyll.pid
+.bundle/
+vendor/
+node_modules/
+.DS_Store
+*.swp
+*.swo
+.env
+.env.local

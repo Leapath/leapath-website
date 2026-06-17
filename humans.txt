@@ -1,0 +1,16 @@
+/* TEAM */
+Organisation: Leapath Technology
+Contact: info@leapath.tech
+Site: https://www.leapath.tech/
+
+/* TECHNOLOGY */
+Jekyll 4.3
+CSS: Custom (no framework)
+JS: Vanilla
+Fonts: Nunito via Google Fonts
+Form backend: Formspree
+Hosting: Netlify / Cloudflare Pages
+
+/* THANKS */
+Built for colleges and universities across India.
+Designed to global standards.

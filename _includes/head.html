@@ -1,0 +1,46 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ page.description }}" />
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}" />{% endif %}
+  <meta name="author" content="{{ page.author | default: 'Leapath Technology' }}" />
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}, noai, noimageai" />
+  <link rel="canonical" href="{{ page.canonical }}" />
+  <meta name="theme-color" content="#1A0845" />
+
+  {% assign favicon_end = page.favicon_end_color | default: "%239B7FD4" %}
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="%232D0F6F"/><stop offset="1" stop-color="{{ favicon_end }}"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="url(%23g)"/><text x="32" y="46" font-family="Nunito,Arial,sans-serif" font-weight="900" font-size="38" text-anchor="middle" fill="white">L.</text></svg>' />
+
+  {% assign og_image = page.og_image | default: "https://www.leapath.tech/assets/images/product-preview.png" %}
+  {% if page.og_title %}
+  <meta property="og:title" content="{{ page.og_title }}" />
+  <meta property="og:description" content="{{ page.og_description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.canonical }}" />
+  <meta property="og:image" content="{{ og_image }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="{{ page.og_title }}" />
+  <meta property="og:site_name" content="{{ page.og_site_name | default: 'Leapath' }}" />
+  <meta property="og:locale" content="{{ page.og_locale | default: 'en_IN' }}" />
+  {% endif %}
+
+  {% if page.twitter_title %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.twitter_title }}" />
+  <meta name="twitter:description" content="{{ page.twitter_description }}" />
+  <meta name="twitter:image" content="{{ og_image }}" />
+  <meta name="twitter:image:alt" content="{{ page.twitter_title }}" />
+  {% endif %}
+
+  <title>{{ page.title }}</title>
+
+  {% if page.include_jsonld %}{% include jsonld_home.html %}{% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+</head>

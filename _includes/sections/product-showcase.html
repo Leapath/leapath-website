@@ -1,0 +1,31 @@
+{% assign ps = site.content | where: "slug", "product-showcase" | first %}
+<section class="product-showcase" id="product-showcase" aria-label="Product preview">
+  <div class="container">
+
+    <div class="product-showcase__head reveal">
+      <div class="section-label">{{ ps.label }}</div>
+      <h2 class="display-3">{{ ps.heading }}</h2>
+      <p class="product-showcase__sub">{{ ps.sub }}</p>
+    </div>
+
+    <div class="product-showcase__frame reveal" data-parallax>
+      <div class="product-showcase__halo" aria-hidden="true"></div>
+      <div class="product-showcase__image-wrap" data-showcase-image>
+        <img src="{{ ps.image }}"
+             alt="{{ ps.image_alt }}"
+             loading="lazy"
+             width="1536" height="1024" />
+      </div>
+    </div>
+
+    <div class="product-showcase__caption reveal">
+      {% for cap in ps.captions %}
+      <div class="product-showcase__caption-item">
+        <span class="product-showcase__caption-num">{{ cap.num }}</span>
+        <span class="product-showcase__caption-text"><strong>{{ cap.title }}</strong> — {{ cap.text }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

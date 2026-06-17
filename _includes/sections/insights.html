@@ -1,0 +1,35 @@
+{% assign ins = site.content | where: "slug", "insights" | first %}
+{% assign insight_cards = site.insight_cards | sort: "name" %}
+<section id="insights" class="section section--mid" aria-labelledby="insights-heading">
+  <div class="container">
+
+    <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:1.5rem; margin-bottom:2rem;">
+      <div>
+        <div class="section-label"><span class="label">{{ ins.label }}</span></div>
+        <h2 class="display-2" id="insights-heading">{{ ins.heading }}</h2>
+        <p class="subheading mt-sm">{{ ins.subheading }}</p>
+      </div>
+      <a href="{{ ins.cta_href }}" class="btn btn-outline" style="flex-shrink:0;">{{ ins.cta_text }}</a>
+    </div>
+
+    <nav class="blog-categories reveal" aria-label="Insight categories">
+      {% for cat in ins.categories %}
+      <span class="blog-category">{{ cat }}</span>
+      {% endfor %}
+    </nav>
+
+    <div class="grid-3">
+      {% for card in insight_cards %}
+      <article class="blog-card reveal reveal-delay-{{ forloop.index }}">
+        <div class="blog-card__img"><img src="{{ card.image }}" alt=""></div>
+        <div class="blog-card__body">
+          <div class="blog-card__tag">{{ card.tag }}</div>
+          <h3 class="blog-card__title">{{ card.title }}</h3>
+          <p class="blog-card__meta">{{ card.meta }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

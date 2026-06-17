@@ -1,21 +1,17 @@
-<!--
-  components/navbar.html
-  ----------------------------------------------------------------
-  Reference partial — kept in sync with the inline copy used in
-  pages/*.html. Updated v4: split Login → Student Login / TPO Login
-  via a dropdown that opens the auth modal (auth.js).
-  ----------------------------------------------------------------
--->
+{% assign cta_text = page.nav_cta_text | default: "Request Demo" %}
+{% assign cta_href = page.nav_cta_href | default: "/#contact-form" %}
+
 <nav class="nav" id="navbar" aria-label="Main navigation">
-  <a href="../index.html#hero" class="nav__logo" aria-label="Leapath home">Leapath<span class="nav__logo-dot">.</span></a>
+
+  <a href="/" class="nav__logo" aria-label="Leapath home">Leapath<span class="nav__logo-dot">.</span></a>
 
   <ul class="nav__links">
-    <li><a href="../index.html#colleges">For Colleges</a></li>
-    <li><a href="../index.html#students">For Students</a></li>
-    <li><a href="../index.html#employers">For Employers</a></li>
-    <li><a href="../index.html#training">Training</a></li>
-    <li><a href="../index.html#analytics">Dashboard</a></li>
-    <li><a href="../index.html#insights">Insights</a></li>
+    <li><a href="/#colleges">For Colleges</a></li>
+    <li><a href="/#students">For Students</a></li>
+    <li><a href="/#employers">For Employers</a></li>
+    <li><a href="/#training">Training</a></li>
+    <li><a href="/#analytics">Dashboard</a></li>
+    <li><a href="/#insights">Insights</a></li>
   </ul>
 
   <div class="nav__cta">
@@ -44,22 +40,23 @@
         </button>
       </div>
     </div>
-    <a href="../index.html#contact-form" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">Request Demo</a>
+    <a href="{{ cta_href }}" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.88rem;">{{ cta_text }}</a>
   </div>
 
   <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
+
 </nav>
 
 <div class="nav__mobile" id="mobile-nav" role="navigation">
-  <a href="../index.html#colleges">For Colleges</a>
-  <a href="../index.html#students">For Students</a>
-  <a href="../index.html#employers">For Employers</a>
-  <a href="../index.html#training">Training</a>
-  <a href="../index.html#analytics">Dashboard</a>
-  <a href="../index.html#insights">Insights</a>
+  <a href="/#colleges">For Colleges</a>
+  <a href="/#students">For Students</a>
+  <a href="/#employers">For Employers</a>
+  <a href="/#training">Training</a>
+  <a href="/#analytics">Dashboard</a>
+  <a href="/#insights">Insights</a>
   <button type="button" class="btn btn-outline" data-auth-role="student" data-auth-mode="login" style="text-align: center; margin-top: 0.5rem;">Student Login</button>
   <button type="button" class="btn btn-outline" data-auth-role="tpo" data-auth-mode="login" style="text-align: center;">TPO Login</button>
-  <a href="../index.html#contact-form" class="btn btn-primary" style="text-align: center; margin-top: 0.5rem;">Request Demo</a>
+  <a href="{{ cta_href }}" class="btn btn-primary" style="text-align: center; margin-top: 0.5rem;">{{ cta_text }}</a>
 </div>

@@ -155,7 +155,7 @@ a   { color: inherit; text-decoration: none; }
 .display-2 { font-family: var(--sans); font-weight: 800; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.12; letter-spacing: -0.025em; }
 .display-3 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; letter-spacing: -0.02em; }
 .heading    { font-family: var(--sans); font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.subheading { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--slate-light); font-weight: 300; max-width: 600px; }
+.subheading { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--slate-light); font-weight: 300; text-align: justify; }
 .label      { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
 
 /* ============================================================
@@ -274,6 +274,7 @@ a   { color: inherit; text-decoration: none; }
 .btn-primary {
   background: var(--gradient-brand);
   color: #FFFFFF;
+  -webkit-text-fill-color: #FFFFFF;
   font-weight: 700;
   box-shadow: 0 4px 14px rgba(91, 45, 158, 0.35), 0 1px 0 var(--border-soft) inset;
 }
@@ -362,11 +363,11 @@ a   { color: inherit; text-decoration: none; }
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 0 2rem;
   height: 68px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0 max(1.5rem, calc((100% - 1200px) / 2));
   transition: background var(--transition), box-shadow var(--transition);
 }
 
@@ -394,8 +395,9 @@ a   { color: inherit; text-decoration: none; }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
   list-style: none;
+  margin-inline: auto;
 }
 .nav__links a {
   font-size: 0.9rem;
@@ -445,11 +447,22 @@ a   { color: inherit; text-decoration: none; }
   z-index: 99;
 }
 .nav__mobile.open { display: flex; }
-.nav__mobile a {
+.nav__mobile a:not(.btn) {
   font-size: 1rem;
   color: var(--text-muted);
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--hairline);
+}
+.nav__mobile .btn-primary {
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
+.nav__mobile .btn-outline {
+  text-align: center;
+  width: 100%;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -678,25 +691,7 @@ a   { color: inherit; text-decoration: none; }
 .delta-down { color: #FF6B6B; }
 
 /* ============================================================
-   HERO — AUDIENCE TILES & KEY NUMBERS (NEW)
-   Added per feedback: 3-audience CTA + key platform numbers
-============================================================ */
-.hero__audience {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  max-width: 720px;
-  margin-top: 2.5rem;
-}
-@media (max-width: 640px) {
-  .hero__audience { grid-template-columns: 1fr; }
-}
-/* ============================================================
-   HERO AUDIENCE TILES
-============================================================ */
-
-/* ============================================================
-   HERO AUDIENCE CARDS
+   HERO — AUDIENCE CARDS
 ============================================================ */
 
 .hero__audience{
@@ -783,10 +778,6 @@ a   { color: inherit; text-decoration: none; }
   object-fit:contain;
 }
 
-.hero__aud-content{
-  flex:1;
-}
-
 .hero__aud-title{
   font-size:1rem;
   font-weight:700;
@@ -794,13 +785,6 @@ a   { color: inherit; text-decoration: none; }
   color:#24153f;
 
   margin-bottom:10px;
-}
-
-.hero__aud-desc{
-  font-size:0.9rem;
-  line-height:1.65;
-
-  color:#625b76;
 }
 
 .hero__aud-arrow{
@@ -832,6 +816,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .hero__aud-content{
+  flex:1;
   display:flex;
   flex-direction:column;
   gap:10px;
@@ -1056,60 +1041,6 @@ a   { color: inherit; text-decoration: none; }
   font-size: 0.78rem;
   color: var(--slate);
   letter-spacing: 0.02em;
-}
-
-/* ============================================================
-   HOW IT WORKS — STEP FLOW
-============================================================ */
-.steps {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
-  gap: 0;
-}
-
-.step {
-  position: relative;
-  padding: 2rem 1.5rem;
-  text-align: center;
-}
-
-.step::after {
-  content: '→';
-  position: absolute;
-  top: 2.2rem;
-  right: -0.6rem;
-  color: var(--teal);
-  font-size: 1.2rem;
-  opacity: 0.5;
-}
-.step:last-child::after { display: none; }
-
-.step__number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--teal-dim);
-  border: 1px solid rgba(196, 175, 240, 0.4);
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--teal);
-  margin: 0 auto 1rem;
-}
-
-.step__title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-}
-
-.step__body {
-  font-size: 0.8rem;
-  color: var(--slate);
-  line-height: 1.6;
 }
 
 /* ============================================================
@@ -1439,9 +1370,9 @@ a   { color: inherit; text-decoration: none; }
   align-items: center;
   padding: 0.45rem 0.95rem;
   border-radius: 999px;
-  background: rgba(196, 175, 240, 0.1);
-  border: 1px solid rgba(196, 175, 240, 0.25);
-  color: var(--lavender);
+  background: rgba(91, 45, 158, 0.08);
+  border: 1px solid rgba(91, 45, 158, 0.2);
+  color: #5B2D9E;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1885,8 +1816,8 @@ footer {
    RESPONSIVE OVERRIDES
 ============================================================ */
 @media (max-width: 900px) {
-  .nav__links, .nav__cta .btn-outline { display: none; }
-  .nav__hamburger { display: flex; }
+  .nav__links, .nav__cta { display: none; }
+  .nav__hamburger { display: flex; margin-left: auto; }
   .hero__visual { display: none; }
   .hero__inner { padding-bottom: 5rem; }
 }
@@ -2160,7 +2091,7 @@ footer {
   width: 32px; height: 32px;
   border-radius: 50%;
   background: var(--teal);
-  color: var(--navy);
+  color: #ffffff;
   font-family: var(--serif);
   font-size: 1rem;
   display: flex;

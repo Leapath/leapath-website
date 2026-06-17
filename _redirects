@@ -1,0 +1,6 @@
+# Redirect old paths if any
+/home              /          301
+/index.html        /          301
+
+# Enforce www (configure in DNS/CDN, not here — kept as reference)
+# http://leapath.tech/*    https://www.leapath.tech/:splat    301

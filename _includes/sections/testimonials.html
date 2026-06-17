@@ -1,0 +1,48 @@
+{% assign tm = site.content | where: "slug", "testimonials" | first %}
+{% assign testimonial_cards = site.testimonial_cards | sort: "name" %}
+<section id="testimonials" class="section section--mid" aria-labelledby="testimonials-heading">
+  <a id="success-stories" aria-hidden="true"></a>
+  <div class="container">
+
+    <div class="text-center reveal mb-lg">
+      <div class="section-label" style="justify-content: center;"><span class="label">{{ tm.label }}</span></div>
+      <h2 class="display-2" id="testimonials-heading">{{ tm.heading }}</h2>
+      <p class="subheading mt-sm" style="margin-inline: auto;">{{ tm.subheading }}</p>
+    </div>
+
+    <div class="case-mini reveal">
+      <div>
+        <div class="case-mini__meta-pre">{{ tm.case_meta }}</div>
+        <div class="case-mini__inst">{{ tm.case_inst }}</div>
+        <p class="case-mini__context">{{ tm.case_context }}</p>
+      </div>
+      <div class="case-mini__results">
+        {% for p in tm.principles %}
+        <div class="case-mini__result">
+          <div class="case-mini__num case-mini__num--principle">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+          <div class="case-mini__lbl">{{ p.label }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="grid-3">
+      {% for card in testimonial_cards %}
+      <div class="testimonial-card reveal reveal-delay-{{ forloop.index }}">
+        <div class="testimonial-card__icon" aria-hidden="true">
+          {% if forloop.index == 1 %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l4-8 5 16 4-12 5 8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          {% elsif forloop.index == 2 %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="7"/><path d="M15 15l5 5" stroke-linecap="round"/></svg>
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13" stroke-linejoin="round"/><path d="M9 21v-7h6v7"/></svg>
+          {% endif %}
+        </div>
+        <p class="testimonial-card__quote">{{ card.content }}</p>
+        <div class="testimonial-card__principle">{{ card.principle }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

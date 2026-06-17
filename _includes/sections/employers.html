@@ -1,0 +1,50 @@
+{% assign em = site.content | where: "slug", "employers" | first %}
+<section id="employers" class="section section--dark" aria-labelledby="employers-heading">
+  <div class="container">
+
+    <div class="section-label reveal">
+      <span class="label">{{ em.label }}</span>
+    </div>
+
+    <div class="split">
+
+      <div class="reveal">
+        <h2 class="display-2" id="employers-heading">{{ em.heading }}</h2>
+        <p class="subheading mt-sm">{{ em.subheading }}</p>
+
+        <ul class="feature-list mt-md">
+          {% for feat in em.features %}
+          <li>{{ feat }}</li>
+          {% endfor %}
+        </ul>
+
+        <div style="margin-top: 2rem;">
+          <a href="{{ em.cta_href }}" class="btn btn-primary">{{ em.cta_text }}</a>
+        </div>
+      </div>
+
+      <div class="split__visual reveal reveal-delay-2" aria-hidden="true">
+        <div style="font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin-bottom: 1rem;">
+          {{ em.pipeline_label }}
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          {% for c in em.candidates %}
+          <div class="mini-dash-row">
+            <div class="mini-dash-name">{{ c.name }}</div>
+            <div class="mini-progress"><div class="mini-progress-fill" style="width: {{ c.width }}; {% if c.color %}background: {{ c.color }};{% endif %} animation-delay: {{ c.delay }};"></div></div>
+            <span class="mini-badge {{ c.badge_class }}">{{ c.badge }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
+          {% for pill in em.pills %}
+          <span class="pill" style="{{ pill.style }}">{{ pill.label }}</span>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
