@@ -9,7 +9,7 @@
       <p class="subheading mt-sm">{{ tr.subheading }}</p>
     </div>
 
-    <div class="grid-3 mt-lg">
+    <div class="training-cards-grid mt-lg">
       {% for card in training_cards %}
       <article class="training-card reveal reveal-delay-{{ forloop.index0 | modulo: 3 | plus: 1 }}">
         <div class="training-card__tag">{{ card.tag }}</div>
