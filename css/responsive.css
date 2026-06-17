@@ -269,6 +269,21 @@ html {
   .steps > .step::after { content: none; display: none; }
 }
 
+/* ---- Trust / Marquee strip ---- */
+@media (max-width: 900px) {
+  .trust__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .trust__label {
+    white-space: normal;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+  .trust__marquee-wrap { width: 100%; align-self: stretch; }
+}
+
 /* ============================================================
    SMALL PHONE (≤ 480px) — additional tightening
 ============================================================ */
