@@ -1,0 +1,816 @@
+{% assign cd = site.data.careers %}
+{% assign open_roles = cd.openings | where: "status", "open" %}
+{% assign open_count = open_roles | size %}
+
+<!-- ============================================================
+     JSON-LD: JobPosting structured data for Google Jobs
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for role in open_roles %}
+    {
+      "@type": "JobPosting",
+      "title": "{{ role.title }}",
+      "description": "{{ role.description | strip_html | strip_newlines }}",
+      "datePosted": "2026-06-01",
+      "validThrough": "2026-12-31",
+      "employmentType": "{% if role.type_slug == 'fulltime' %}FULL_TIME{% else %}INTERN{% endif %}",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Leapath",
+        "sameAs": "https://www.leapath.tech",
+        "logo": "https://www.leapath.tech/assets/logos/logo-hero.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN",
+          "addressRegion": "India"
+        }
+      },
+      "jobLocationType": "TELECOMMUTE",
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "unitText": "YEAR"
+        }
+      },
+      "url": "https://www.leapath.tech/careers#{{ role.id }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<!-- Careers role data for JS drawer -->
+<script type="application/json" id="careers-json">
+[{% for role in open_roles %}{
+  "id": "{{ role.id }}",
+  "title": {{ role.title | jsonify }},
+  "department": {{ role.department | jsonify }},
+  "dept_slug": {{ role.dept_slug | jsonify }},
+  "location": {{ role.location | jsonify }},
+  "type": {{ role.type | jsonify }},
+  "type_slug": {{ role.type_slug | jsonify }},
+  "comp": {{ role.comp | jsonify }},
+  "exp": {{ role.exp | jsonify }},
+  "headline": {{ role.headline | jsonify }},
+  "description": {{ role.description | jsonify }},
+  "responsibilities": {{ role.responsibilities | jsonify }},
+  "requirements": {{ role.requirements | jsonify }},
+  "nice_to_have": {{ role.nice_to_have | jsonify }},
+  "questions": {{ role.questions | jsonify }},
+  "ninety_days": {{ role.ninety_days | jsonify }}
+}{% unless forloop.last %},{% endunless %}{% endfor %}]
+</script>
+
+
+<!-- ============================================================
+     1. HERO
+============================================================ -->
+<section class="careers-hero" aria-labelledby="careers-hero-heading">
+  <div class="careers-hero__orb careers-hero__orb--1" aria-hidden="true"></div>
+  <div class="careers-hero__orb careers-hero__orb--2" aria-hidden="true"></div>
+  <div class="careers-hero__orb careers-hero__orb--3" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="careers-hero__split">
+
+      <!-- LEFT: text content -->
+      <div class="careers-hero__left">
+
+        <div class="careers-hero__welcome-tag">
+          <span class="careers-hero__welcome-dot" aria-hidden="true"></span>
+          Now accepting applications
+        </div>
+
+        <h1 class="careers-hero__heading" id="careers-hero-heading">
+          You don't need to be perfect.<br><span class="careers-hero__heading-accent">You need to care.</span>
+        </h1>
+
+        <p class="careers-hero__sub">
+          We're not looking for the most polished resume in the room. We're looking for someone who is curious, hungry, and ready to do real work that matters. If that's you — you already belong here.
+        </p>
+
+        <div class="careers-hero__affirmations" aria-hidden="true">
+          <span class="careers-hero__affirm">✦ Your background is an asset</span>
+          <span class="careers-hero__affirm">✦ Your ideas will be heard</span>
+          <span class="careers-hero__affirm">✦ Your growth is our goal</span>
+        </div>
+
+        <div class="careers-hero__ctas">
+          <a href="#open-roles" class="btn btn-primary btn-lg">
+            See Open Roles
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#open-application" class="btn careers-hero__btn-ghost btn-lg">Drop Your Resume</a>
+        </div>
+
+        <div class="careers-hero__trust">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Every application gets a personal response
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Hear back within 5 days, always
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            No ghosting. Ever.
+          </span>
+        </div>
+      </div>
+
+      <!-- RIGHT: visual panel -->
+      <div class="careers-hero__right" aria-hidden="true">
+        <div class="careers-hero__visual">
+
+          <!-- Central glow card -->
+          <div class="careers-hero__glow-card">
+            <div class="careers-hero__glow-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="url(#hg)" stroke-width="1.8">
+                <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7226FF"/><stop offset="100%" stop-color="#F042FF"/></linearGradient></defs>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <p class="careers-hero__glow-quote">"Every application gets a personal read. If you care enough to apply thoughtfully, we will notice — and we will respond."</p>
+            <div class="careers-hero__glow-footer">
+              <span class="careers-hero__glow-dot"></span>
+              Personal review · always
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="careers-hero__badge careers-hero__badge--tl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Real work from day 1</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--tr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Response in 5 days</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--bl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Your growth matters</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--br">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Small team, big impact</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats strip — full width below the split -->
+    <div class="careers-hero__stats" role="list" aria-label="Company facts">
+      {% for stat in cd.stats %}
+      <div class="careers-hero__stat" role="listitem">
+        <span class="careers-hero__stat-num">{{ stat.number }}</span>
+        <span class="careers-hero__stat-label">{{ stat.label }}</span>
+      </div>
+      {% unless forloop.last %}<div class="careers-hero__stat-divider" aria-hidden="true"></div>{% endunless %}
+      {% endfor %}
+      <div class="careers-hero__stat-divider" aria-hidden="true"></div>
+      <div class="careers-hero__stat" role="listitem">
+        <span class="careers-hero__stat-num">{{ open_count }}</span>
+        <span class="careers-hero__stat-label">Open roles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     2. FOUNDER'S NOTE
+============================================================ -->
+<section class="careers-founder section" aria-labelledby="founder-heading">
+  <div class="container">
+    <div class="careers-founder__card reveal">
+
+      <!-- LEFT: identity panel -->
+      <div class="careers-founder__left">
+        <div class="careers-founder__avatar-wrap">
+          <div class="careers-founder__avatar" aria-hidden="true">JE</div>
+          <div class="careers-founder__avatar-ring" aria-hidden="true"></div>
+        </div>
+        <div class="careers-founder__identity">
+          <span class="careers-founder__name">{{ cd.founder.name }}</span>
+          <span class="careers-founder__role">Founder &amp; CEO</span>
+          <span class="careers-founder__company">Leapath</span>
+        </div>
+        <div class="careers-founder__badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Building since 2026
+        </div>
+      </div>
+
+      <!-- RIGHT: quote panel -->
+      <div class="careers-founder__right">
+        <p class="careers-founder__label">A note from the founder</p>
+        <span class="careers-founder__deco" aria-hidden="true">"</span>
+        <blockquote class="careers-founder__quote" id="founder-heading">
+          {{ cd.founder.note }}
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. VALUES — behaviors, not buzzwords
+============================================================ -->
+<section class="careers-values" aria-labelledby="values-heading">
+  <div class="careers-values__bg" aria-hidden="true">
+    <div class="careers-values__orb careers-values__orb--1"></div>
+    <div class="careers-values__orb careers-values__orb--2"></div>
+  </div>
+
+  <div class="container">
+
+    <!-- header -->
+    <div class="careers-values__header reveal">
+      <p class="careers-values__eyebrow">How we work</p>
+      <h2 class="careers-values__heading" id="values-heading">Our values,<br><em>in plain English</em></h2>
+      <p class="careers-values__sub">We don't hang buzzwords on a wall. These are the behaviors that actually shape how decisions get made here.</p>
+    </div>
+
+    <!-- value rows -->
+    <div class="careers-values__list">
+      {% for v in cd.values %}
+      <div class="careers-value-row reveal reveal-delay-{{ forloop.index }}">
+
+        <!-- index number -->
+        <span class="careers-value-row__num" aria-hidden="true">0{{ forloop.index }}</span>
+
+        <!-- icon -->
+        <div class="careers-value-row__icon" aria-hidden="true">
+          {% if v.icon == "rocket" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.5 16.5c-1.5 1.5-2 4-2 4s2.5-.5 4-2l8.5-8.5-2-2L4.5 16.5z"/><path d="M19.5 3c-3 0-6 1.5-8 4L9 10l5 5 3-2.5c2.5-2 4-5 4-8 0 0-2 0-1.5-.5z"/><circle cx="14.5" cy="9.5" r="1"/></svg>
+          {% elsif v.icon == "pen" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          {% elsif v.icon == "target" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          {% endif %}
+        </div>
+
+        <!-- text -->
+        <div class="careers-value-row__body">
+          <h3 class="careers-value-row__title">{{ v.title }}</h3>
+          <p class="careers-value-row__text">{{ v.behavior }}</p>
+        </div>
+
+        <!-- hover arrow -->
+        <span class="careers-value-row__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. PERKS
+============================================================ -->
+<section class="careers-perks" aria-labelledby="perks-heading">
+  <div class="careers-perks__bg" aria-hidden="true">
+    <div class="careers-perks__orb careers-perks__orb--1"></div>
+    <div class="careers-perks__orb careers-perks__orb--2"></div>
+  </div>
+
+  <div class="container">
+
+    <!-- Mission statement -->
+    <div class="careers-perks__mission reveal">
+      <p class="careers-perks__eyebrow">Why this work matters</p>
+      <h2 class="careers-perks__heading" id="perks-heading">
+        Ten years from now, you will say<br>
+        <em>"I helped build that."</em>
+      </h2>
+      <p class="careers-perks__sub">
+        Leapath is the infrastructure that decides which students get seen by which companies across India. The work you do here touches real futures. That is not a marketing line. That is the job description.
+      </p>
+    </div>
+
+    <!-- Pride pillars -->
+    <div class="careers-pride-grid reveal">
+
+      <div class="careers-pride-card">
+        <div class="careers-pride-card__number" aria-hidden="true">01</div>
+        <div class="careers-pride-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M12 14v8"/><path d="M8 18l4 4 4-4"/></svg>
+        </div>
+        <h3 class="careers-pride-card__title">Your name travels further than your resume</h3>
+        <p class="careers-pride-card__body">The companies that recruit from the colleges we serve — Infosys, TCS, Wipro, Deloitte — they will see the data layer you built. Product leads at those companies will notice. Leapath on your profile is a signal that you built something real, not maintained something old.</p>
+        <div class="careers-pride-card__proof">
+          <span class="careers-pride-card__proof-dot"></span>
+          Recognized by enterprise recruiters across India
+        </div>
+      </div>
+
+      <div class="careers-pride-card careers-pride-card--dark">
+        <div class="careers-pride-card__number" aria-hidden="true">02</div>
+        <div class="careers-pride-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="careers-pride-card__title">You grow 3× faster than you would at an MNC</h3>
+        <p class="careers-pride-card__body">At a big company you own one API endpoint for two years. Here, in 12 months you will have owned a product surface, made architectural decisions, shipped features to real users, and probably mentored someone. The reps you get here are not available in any large org.</p>
+        <div class="careers-pride-card__proof">
+          <span class="careers-pride-card__proof-dot"></span>
+          Full ownership from day one — no probation period for responsibility
+        </div>
+      </div>
+
+      <div class="careers-pride-card">
+        <div class="careers-pride-card__number" aria-hidden="true">03</div>
+        <div class="careers-pride-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="careers-pride-card__title">You will know the student whose life you changed</h3>
+        <p class="careers-pride-card__body">The readiness score you engineered helped a first-generation college student from Nagpur get shortlisted by a company that never recruited from her college before. You will hear that story. That is the kind of work that does not show up in a performance review — it shows up in who you become.</p>
+        <div class="careers-pride-card__proof">
+          <span class="careers-pride-card__proof-dot"></span>
+          Thousands of students across Indian colleges are affected by this platform
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bold statement -->
+    <div class="careers-perks__manifesto reveal">
+      <blockquote class="careers-perks__manifesto-quote">
+        "At most companies, your best work is invisible.<br>Here, the results walk into placement season."
+      </blockquote>
+      <p class="careers-perks__manifesto-attr">— What we believe work should feel like</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. TEAM SPOTLIGHT — commented out
+============================================================ -->
+{% comment %}
+<section class="careers-team section section--mid" aria-labelledby="team-heading">
+  <div class="container">
+    <div class="text-center reveal mb-lg">
+      <div class="section-label" style="justify-content:center;"><span class="label">The team</span></div>
+      <h2 class="display-2" id="team-heading">Meet a few of your future colleagues</h2>
+      <p class="subheading mt-sm" style="margin-inline:auto; max-width:48ch;">
+        Real people, real backgrounds, real opinions about what makes a great team.
+      </p>
+    </div>
+
+    <div class="careers-team__grid">
+      {% for member in cd.team %}
+      <div class="careers-team-card reveal reveal-delay-{{ forloop.index }}">
+        <div class="careers-team-card__avatar" style="background: linear-gradient({{ member.gradient }});" aria-hidden="true">
+          {{ member.initials }}
+        </div>
+        <div class="careers-team-card__meta">
+          <span class="careers-team-card__name">{{ member.name }}</span>
+          <span class="careers-team-card__role">{{ member.role }}</span>
+          <span class="careers-team-card__before">{{ member.before }}</span>
+        </div>
+        <blockquote class="careers-team-card__quote">"{{ member.quote }}"</blockquote>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endcomment %}
+
+
+<!-- ============================================================
+     6. HOW WE HIRE
+============================================================ -->
+<section class="careers-process" aria-labelledby="process-heading">
+  <div class="careers-process__bg" aria-hidden="true">
+    <div class="careers-process__orb careers-process__orb--1"></div>
+    <div class="careers-process__orb careers-process__orb--2"></div>
+  </div>
+  <div class="container">
+    <div class="text-center reveal mb-lg" style="position:relative;z-index:1;">
+      <p class="careers-process__eyebrow">The process</p>
+      <h2 class="careers-process__heading" id="process-heading">Exactly what to expect</h2>
+      <p class="careers-process__sub">No black holes. No week-long silences. Every step is predictable, respectful, and fast.</p>
+    </div>
+
+    <div class="careers-process__timeline" role="list">
+      {% for step in cd.process %}
+      <div class="careers-process__step reveal reveal-delay-{{ forloop.index }}" role="listitem">
+        <div class="careers-process__step-head">
+          <span class="careers-process__step-num" aria-hidden="true">{{ step.number }}</span>
+          <div class="careers-process__step-meta">
+            <span class="careers-process__step-title">{{ step.title }}</span>
+            <span class="careers-process__step-duration">{{ step.duration }}</span>
+          </div>
+        </div>
+        <p class="careers-process__step-desc">{{ step.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     7. OPEN ROLES
+============================================================ -->
+<section class="careers-roles section section--mid" id="open-roles" aria-labelledby="roles-heading">
+  <div class="container">
+
+    <div class="careers-roles__head reveal">
+      <div>
+        <div class="section-label"><span class="label">Open positions</span></div>
+        <h2 class="display-2" id="roles-heading">
+          <span id="roles-count">{{ open_count }}</span> open role{% if open_count != 1 %}s{% endif %} right now
+        </h2>
+      </div>
+      <a href="#open-application" class="btn btn-outline careers-roles__head-link">Don't see yours? →</a>
+    </div>
+
+    <!-- Filter bar hidden — only one role currently open -->
+
+    <!-- Role cards grid -->
+    <div class="careers-roles__grid" id="roles-grid" aria-live="polite" aria-label="Job listings">
+      {% for role in open_roles %}
+      <article
+        class="careers-role-card reveal"
+        data-dept="{{ role.dept_slug }}"
+        data-type="{{ role.type_slug }}"
+        data-role-id="{{ role.id }}"
+        aria-label="{{ role.title }}"
+      >
+        <div class="careers-role-card__dept-bar" style="background: linear-gradient(90deg, {% if role.dept_slug == 'engineering' %}#5B2D9E, #7226FF{% elsif role.dept_slug == 'design' %}#F042FF, #F8B6DA{% elsif role.dept_slug == 'growth' %}#7226FF, #F042FF{% elsif role.dept_slug == 'data' %}#2D0F6F, #9B7FD4{% else %}#3A1B85, #C4AFF0{% endif %});" aria-hidden="true"></div>
+        <div class="careers-role-card__body">
+          <div class="careers-role-card__badges">
+            <span class="careers-role-card__dept-badge careers-role-card__dept-badge--{{ role.dept_slug }}">{{ role.department }}</span>
+            <span class="careers-role-card__type-badge">{{ role.type }}</span>
+          </div>
+          <h3 class="careers-role-card__title">{{ role.title }}</h3>
+          <p class="careers-role-card__headline">{{ role.headline }}</p>
+          <div class="careers-role-card__meta">
+            <span class="careers-role-card__meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ role.location }}
+            </span>
+            <span class="careers-role-card__meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {{ role.exp }} experience
+            </span>
+            <span class="careers-role-card__comp">{{ role.comp }}</span>
+          </div>
+        </div>
+        <button
+          class="careers-role-card__cta btn btn-primary"
+          data-role-id="{{ role.id }}"
+          aria-label="View {{ role.title }} details and apply"
+        >View & Apply →</button>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Empty state shown by JS when filters match nothing -->
+    <div class="careers-roles__empty" id="roles-empty" hidden aria-live="polite">
+      <div class="careers-roles__empty-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="28"/><path d="M22 32h20M32 22v20"/></svg>
+      </div>
+      <p class="careers-roles__empty-title">No roles match those filters right now.</p>
+      <p class="careers-roles__empty-sub">
+        We're always growing. <a href="#open-application">Drop your resume</a> and we'll reach out when something fits.
+      </p>
+      <button class="btn btn-outline" id="roles-clear-filters">Clear filters</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ROLE DRAWER + OVERLAY
+============================================================ -->
+<div class="careers-overlay" id="careers-overlay" aria-hidden="true"></div>
+
+<aside
+  class="careers-drawer"
+  id="careers-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Role details and application"
+  hidden
+>
+  <div class="careers-drawer__header">
+    <div class="careers-drawer__header-info">
+      <div class="careers-drawer__badges" id="drawer-badges"></div>
+      <h2 class="careers-drawer__title" id="drawer-title"></h2>
+      <div class="careers-drawer__meta" id="drawer-meta"></div>
+    </div>
+    <button class="careers-drawer__close" id="drawer-close" aria-label="Close role details">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="careers-drawer__body" id="drawer-body">
+
+    <!-- Role detail content (populated by JS) -->
+    <div class="careers-drawer__detail" id="drawer-detail">
+      <p class="careers-drawer__description" id="drawer-description"></p>
+
+      <div class="careers-drawer__ninety" id="drawer-ninety">
+        <div class="careers-drawer__ninety-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Your first 90 days
+        </div>
+        <p id="drawer-ninety-text"></p>
+      </div>
+
+      <div class="careers-drawer__section">
+        <h3 class="careers-drawer__section-title">What you'll do</h3>
+        <ul class="careers-drawer__list" id="drawer-responsibilities"></ul>
+      </div>
+
+      <div class="careers-drawer__section">
+        <h3 class="careers-drawer__section-title">What we're looking for</h3>
+        <ul class="careers-drawer__list" id="drawer-requirements"></ul>
+      </div>
+
+      <div class="careers-drawer__section careers-drawer__section--soft">
+        <h3 class="careers-drawer__section-title">Nice to have</h3>
+        <ul class="careers-drawer__list careers-drawer__list--soft" id="drawer-niceToHave"></ul>
+      </div>
+
+      <div class="careers-drawer__divider" aria-hidden="true"></div>
+
+      <button class="btn btn-primary btn-lg careers-drawer__start-apply" id="drawer-start-apply" style="width:100%">
+        Apply for this role →
+      </button>
+    </div>
+
+    <!-- Multi-step application form -->
+    <div class="careers-drawer__form-wrap" id="drawer-form-wrap" hidden>
+
+      <div class="careers-form-progress" aria-label="Application progress">
+        <div class="careers-form-progress__bar">
+          <div class="careers-form-progress__fill" id="form-progress-fill"></div>
+        </div>
+        <div class="careers-form-progress__steps">
+          <span class="careers-form-progress__step active" data-step="1">Your Details</span>
+          <span class="careers-form-progress__step" data-step="2">Your Work</span>
+          <span class="careers-form-progress__step" data-step="3">Almost Done</span>
+        </div>
+      </div>
+
+      <form
+        class="careers-app-form"
+        id="careers-app-form"
+        action="https://formspree.io/f/xkoyrkjl"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate
+        aria-label="Job application form"
+      >
+        <input type="hidden" name="_subject" id="form-subject" value="New Application" />
+        <input type="hidden" name="role_id" id="form-role-id" />
+        <input type="hidden" name="role_title" id="form-role-title" />
+        <input type="hidden" name="_redirect" value="false" />
+
+        <!-- Step 1: Your Details -->
+        <fieldset class="careers-form-step active" data-step="1" aria-label="Step 1: Your details">
+          <legend class="careers-form-step__legend">Tell us about yourself</legend>
+          <div class="careers-form-row">
+            <div class="careers-form-field">
+              <label for="app-name">Full name <span aria-hidden="true" class="req-star">*</span></label>
+              <input type="text" id="app-name" name="name" required autocomplete="name" placeholder="Priya Sharma" />
+            </div>
+            <div class="careers-form-field">
+              <label for="app-email">Email address <span aria-hidden="true" class="req-star">*</span></label>
+              <input type="email" id="app-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="careers-form-row">
+            <div class="careers-form-field">
+              <label for="app-phone">Phone number</label>
+              <input type="tel" id="app-phone" name="phone" autocomplete="tel" placeholder="+91 98765 43210" />
+            </div>
+            <div class="careers-form-field">
+              <label for="app-location">Current city</label>
+              <input type="text" id="app-location" name="location" autocomplete="address-level2" placeholder="Bangalore" />
+            </div>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-linkedin">LinkedIn URL</label>
+            <input type="url" id="app-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-portfolio">Portfolio / GitHub / personal site</label>
+            <input type="url" id="app-portfolio" name="portfolio" placeholder="https://github.com/yourhandle" />
+          </div>
+        </fieldset>
+
+        <!-- Step 2: Your Work -->
+        <fieldset class="careers-form-step" data-step="2" aria-label="Step 2: Your work" hidden>
+          <legend class="careers-form-step__legend">Show us what you've built</legend>
+          <div class="careers-form-field">
+            <label for="app-resume">Resume / CV <span aria-hidden="true" class="req-star">*</span></label>
+            <div class="careers-upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload resume — click or drag and drop">
+              <div class="careers-upload-zone__inner" id="upload-inner">
+                <svg class="careers-upload-zone__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span class="careers-upload-zone__text">Drop your resume here, or <span class="careers-upload-zone__link">browse</span></span>
+                <span class="careers-upload-zone__hint">PDF, DOC, DOCX — max 5 MB</span>
+              </div>
+              <div class="careers-upload-zone__preview" id="upload-preview" hidden>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span id="upload-filename"></span>
+                <button type="button" class="careers-upload-zone__remove" id="upload-remove" aria-label="Remove file">✕</button>
+              </div>
+              <input type="file" id="app-resume" name="resume" accept=".pdf,.doc,.docx" class="careers-upload-zone__input" aria-hidden="true" tabindex="-1" />
+            </div>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-cover">Cover letter <span class="careers-form-field__opt">(optional but encouraged)</span></label>
+            <textarea id="app-cover" name="cover_letter" rows="4" placeholder="What drew you to this role? What will you bring that is not on your resume?"></textarea>
+          </div>
+          <div id="drawer-questions-wrap"></div>
+        </fieldset>
+
+        <!-- Step 3: Almost Done -->
+        <fieldset class="careers-form-step" data-step="3" aria-label="Step 3: Final details" hidden>
+          <legend class="careers-form-step__legend">One last thing</legend>
+          <div class="careers-form-field">
+            <label for="app-referral">How did you hear about this role?</label>
+            <select id="app-referral" name="referral_source">
+              <option value="">Select one</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="referral">Referred by someone at Leapath</option>
+              <option value="website">Leapath website</option>
+              <option value="twitter">Twitter / X</option>
+              <option value="job_board">Job board (Naukri, Instahyre, etc.)</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-referrer-name">Referrer's name <span class="careers-form-field__opt">(if referred)</span></label>
+            <input type="text" id="app-referrer-name" name="referrer_name" placeholder="Who sent you?" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-noticePeriod">Notice period / earliest start date</label>
+            <input type="text" id="app-noticePeriod" name="notice_period" placeholder="e.g. Immediate / 30 days / 60 days" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-video">Intro video link <span class="careers-form-field__opt">(optional — 60 sec Loom or similar)</span></label>
+            <input type="url" id="app-video" name="intro_video" placeholder="https://loom.com/share/..." />
+            <span class="careers-form-field__hint">Record a 60-second video introducing yourself. It dramatically improves your chances — most candidates skip this.</span>
+          </div>
+          <div class="careers-form-consent">
+            <label class="careers-form-consent__label">
+              <input type="checkbox" id="app-consent" name="consent" required />
+              <span>I agree that Leapath may store my application details for up to 12 months and contact me regarding this or future relevant openings. <span aria-hidden="true" class="req-star">*</span></span>
+            </label>
+          </div>
+          <div class="careers-form-trust">
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> We respond to every application</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> No spam, ever</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Response within 5 days</span>
+          </div>
+          <div class="careers-form-success" id="form-success" hidden role="status" aria-live="polite">
+            <div class="careers-form-success__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Application received.</h3>
+            <p>We will review your application and respond within 5 days — no matter what. Check your inbox (and spam, just in case).</p>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="careers-drawer__footer" id="drawer-footer">
+    <button class="btn btn-outline" id="drawer-back" hidden>← Back</button>
+    <button class="btn btn-primary" id="drawer-next">Next step →</button>
+    <button class="btn btn-primary" id="drawer-submit" hidden type="submit" form="careers-app-form">
+      Submit Application
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+    <span class="careers-drawer__footer-note" id="drawer-footer-note"></span>
+  </div>
+</aside>
+
+
+<!-- ============================================================
+     8. OPEN APPLICATION
+============================================================ -->
+<section class="careers-open-apply section" id="open-application" aria-labelledby="open-apply-heading">
+  <div class="container">
+    <div class="careers-open-apply__inner reveal">
+      <div class="careers-open-apply__content">
+        <div class="section-label"><span class="label">Always open</span></div>
+        <h2 class="display-2" id="open-apply-heading">Don't see the right role?</h2>
+        <p class="subheading mt-sm">
+          We hire for exceptional people first. If you believe you can make Leapath meaningfully better — in
+          any function — we want to hear from you. Drop your details and we'll reach out when something fits.
+        </p>
+        <ul class="careers-open-apply__bullets mt-md">
+          <li>We'll keep your profile for 12 months</li>
+          <li>You'll be the first we call when a role opens</li>
+          <li>No automated rejection — a human reads every note</li>
+        </ul>
+      </div>
+
+      <form
+        class="careers-open-apply__form"
+        action="https://formspree.io/f/xkoyrkjl"
+        method="POST"
+        enctype="multipart/form-data"
+        id="open-apply-form"
+        novalidate
+        aria-label="Open application form"
+      >
+        <input type="hidden" name="_subject" value="Open Application — Leapath" />
+        <input type="hidden" name="role_title" value="Open Application" />
+        <input type="hidden" name="_redirect" value="false" />
+
+        <div class="careers-form-field">
+          <label for="oa-name">Full name <span aria-hidden="true" class="req-star">*</span></label>
+          <input type="text" id="oa-name" name="name" required autocomplete="name" placeholder="Your name" />
+        </div>
+        <div class="careers-form-field">
+          <label for="oa-email">Email <span aria-hidden="true" class="req-star">*</span></label>
+          <input type="email" id="oa-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+        </div>
+        <div class="careers-form-field">
+          <label for="oa-function">What function are you strongest in?</label>
+          <select id="oa-function" name="function">
+            <option value="">Select an area</option>
+            <option>Engineering</option>
+            <option>Design</option>
+            <option>Growth / Sales</option>
+            <option>Data / Analytics</option>
+            <option>Customer Success</option>
+            <option>Operations</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="careers-form-field">
+          <label for="oa-note">Why Leapath? What would you build here? <span class="careers-form-field__opt">(2–3 sentences)</span></label>
+          <textarea id="oa-note" name="note" rows="3" placeholder="What draws you to this problem? What would you do here?"></textarea>
+        </div>
+        <div class="careers-form-field">
+          <label for="oa-resume">Resume / CV <span class="careers-form-field__opt">(optional)</span></label>
+          <div class="careers-upload-zone careers-upload-zone--sm" id="oa-upload-zone" role="button" tabindex="0" aria-label="Upload resume">
+            <div class="careers-upload-zone__inner" id="oa-upload-inner">
+              <svg class="careers-upload-zone__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="careers-upload-zone__text">Drop PDF or <span class="careers-upload-zone__link">browse</span></span>
+            </div>
+            <div class="careers-upload-zone__preview" id="oa-upload-preview" hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span id="oa-upload-filename"></span>
+              <button type="button" class="careers-upload-zone__remove" id="oa-upload-remove" aria-label="Remove file">✕</button>
+            </div>
+            <input type="file" id="oa-resume" name="resume" accept=".pdf,.doc,.docx" class="careers-upload-zone__input" aria-hidden="true" tabindex="-1" />
+          </div>
+        </div>
+        <div class="careers-form-field">
+          <label for="oa-linkedin">LinkedIn or portfolio URL</label>
+          <input type="url" id="oa-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" />
+        </div>
+        <div class="careers-form-consent">
+          <label class="careers-form-consent__label">
+            <input type="checkbox" id="oa-consent" name="consent" required />
+            <span>I agree that Leapath may keep my details for up to 12 months and contact me regarding relevant roles. <span aria-hidden="true" class="req-star">*</span></span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:1rem;">
+          Send my application →
+        </button>
+        <div class="careers-form-success" id="oa-success" hidden role="status" aria-live="polite">
+          <div class="careers-form-success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Received. We'll be in touch.</h3>
+          <p>We'll keep your profile active and reach out as soon as something matches your background.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
