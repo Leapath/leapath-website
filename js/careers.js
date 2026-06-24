@@ -109,6 +109,10 @@
     /* Clear filters button in empty state */
     const clearBtn = document.getElementById('roles-clear-filters');
     if (clearBtn) clearBtn.addEventListener('click', resetFilters);
+
+    /* Reset button in filter bar footer */
+    const resetBtn = document.getElementById('roles-reset-filters');
+    if (resetBtn) resetBtn.addEventListener('click', resetFilters);
   }
 
   function applyFilters() {
@@ -129,9 +133,25 @@
     /* Toggle empty state */
     if (emptyState) emptyState.hidden = visible > 0;
 
-    /* Update count label */
+    /* Update heading count label */
     const countEl = document.getElementById('roles-count');
     if (countEl) countEl.textContent = visible;
+
+    /* Update filter footer result text */
+    const resultEl = document.getElementById('filter-result-text');
+    if (resultEl) {
+      const isFiltered = state.activeDept !== 'all' || state.activeType !== 'all';
+      resultEl.innerHTML = isFiltered
+        ? `Showing <strong>${visible}</strong> of ${cards.length} role${cards.length !== 1 ? 's' : ''}`
+        : `Showing all <strong>${visible}</strong> open role${visible !== 1 ? 's' : ''}`;
+    }
+
+    /* Show/hide reset button */
+    const resetBtn = document.getElementById('roles-reset-filters');
+    if (resetBtn) {
+      const isFiltered = state.activeDept !== 'all' || state.activeType !== 'all';
+      resetBtn.hidden = !isFiltered;
+    }
   }
 
   function resetFilters() {

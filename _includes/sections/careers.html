@@ -449,7 +449,70 @@
       <a href="#open-application" class="btn btn-outline careers-roles__head-link">Don't see yours? →</a>
     </div>
 
-    <!-- Filter bar hidden — only one role currently open -->
+    {% if open_count > 0 %}
+
+    <!-- Filter bar -->
+    <div class="careers-filters reveal" role="group" aria-label="Filter roles">
+
+      <div class="careers-filters__top">
+        <div class="careers-filters__row" role="group" aria-label="Filter by department">
+          <div class="careers-filters__row-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Department
+          </div>
+          <div class="careers-filters__pills">
+            <button class="careers-filter-pill active" data-filter="dept" data-value="all" aria-pressed="true">
+              All
+              <span class="careers-filter-pill__count">{{ open_count }}</span>
+            </button>
+            {% assign depts = open_roles | map: "department" | uniq %}
+            {% for dept in depts %}
+            {% assign dept_role = open_roles | where: "department", dept | first %}
+            {% assign dept_count = open_roles | where: "department", dept | size %}
+            <button class="careers-filter-pill" data-filter="dept" data-value="{{ dept_role.dept_slug }}" aria-pressed="false">
+              {{ dept }}
+              <span class="careers-filter-pill__count">{{ dept_count }}</span>
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="careers-filters__divider" aria-hidden="true"></div>
+
+        <div class="careers-filters__row" role="group" aria-label="Filter by type">
+          <div class="careers-filters__row-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Type
+          </div>
+          <div class="careers-filters__pills">
+            <button class="careers-filter-pill active" data-filter="type" data-value="all" aria-pressed="true">
+              All
+              <span class="careers-filter-pill__count">{{ open_count }}</span>
+            </button>
+            {% assign types = open_roles | map: "type" | uniq %}
+            {% for type in types %}
+            {% assign type_role = open_roles | where: "type", type | first %}
+            {% assign type_count = open_roles | where: "type", type | size %}
+            <button class="careers-filter-pill" data-filter="type" data-value="{{ type_role.type_slug }}" aria-pressed="false">
+              {{ type }}
+              <span class="careers-filter-pill__count">{{ type_count }}</span>
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="careers-filters__footer">
+        <span class="careers-filters__result" id="filter-result-text">
+          Showing all <strong>{{ open_count }}</strong> open role{% if open_count != 1 %}s{% endif %}
+        </span>
+        <button class="careers-filters__reset" id="roles-reset-filters" aria-label="Reset all filters" hidden>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Reset filters
+        </button>
+      </div>
+
+    </div>
 
     <!-- Role cards grid -->
     <div class="careers-roles__grid" id="roles-grid" aria-live="polite" aria-label="Job listings">
@@ -461,7 +524,7 @@
         data-role-id="{{ role.id }}"
         aria-label="{{ role.title }}"
       >
-        <div class="careers-role-card__dept-bar" style="background: linear-gradient(90deg, {% if role.dept_slug == 'engineering' %}#5B2D9E, #7226FF{% elsif role.dept_slug == 'design' %}#F042FF, #F8B6DA{% elsif role.dept_slug == 'growth' %}#7226FF, #F042FF{% elsif role.dept_slug == 'data' %}#2D0F6F, #9B7FD4{% else %}#3A1B85, #C4AFF0{% endif %});" aria-hidden="true"></div>
+        <div class="careers-role-card__dept-bar" style="background: linear-gradient(90deg, {% if role.dept_slug == 'engineering' %}#5B2D9E, #7226FF{% elsif role.dept_slug == 'design' %}#F042FF, #F8B6DA{% elsif role.dept_slug == 'growth' %}#7226FF, #F042FF{% elsif role.dept_slug == 'data' %}#2D0F6F, #9B7FD4{% elsif role.dept_slug == 'advisory' %}#0F5E6B, #1ABFB4{% else %}#3A1B85, #C4AFF0{% endif %});" aria-hidden="true"></div>
         <div class="careers-role-card__body">
           <div class="careers-role-card__badges">
             <span class="careers-role-card__dept-badge careers-role-card__dept-badge--{{ role.dept_slug }}">{{ role.department }}</span>
@@ -501,6 +564,22 @@
       </p>
       <button class="btn btn-outline" id="roles-clear-filters">Clear filters</button>
     </div>
+
+    {% else %}
+
+    <!-- Zero roles state — rendered server-side when no openings exist -->
+    <div class="careers-no-roles reveal" aria-label="No open positions">
+      <div class="careers-no-roles__inner">
+        <div class="careers-no-roles__icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="careers-no-roles__title">We're not actively hiring right now.</h3>
+        <p class="careers-no-roles__sub">That changes. If you believe in what we're building, drop your resume and we will reach out when the right opportunity opens up.</p>
+        <a href="#open-application" class="btn btn-primary">Stay in Touch →</a>
+      </div>
+    </div>
+
+    {% endif %}
 
   </div>
 </section>
@@ -763,6 +842,7 @@
           <select id="oa-function" name="function">
             <option value="">Select an area</option>
             <option>Engineering</option>
+            <option>AI / Machine Learning</option>
             <option>Design</option>
             <option>Growth / Sales</option>
             <option>Data / Analytics</option>
