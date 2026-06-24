@@ -55,7 +55,7 @@
 
       <div class="reveal" style="order: 1;">
         <h2 class="display-2" id="students-heading" style="color: var(--navy);">{{ st.heading }}</h2>
-        <p class="mt-sm" style="color: var(--slate); font-size: 1.05rem; line-height: 1.7; max-width: 520px;">{{ st.subheading }}</p>
+        <p class="mt-sm" style="color: var(--slate); font-size: clamp(1rem, 1.8vw, 1.2rem); line-height: 1.7; max-width: 520px;">{{ st.subheading }}</p>
 
         <ul class="feature-list mt-md" style="--teal-dim: rgba(0,168,130,0.1); color: var(--slate);">
           {% for feat in st.features %}

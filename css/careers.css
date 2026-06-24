@@ -690,7 +690,7 @@
 }
 .careers-value-row:hover .careers-value-row__title { color: #FFFFFF; }
 .careers-value-row__text {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   color: rgba(196,175,240,0.55);
   line-height: 1.70;
   margin: 0;
@@ -883,7 +883,7 @@
 .careers-pride-card--dark .careers-pride-card__title { color: #FFFFFF; }
 
 .careers-pride-card__body {
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.72;
   margin: 0;
