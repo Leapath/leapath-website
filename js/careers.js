@@ -478,6 +478,34 @@
     if (oaForm) {
       oaForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        /* Validate required fields */
+        let valid = true;
+        oaForm.querySelectorAll('[required]').forEach(field => {
+          field.classList.remove('careers-field-error');
+          if (field.type === 'checkbox') {
+            if (!field.checked) {
+              field.closest('.careers-form-consent')?.classList.add('careers-field-error');
+              valid = false;
+            } else {
+              field.closest('.careers-form-consent')?.classList.remove('careers-field-error');
+            }
+          } else if (!field.value.trim()) {
+            field.classList.add('careers-field-error');
+            valid = false;
+            field.addEventListener('input', () => field.classList.remove('careers-field-error'), { once: true });
+          } else if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim())) {
+            field.classList.add('careers-field-error');
+            valid = false;
+          }
+        });
+        if (!valid) {
+          const firstError = oaForm.querySelector('.careers-field-error, [required]:invalid');
+          firstError?.focus();
+          firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
         const btn = oaForm.querySelector('[type="submit"]');
         if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
@@ -552,9 +580,13 @@
       if (preview) hide(preview);
     }
 
+    /* Prevent input's own click from bubbling up and triggering zone handler again */
+    input.addEventListener('click', (e) => e.stopPropagation());
+
     /* Click on zone triggers file input */
     zone.addEventListener('click', (e) => {
       if (e.target === removeBtn || removeBtn?.contains(e.target)) return;
+      if (e.target === input) return;
       input.click();
     });
 

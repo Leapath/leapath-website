@@ -2216,6 +2216,8 @@
 .careers-open-apply__form .careers-upload-zone:hover { border-color: rgba(196,175,240,0.45); }
 .careers-open-apply__form .careers-upload-zone__text,
 .careers-open-apply__form .careers-upload-zone__hint { color: rgba(196,175,240,0.45); }
+.careers-open-apply__form .careers-upload-zone__preview { color: rgba(196,175,240,0.9); }
+.careers-open-apply__form .careers-upload-zone__remove { color: rgba(196,175,240,0.55); }
 .careers-open-apply__form .careers-form-consent__label { color: rgba(196,175,240,0.55); }
 
 
