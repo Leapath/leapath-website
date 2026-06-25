@@ -2,7 +2,7 @@
 permalink: /careers/
 layout: default
 title: "Careers at Leapath — Growth Internship (Founder's Office)"
-description: "Join Leapath as a Founder's Office Intern in Growth. Work directly with founders on GTM strategy, outreach, and market research for a B2B SaaS platform changing campus placements across India."
+description: "Join Leapath as a Growth Intern in the Founder's Office. Work on GTM strategy, outreach, and market research for a B2B SaaS changing campus placements in India."
 keywords: "leapath careers, growth internship india, founder office internship, gtm internship remote, edtech internship 2026, b2b saas internship, marketing internship india, startup internship"
 author: "Leapath Technology"
 robots: "index, follow"

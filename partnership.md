@@ -2,12 +2,17 @@
 permalink: /partnership/
 layout: default
 title: "Partner with Leapath — Institutional Programme"
-description: "Institutional partnership programme for the Leapath Placement Intelligence Platform — onboard your college, university, or training body to a co-built placement readiness layer."
+description: "Partner with Leapath — onboard your college or university to a co-built placement readiness layer. Apply for the institutional partnership programme."
 keywords: "leapath partnership, institutional partnership, college partnership, placement intelligence, TPO collaboration"
 robots: "index, follow"
 canonical: "https://www.leapath.tech/partnership/"
 og_title: "Partner with Leapath — Institutional Programme"
 og_description: "Join a small, hand-picked cohort of partner institutions building the next layer of placement intelligence."
+og_site_name: "Leapath"
+og_locale: "en_IN"
+twitter_title: "Partner with Leapath — Institutional Programme"
+twitter_description: "Join a hand-picked cohort of colleges building the next layer of placement intelligence. Apply for the institutional partnership programme."
+author: "Leapath Technology"
 favicon_end_color: "%23F042FF"
 nav_cta_text: "Apply Now"
 nav_cta_href: "#partnership-form"

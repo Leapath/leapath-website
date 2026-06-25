@@ -12,28 +12,35 @@ layout: none
   </url>
 
   <url>
-    <loc>https://www.leapath.tech/partnership.html</loc>
+    <loc>https://www.leapath.tech/partnership/</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.leapath.tech/privacy-policy.html</loc>
+    <loc>https://www.leapath.tech/careers/</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.leapath.tech/privacy-policy/</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://www.leapath.tech/terms-of-service.html</loc>
+    <loc>https://www.leapath.tech/terms-of-service/</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://www.leapath.tech/data-processing.html</loc>
+    <loc>https://www.leapath.tech/data-processing/</loc>
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
