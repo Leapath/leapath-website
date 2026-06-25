@@ -9,6 +9,7 @@ description: "Terms of Service governing access to and use of the Leapath Placem
 robots: "index, follow"
 canonical: "https://www.leapath.tech/terms-of-service/"
 favicon_end_color: "%23F042FF"
+include_legal_jsonld: true
 ---
 
 ## 1. Agreement to Terms

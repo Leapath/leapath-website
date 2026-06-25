@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "{{ page.title }}",
+    "description": "{{ page.description }}",
+    "url": "{{ page.canonical }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Leapath Technology",
+      "url": "https://www.leapath.tech/"
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.leapath.tech/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.page_title }}",
+          "item": "{{ page.canonical }}"
+        }
+      ]
+    }
+  }
+]
+</script>

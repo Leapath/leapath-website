@@ -8,6 +8,7 @@ title: "Data Processing & Security Policy — Leapath"
 description: "Data Processing & Security Policy for the Leapath Placement Intelligence Platform — safeguards, sub-processors, retention, and incident response."
 robots: "index, follow"
 canonical: "https://www.leapath.tech/data-processing/"
+include_legal_jsonld: true
 favicon_end_color: "%23F042FF"
 ---
 

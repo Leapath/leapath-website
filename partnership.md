@@ -16,6 +16,7 @@ author: "Leapath Technology"
 favicon_end_color: "%23F042FF"
 nav_cta_text: "Apply Now"
 nav_cta_href: "#partnership-form"
+include_partnership_jsonld: true
 ---
 
 

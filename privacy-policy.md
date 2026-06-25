@@ -9,6 +9,7 @@ description: "Privacy Policy for the Leapath Placement Intelligence Platform —
 robots: "index, follow"
 canonical: "https://www.leapath.tech/privacy-policy/"
 favicon_end_color: "%23F042FF"
+include_legal_jsonld: true
 ---
 
 ## 1. Introduction
