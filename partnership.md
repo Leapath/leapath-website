@@ -1,11 +1,11 @@
 ---
-permalink: /partnership.html
+permalink: /partnership/
 layout: default
 title: "Partner with Leapath — Institutional Programme"
 description: "Institutional partnership programme for the Leapath Placement Intelligence Platform — onboard your college, university, or training body to a co-built placement readiness layer."
 keywords: "leapath partnership, institutional partnership, college partnership, placement intelligence, TPO collaboration"
 robots: "index, follow"
-canonical: "https://www.leapath.tech/partnership.html"
+canonical: "https://www.leapath.tech/partnership/"
 og_title: "Partner with Leapath — Institutional Programme"
 og_description: "Join a small, hand-picked cohort of partner institutions building the next layer of placement intelligence."
 favicon_end_color: "%23F042FF"

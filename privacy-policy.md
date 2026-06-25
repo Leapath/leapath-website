@@ -1,5 +1,5 @@
 ---
-permalink: /privacy-policy.html
+permalink: /privacy-policy/
 layout: legal
 page_title: "Privacy Policy"
 effective_date: "5 May 2026"
@@ -7,7 +7,7 @@ last_updated: "5 May 2026"
 title: "Privacy Policy — Leapath"
 description: "Privacy Policy for the Leapath Placement Intelligence Platform — how we collect, use, and protect personal data of students, TPOs, and recruiters."
 robots: "index, follow"
-canonical: "https://www.leapath.tech/privacy-policy.html"
+canonical: "https://www.leapath.tech/privacy-policy/"
 favicon_end_color: "%23F042FF"
 ---
 

@@ -291,7 +291,8 @@
       const id = `app-q-${i}`;
       wrap.innerHTML = `
         <label for="${id}">${escHtml(q)}</label>
-        <textarea id="${id}" name="question_${i + 1}" rows="3" placeholder="Your answer…"></textarea>
+        <input type="hidden" name="question_${i + 1}_text" value="${escHtml(q)}" />
+        <textarea id="${id}" name="question_${i + 1}_answer" rows="3" placeholder="Your answer…"></textarea>
       `;
       questionsWrap.appendChild(wrap);
     });

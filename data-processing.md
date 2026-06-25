@@ -1,5 +1,5 @@
 ---
-permalink: /data-processing.html
+permalink: /data-processing/
 layout: legal
 page_title: "Data Processing & Security Policy"
 effective_date: "5 May 2026"
@@ -7,7 +7,7 @@ last_updated: "5 May 2026"
 title: "Data Processing & Security Policy — Leapath"
 description: "Data Processing & Security Policy for the Leapath Placement Intelligence Platform — safeguards, sub-processors, retention, and incident response."
 robots: "index, follow"
-canonical: "https://www.leapath.tech/data-processing.html"
+canonical: "https://www.leapath.tech/data-processing/"
 favicon_end_color: "%23F042FF"
 ---
 

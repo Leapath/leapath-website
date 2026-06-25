@@ -1,6 +1,11 @@
 # Redirect old paths if any
-/home              /          301
-/index.html        /          301
+/home                  /                    301
+/index.html            /                    301
+/careers.html          /careers/            301
+/partnership.html      /partnership/        301
+/privacy-policy.html   /privacy-policy/     301
+/terms-of-service.html /terms-of-service/   301
+/data-processing.html  /data-processing/    301
 
 # Enforce www (configure in DNS/CDN, not here — kept as reference)
 # http://leapath.tech/*    https://www.leapath.tech/:splat    301

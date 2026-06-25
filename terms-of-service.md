@@ -1,5 +1,5 @@
 ---
-permalink: /terms-of-service.html
+permalink: /terms-of-service/
 layout: legal
 page_title: "Terms of Service"
 effective_date: "5 May 2026"
@@ -7,7 +7,7 @@ last_updated: "5 May 2026"
 title: "Terms of Service — Leapath"
 description: "Terms of Service governing access to and use of the Leapath Placement Intelligence Platform by institutions, TPOs, students, and recruiters."
 robots: "index, follow"
-canonical: "https://www.leapath.tech/terms-of-service.html"
+canonical: "https://www.leapath.tech/terms-of-service/"
 favicon_end_color: "%23F042FF"
 ---
 

@@ -5,7 +5,7 @@ baseurl: ""
 
 # Build settings
 markdown: kramdown
-permalink: /:path:output_ext
+permalink: pretty
 
 # All collections live under _data/ for clean organisation
 collections_dir: _data

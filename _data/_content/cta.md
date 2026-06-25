@@ -25,7 +25,7 @@ partnership_pre: "Institutional Partnership"
 partnership_title: "Pilot programme"
 partnership_body: "We are currently onboarding a small set of institutions at no cost. Partner colleges receive full platform access, priority support, and input into the product roadmap."
 partnership_cta: "Explore partnership →"
-partnership_href: "/partnership.html"
+partnership_href: "/partnership/"
 contact_title: "Prefer to email us directly?"
 contact_email: "info@leapath.tech"
 ---
