@@ -39,19 +39,6 @@ include_partnership_jsonld: true
   </section>
 
 
-  <!-- ============================================================
-       BANNER IMAGE
-  ============================================================ -->
-  <div class="container">
-    <div class="partnership-banner reveal">
-      <img src="/assets/images/partnership-banner.jpg"
-           alt="A historic university campus building framed by autumn leaves — representing the institutional partners Leapath works with."
-           loading="lazy" />
-      <div class="partnership-banner__caption">
-        <strong>Currently onboarding</strong> &middot; Pilot cohort · Spring 2026
-      </div>
-    </div>
-  </div>
 
 
   <!-- ============================================================

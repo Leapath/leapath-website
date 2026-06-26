@@ -1,6 +1,6 @@
 ---
 slug: "hero"
-eyebrow: "Placement Intelligence Platform · Built for Indian Institutions"
+eyebrow: "Placement Intelligence Platform · Built for Global Institutions"
 headline: "From Skill Gaps<br>to Placements —<br><em>measured, not guessed.</em>"
 punch: "Know which students will get placed — and why."
 sub: "Leapath is the structured leap from education to employability. We give colleges, TPOs, and students a shared, data-backed view of placement readiness — so you know exactly where each student stands, what gap is in the way, and what it takes to close it before recruiters arrive on campus."
