@@ -1,5 +1,6 @@
 ---
 permalink: /terms-of-service/
+redirect_from: /terms-of-service.html
 layout: legal
 page_title: "Terms of Service"
 effective_date: "5 May 2026"

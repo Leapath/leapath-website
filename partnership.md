@@ -1,5 +1,6 @@
 ---
 permalink: /partnership/
+redirect_from: /partnership.html
 layout: default
 title: "Partner with Leapath — Institutional Programme"
 description: "Partner with Leapath — onboard your college or university to a co-built placement readiness layer. Apply for the institutional partnership programme."

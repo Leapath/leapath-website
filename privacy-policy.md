@@ -1,5 +1,6 @@
 ---
 permalink: /privacy-policy/
+redirect_from: /privacy-policy.html
 layout: legal
 page_title: "Privacy Policy"
 effective_date: "5 May 2026"

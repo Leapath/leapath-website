@@ -1,5 +1,6 @@
 ---
 permalink: /careers/
+redirect_from: /careers.html
 layout: default
 title: "Careers at Leapath — Growth Internship (Founder's Office)"
 description: "Join Leapath as a Growth Intern in the Founder's Office. Work on GTM strategy, outreach, and market research for a B2B SaaS changing campus placements in India."

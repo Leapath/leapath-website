@@ -32,6 +32,7 @@ collections:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Sitemap settings (jekyll-sitemap)
 sitemap:
@@ -43,6 +44,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - package-lock.json
+  - vercel.json
   - components/
   - node_modules/
   - .bundle/

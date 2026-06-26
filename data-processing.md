@@ -1,5 +1,6 @@
 ---
 permalink: /data-processing/
+redirect_from: /data-processing.html
 layout: legal
 page_title: "Data Processing & Security Policy"
 effective_date: "5 May 2026"
