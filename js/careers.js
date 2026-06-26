@@ -526,6 +526,7 @@
           try { json = await res.json(); } catch (_) {}
 
           if (res.ok) {
+            oaForm.reset();
             oaForm.querySelectorAll('input, textarea, select, button').forEach(f => { f.disabled = true; });
             if (oaSuccess) show(oaSuccess);
             if (btn) hide(btn);

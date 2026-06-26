@@ -32,6 +32,7 @@
   }
 
   function showSuccess(form) {
+    form.reset();
     const successEl = form.querySelector('.form-success');
     if (successEl) {
       successEl.hidden = false;

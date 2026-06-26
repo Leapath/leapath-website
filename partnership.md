@@ -111,7 +111,7 @@ include_partnership_jsonld: true
 
         <form id="partnership-form"
               class="contact-form"
-              action="https://info.leapath.tech/api/contact"
+              action="https://info.leapath.tech/api/partnership"
               method="POST"
               enctype="multipart/form-data"
               aria-labelledby="partnership-form-heading"
@@ -122,11 +122,11 @@ include_partnership_jsonld: true
           <div class="form-row">
             <div class="form-field">
               <label for="pf-institution">Institution name <span aria-hidden="true">*</span></label>
-              <input type="text" id="pf-institution" name="college" required autocomplete="organization" />
+              <input type="text" id="pf-institution" name="org_name" required autocomplete="organization" />
             </div>
             <div class="form-field">
               <label for="pf-contact">Contact person <span aria-hidden="true">*</span></label>
-              <input type="text" id="pf-contact" name="tpo_name" required autocomplete="name" />
+              <input type="text" id="pf-contact" name="contact_name" required autocomplete="name" />
             </div>
           </div>
 
@@ -137,7 +137,7 @@ include_partnership_jsonld: true
             </div>
             <div class="form-field">
               <label for="pf-mobile">Mobile <span aria-hidden="true">*</span></label>
-              <input type="tel" id="pf-mobile" name="mobile" required autocomplete="tel" pattern="[0-9+\-\s]{7,}" />
+              <input type="tel" id="pf-mobile" name="phone" autocomplete="tel" pattern="[0-9+\-\s]{7,}" />
             </div>
           </div>
 
@@ -155,7 +155,7 @@ include_partnership_jsonld: true
             </div>
             <div class="form-field">
               <label for="pf-role">Role <span aria-hidden="true">*</span></label>
-              <select id="pf-role" name="role" required>
+              <select id="pf-role" name="partnership_type">
                 <option value="">Select your role</option>
                 <option>TPO / Placement Head</option>
                 <option>Principal / Director</option>
@@ -170,7 +170,7 @@ include_partnership_jsonld: true
 
           <div class="form-field">
             <label for="pf-message">Message</label>
-            <textarea id="pf-message" name="requirement" rows="4" placeholder="Tell us about your placement cell, what you're hoping to solve, and any timeline constraints."></textarea>
+            <textarea id="pf-message" name="message" rows="4" placeholder="Tell us about your placement cell, what you're hoping to solve, and any timeline constraints."></textarea>
           </div>
 
           <div class="form-actions">
