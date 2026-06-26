@@ -84,17 +84,33 @@
         headers: { Accept: 'application/json' }
       });
 
+      let json = null;
+      try { json = await response.json(); } catch (_) { /* ignore */ }
+
       if (response.ok) {
         showSuccess(form);
       } else {
-        // Try to surface a useful error from Formspree
         let msg = 'Something went wrong. Please try again or email us directly.';
-        try {
-          const data = await response.json();
-          if (data && data.errors && data.errors.length) {
-            msg = data.errors.map((err) => err.message).join(' ');
+        if (json) {
+          if (json.error) {
+            msg = json.error;
+            // Highlight the specific field named by the API (422 responses)
+            if (json.field) {
+              const fieldEl = form.querySelector(`[name="${json.field}"]`);
+              if (fieldEl) {
+                fieldEl.style.borderColor = '#FF6B6B';
+                fieldEl.style.boxShadow = '0 0 0 3px rgba(255,107,107,0.15)';
+                fieldEl.focus();
+                fieldEl.addEventListener('input', () => {
+                  fieldEl.style.borderColor = '';
+                  fieldEl.style.boxShadow = '';
+                }, { once: true });
+              }
+            }
+          } else if (json.errors && json.errors.length) {
+            msg = json.errors.map((err) => err.message).join(' ');
           }
-        } catch (_) { /* ignore */ }
+        }
         showError(form, msg);
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -102,11 +118,11 @@
         }
       }
     } catch (err) {
-      // Network failure — fall back to native form submission
-      showError(form, 'Network issue — retrying via standard submission.');
-      if (submitBtn) submitBtn.disabled = false;
-      // Allow standard submit as fallback
-      setTimeout(() => form.submit(), 250);
+      showError(form, 'Something went wrong. Please try again or email us directly.');
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
     }
   }
 

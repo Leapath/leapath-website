@@ -111,25 +111,22 @@ include_partnership_jsonld: true
 
         <form id="partnership-form"
               class="contact-form"
-              action="https://formspree.io/f/xnjwvwdq"
+              action="https://info.leapath.tech/api/contact"
               method="POST"
+              enctype="multipart/form-data"
               aria-labelledby="partnership-form-heading"
               data-leapath-form>
 
           <h3 id="partnership-form-heading" class="contact-form__heading" style="margin-bottom: 1.5rem;">Partnership enquiry</h3>
 
-          <!-- Hidden field tags Formspree submissions by source so we can route them. -->
-          <input type="hidden" name="form_source" value="partnership" />
-          <input type="hidden" name="_subject" value="New partnership enquiry — Leapath" />
-
           <div class="form-row">
             <div class="form-field">
               <label for="pf-institution">Institution name <span aria-hidden="true">*</span></label>
-              <input type="text" id="pf-institution" name="institution_name" required autocomplete="organization" />
+              <input type="text" id="pf-institution" name="college" required autocomplete="organization" />
             </div>
             <div class="form-field">
               <label for="pf-contact">Contact person <span aria-hidden="true">*</span></label>
-              <input type="text" id="pf-contact" name="contact_person" required autocomplete="name" />
+              <input type="text" id="pf-contact" name="tpo_name" required autocomplete="name" />
             </div>
           </div>
 
@@ -137,6 +134,24 @@ include_partnership_jsonld: true
             <div class="form-field">
               <label for="pf-email">Email <span aria-hidden="true">*</span></label>
               <input type="email" id="pf-email" name="email" required autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="pf-mobile">Mobile <span aria-hidden="true">*</span></label>
+              <input type="tel" id="pf-mobile" name="mobile" required autocomplete="tel" pattern="[0-9+\-\s]{7,}" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="pf-size">Institution size <span aria-hidden="true">*</span></label>
+              <select id="pf-size" name="student_count" required>
+                <option value="">Select cohort size</option>
+                <option>Under 500 students</option>
+                <option>500 – 1,500</option>
+                <option>1,500 – 5,000</option>
+                <option>5,000 – 10,000</option>
+                <option>10,000+</option>
+              </select>
             </div>
             <div class="form-field">
               <label for="pf-role">Role <span aria-hidden="true">*</span></label>
@@ -154,20 +169,8 @@ include_partnership_jsonld: true
           </div>
 
           <div class="form-field">
-            <label for="pf-size">Institution size <span aria-hidden="true">*</span></label>
-            <select id="pf-size" name="institution_size" required>
-              <option value="">Select cohort size</option>
-              <option>Under 500 students</option>
-              <option>500 – 1,500</option>
-              <option>1,500 – 5,000</option>
-              <option>5,000 – 10,000</option>
-              <option>10,000+</option>
-            </select>
-          </div>
-
-          <div class="form-field">
             <label for="pf-message">Message</label>
-            <textarea id="pf-message" name="message" rows="4" placeholder="Tell us about your placement cell, what you're hoping to solve, and any timeline constraints."></textarea>
+            <textarea id="pf-message" name="requirement" rows="4" placeholder="Tell us about your placement cell, what you're hoping to solve, and any timeline constraints."></textarea>
           </div>
 
           <div class="form-actions">

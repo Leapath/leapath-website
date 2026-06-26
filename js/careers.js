@@ -454,6 +454,9 @@
             headers: { Accept: 'application/json' },
           });
 
+          let json = null;
+          try { json = await res.json(); } catch (_) {}
+
           if (res.ok) {
             hide(document.querySelector('.careers-form-step[data-step="3"]'));
             hide(progressFill?.parentElement?.parentElement);
@@ -463,7 +466,8 @@
             if (drawerSubmit) hide(drawerSubmit);
             if (drawerFooterNote) drawerFooterNote.textContent = 'Application sent ✓';
           } else {
-            alert('Something went wrong. Please try again or email us at info@leapath.tech');
+            const msg = json?.error || 'Something went wrong. Please try again or email us at info@leapath.tech';
+            alert(msg);
           }
         } catch (err) {
           alert('Network error. Please check your connection and try again.');
@@ -517,12 +521,17 @@
             body: data,
             headers: { Accept: 'application/json' },
           });
+
+          let json = null;
+          try { json = await res.json(); } catch (_) {}
+
           if (res.ok) {
             oaForm.querySelectorAll('input, textarea, select, button').forEach(f => { f.disabled = true; });
             if (oaSuccess) show(oaSuccess);
             if (btn) hide(btn);
           } else {
-            alert('Something went wrong. Please email us at info@leapath.tech');
+            const msg = json?.error || 'Something went wrong. Please email us at info@leapath.tech';
+            alert(msg);
             if (btn) { btn.disabled = false; btn.textContent = 'Send my application →'; }
           }
         } catch {
