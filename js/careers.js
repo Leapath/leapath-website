@@ -574,9 +574,9 @@
 
     function showFile(file) {
       if (!file) return;
-      const MAX = 5 * 1024 * 1024;
+      const MAX = 1 * 1024 * 1024;
       if (file.size > MAX) {
-        alert('File is too large. Maximum size is 5 MB.');
+        alert('File is too large. Maximum size is 1 MB.');
         input.value = '';
         return;
       }
