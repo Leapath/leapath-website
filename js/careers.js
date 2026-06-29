@@ -70,6 +70,22 @@
   function show(el) { if (el) { el.hidden = false; el.removeAttribute('hidden'); } }
   function hide(el) { if (el) el.hidden = true; }
 
+  function showFormError(form, message) {
+    let el = form.querySelector('.careers-form-error-banner');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'careers-form-error-banner';
+      el.setAttribute('role', 'alert');
+      el.style.cssText =
+        'margin-top:1rem;padding:0.85rem 1rem;background:rgba(255,107,107,0.1);' +
+        'border:1px solid rgba(255,107,107,0.3);border-radius:8px;color:#FFB3B3;font-size:0.9rem;';
+      form.appendChild(el);
+    }
+    el.textContent = message;
+    el.hidden = false;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
   function makeList(items) {
     return items.map(i => `<li>${escHtml(i)}</li>`).join('');
   }
@@ -377,7 +393,11 @@
 
   function resetFormState() {
     state.formStep = 1;
-    if (appForm) appForm.reset();
+    if (appForm) {
+      appForm.reset();
+      const errBanner = appForm.querySelector('.careers-form-error-banner');
+      if (errBanner) errBanner.hidden = true;
+    }
     if (formSuccess) hide(formSuccess);
     if (progressFill) progressFill.style.width = '33.33%';
     progressSteps.forEach(ps => {
@@ -467,10 +487,10 @@
             if (drawerFooterNote) drawerFooterNote.textContent = 'Application sent ✓';
           } else {
             const msg = json?.error || 'Something went wrong. Please try again or email us at info@leapath.tech';
-            alert(msg);
+            showFormError(appForm, msg);
           }
         } catch (err) {
-          alert('Network error. Please check your connection and try again.');
+          showFormError(appForm, 'Network error. Please check your connection and try again.');
         } finally {
           submitBtn?.classList.remove('loading');
         }
@@ -531,12 +551,12 @@
             if (oaSuccess) show(oaSuccess);
             if (btn) hide(btn);
           } else {
-            const msg = json?.error || 'Something went wrong. Please email us at info@leapath.tech';
-            alert(msg);
+            const msg = json?.error || 'Something went wrong. Please try again or email us at info@leapath.tech';
+            showFormError(oaForm, msg);
             if (btn) { btn.disabled = false; btn.textContent = 'Send my application →'; }
           }
         } catch {
-          alert('Network error. Please check your connection.');
+          showFormError(oaForm, 'Network error. Please check your connection.');
           if (btn) { btn.disabled = false; btn.textContent = 'Send my application →'; }
         }
       });
@@ -574,9 +594,9 @@
 
     function showFile(file) {
       if (!file) return;
-      const MAX = 1 * 1024 * 1024;
+      const MAX = 5 * 1024 * 1024;
       if (file.size > MAX) {
-        alert('File is too large. Maximum size is 1 MB.');
+        alert('File is too large. Maximum size is 5 MB.');
         input.value = '';
         return;
       }
