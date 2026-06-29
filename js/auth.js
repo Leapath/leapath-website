@@ -147,8 +147,8 @@
     const mode = MODES[currentMode];
     const role = ROLES[currentRole];
     modalEl.querySelector('#auth-modal-title').textContent =
-      currentMode === 'login'  ? `Welcome back, ${role.label.toLowerCase()}` :
-      currentMode === 'signup' ? `Create your ${role.label.toLowerCase()} account` :
+      currentMode === 'login'  ? `Welcome back, ${role.label}` :
+      currentMode === 'signup' ? `Create your ${role.label} account` :
       'Reset your password';
 
     modalEl.querySelector('[data-context]').textContent = role.context;

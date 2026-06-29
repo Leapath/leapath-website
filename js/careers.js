@@ -594,20 +594,35 @@
     /* Prevent input's own click from bubbling up and triggering zone handler again */
     input.addEventListener('click', (e) => e.stopPropagation());
 
+    /* Guard against the file dialog close firing a synthetic click on the zone */
+    let picking = false;
+    function openPicker() {
+      if (picking) return;
+      picking = true;
+      input.click();
+      /* Reset via window focus (fires when dialog closes, whether file chosen or cancelled) */
+      const onFocus = () => {
+        setTimeout(() => { picking = false; }, 200);
+        window.removeEventListener('focus', onFocus);
+      };
+      window.addEventListener('focus', onFocus);
+    }
+
     /* Click on zone triggers file input */
     zone.addEventListener('click', (e) => {
       if (e.target === removeBtn || removeBtn?.contains(e.target)) return;
       if (e.target === input) return;
-      input.click();
+      openPicker();
     });
 
     /* Keyboard access */
     zone.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); input.click(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPicker(); }
     });
 
     /* File selected via browser dialog */
     input.addEventListener('change', () => {
+      picking = false;
       if (input.files && input.files[0]) showFile(input.files[0]);
     });
 
