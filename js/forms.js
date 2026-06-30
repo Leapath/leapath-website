@@ -1,17 +1,17 @@
 /* ============================================================
    forms.js
    --------------------------------------------------------------
-   Handles client-side validation + Formspree submission for any
-   form that opts in by carrying the `data-leapath-form` attribute.
-   Existing inline form ids (contact-form, partnership-form) are
-   also recognised, so this drops in without HTML changes.
+   Handles client-side validation + submission for any form that
+   opts in by carrying the `data-leapath-form` attribute. Existing
+   inline form ids (contact-form, partnership-form) are also
+   recognised, so this drops in without HTML changes.
    --------------------------------------------------------------
    Behaviour:
      - On submit: run native validation; bail on invalid.
-     - If valid: POST to the form's `action` (Formspree) via fetch
-       with JSON Accept header so Formspree returns JSON instead
-       of redirecting. Show inline success state on 200; fall back
-       to native submit on network error.
+     - If valid: POST to the form's `action` via fetch with JSON
+       Accept header so the API returns JSON instead of redirecting.
+       Show inline success state on 200; fall back to native submit
+       on network error.
 ============================================================ */
 (function () {
   'use strict';

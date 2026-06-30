@@ -73,7 +73,7 @@ leapath-website/
 │
 ├── js/
 │   ├── main.js                   ← sticky nav, hamburger, scroll-reveal
-│   ├── forms.js                  ← Formspree handler + client validation
+│   ├── forms.js                  ← form submission handler + client validation
 │   ├── animations.js             ← hero intro stagger + parallax
 │   ├── auth.js                   ← login dropdown + auth modal (UI only)
 │   └── region-selector.js        ← first-visit region modal + banner
@@ -153,7 +153,7 @@ Trigger from any element with data attributes:
 
 ## Forms
 
-All forms POST to Formspree. `forms.js` auto-binds to `#contact-form`, `#partnership-form`, and any `[data-leapath-form]` element. Validates client-side, submits via `fetch`, shows inline success state, falls back to native submit on error.
+All forms POST to the Leapath API (`info.leapath.tech`). `forms.js` auto-binds to `#contact-form`, `#partnership-form`, and any `[data-leapath-form]` element. Validates client-side, submits via `fetch`, shows inline success state, falls back to native submit on error.
 
 ---
 
