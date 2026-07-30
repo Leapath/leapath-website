@@ -74,9 +74,11 @@ mono: "LP"
       <a href="/case-studies/psg-tech-case-study/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--3"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg></div><div class="bc__body"><div class="bc__tag">Case Study</div><div class="bc__t">How PSG Tech improved placement rate by 34% in a single season</div></div></a>
       <a href="/blog/placement-readiness-five-countries/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--6"><svg class="icon" aria-hidden="true"><use href="#ic-globe"></use></svg></div><div class="bc__body"><div class="bc__tag">Research</div><div class="bc__t">Placement readiness across 5 countries — what's universal and what's not</div></div></a>
     </div>
-    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/insights/research-report.jpg');">
+    <div class="ip-cta ip-cta--photo" style="margin-top:7rem;--cta-img:url('/assets/v2/images/insights/research-report.jpg');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
+      <div class="ip-cta__eyebrow">Ready when you are</div>
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>
+    <div class="ip-cta__meta">No commitment required · Response within 1 business day</div>
     </div>
   </div>

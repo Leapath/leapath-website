@@ -73,9 +73,11 @@ mono: "LP"
       <a href="/blog/recruiters-readiness-scores/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--5"><svg class="icon" aria-hidden="true"><use href="#ic-building"></use></svg></div><div class="bc__body"><div class="bc__tag">Recruiter Insights</div><div class="bc__t">Why campus recruiters are switching from GPA filters to readiness scores</div></div></a>
       <a href="/blog/90-day-readiness-sprint/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--2"><svg class="icon" aria-hidden="true"><use href="#ic-target"></use></svg></div><div class="bc__body"><div class="bc__tag">TPO Playbook</div><div class="bc__t">How to run a 90-day placement readiness sprint before season opens</div></div></a>
     </div>
-    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/roles/employers.jpg');">
+    <div class="ip-cta ip-cta--photo" style="margin-top:7rem;--cta-img:url('/assets/v2/images/roles/employers.jpg');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
+      <div class="ip-cta__eyebrow">Ready when you are</div>
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>
+    <div class="ip-cta__meta">No commitment required · Response within 1 business day</div>
     </div>
   </div>

@@ -28,7 +28,7 @@
 .cs-page--nav{width:auto;padding:0 1.1rem}
 .cs-page:disabled{opacity:.35;cursor:not-allowed}
 
-.cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem}
 .cs-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--surf);border:1.5px solid var(--bd);text-decoration:none;transition:all .25s ease;box-shadow:var(--s)}
 .cs-card:hover{transform:translateY(-5px);box-shadow:var(--sl);border-color:rgba(91,45,158,.25)}
 .cs-card__cover{position:relative;padding:1.75rem;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
