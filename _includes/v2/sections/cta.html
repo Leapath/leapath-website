@@ -1,0 +1,12 @@
+<section class="ip-section{% if include.soft %} ip-section--soft{% endif %}"{% if include.style %} style="{{ include.style }}"{% endif %}>
+  <div class="container">
+    <div class="ip-cta"{% if include.cta_style %} style="{{ include.cta_style }}"{% endif %}>
+      <div class="ip-cta__t">{{ include.title }}</div>
+      <div class="ip-cta__sub">{{ include.sub }}</div>
+      <div class="ip-cta__btns">
+        <a href="{{ include.btn1_href }}" class="btn btn-grad btn-xl">{{ include.btn1_text }}</a>
+        {% if include.btn2_text %}<a href="{{ include.btn2_href }}" class="btn btn-out btn-xl">{{ include.btn2_text }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

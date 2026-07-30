@@ -1,0 +1,46 @@
+{% assign m = site.v2_content | where: "slug", "careers-misc" | first %}
+{% assign cards = site.v2_careers_pride | sort: "number" %}
+<section class="careers-perks" aria-labelledby="perks-heading">
+  <div class="careers-perks__bg" aria-hidden="true">
+    <div class="careers-perks__orb careers-perks__orb--1"></div>
+    <div class="careers-perks__orb careers-perks__orb--2"></div>
+  </div>
+
+  <div class="container">
+
+    <div class="careers-perks__mission reveal">
+      <p class="careers-perks__eyebrow">{{ m.pride_eyebrow }}</p>
+      <h2 class="careers-perks__heading" id="perks-heading">{{ m.pride_heading }}</h2>
+      <p class="careers-perks__sub">{{ m.pride_sub }}</p>
+    </div>
+
+    <div class="careers-pride-grid reveal">
+      {% for c in cards %}
+      <div class="careers-pride-card{% if c.dark %} careers-pride-card--dark{% endif %}">
+        <div class="careers-pride-card__number" aria-hidden="true">{{ c.number }}</div>
+        <div class="careers-pride-card__icon" aria-hidden="true">
+          {% if c.icon == "badge" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M12 14v8"/><path d="M8 18l4 4 4-4"/></svg>
+          {% elsif c.icon == "rocket" %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          {% else %}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          {% endif %}
+        </div>
+        <h3 class="careers-pride-card__title">{{ c.title }}</h3>
+        <p class="careers-pride-card__body">{{ c.body }}</p>
+        <div class="careers-pride-card__proof">
+          <span class="careers-pride-card__proof-dot"></span>
+          {{ c.proof }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="careers-perks__manifesto reveal">
+      <blockquote class="careers-perks__manifesto-quote">{{ m.pride_manifesto }}</blockquote>
+      <p class="careers-perks__manifesto-attr">{{ m.pride_manifesto_attr }}</p>
+    </div>
+
+  </div>
+</section>

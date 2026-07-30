@@ -1,0 +1,2 @@
+{% assign x = site.v2_content | where: "slug", include.slug | first %}
+{{ x.content }}

@@ -1,0 +1,106 @@
+{% assign h = site.v2_content | where: "slug", "careers-hero" | first %}
+{% assign open_count = site.v2_open_roles.size %}
+<section class="careers-hero" aria-labelledby="careers-hero-heading">
+  <div class="careers-hero__orb careers-hero__orb--1" aria-hidden="true"></div>
+  <div class="careers-hero__orb careers-hero__orb--2" aria-hidden="true"></div>
+  <div class="careers-hero__orb careers-hero__orb--3" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="careers-hero__split">
+
+      <div class="careers-hero__left">
+
+        <div class="careers-hero__welcome-tag">
+          <span class="careers-hero__welcome-dot" aria-hidden="true"></span>
+          {{ h.tag }}
+        </div>
+
+        <h1 class="careers-hero__heading" id="careers-hero-heading">{{ h.heading }}</h1>
+
+        <p class="careers-hero__sub">{{ h.sub }}</p>
+
+        <div class="careers-hero__affirmations" aria-hidden="true">
+          {% for a in h.affirmations %}<span class="careers-hero__affirm">✦ {{ a }}</span>{% endfor %}
+        </div>
+
+        <div class="careers-hero__ctas">
+          <a href="#open-roles" class="btn btn-grad btn-lg">
+            See Open Roles
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#open-application" class="btn careers-hero__btn-ghost btn-lg">Drop Your Resume</a>
+        </div>
+
+        <div class="careers-hero__trust">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            {{ h.trust[0] }}
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {{ h.trust[1] }}
+          </span>
+          <span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            {{ h.trust[2] }}
+          </span>
+        </div>
+      </div>
+
+      <div class="careers-hero__right" aria-hidden="true">
+        <div class="careers-hero__visual">
+
+          <div class="careers-hero__glow-card">
+            <div class="careers-hero__glow-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="url(#hg)" stroke-width="1.8">
+                <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7226FF"/><stop offset="100%" stop-color="#F042FF"/></linearGradient></defs>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <p class="careers-hero__glow-quote">"Every application gets a personal read. If you care enough to apply thoughtfully, we will notice — and we will respond."</p>
+            <div class="careers-hero__glow-footer">
+              <span class="careers-hero__glow-dot"></span>
+              Personal review · always
+            </div>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--tl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Real work from day 1</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--tr">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Response in 5 days</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--bl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Your growth matters</span>
+          </div>
+
+          <div class="careers-hero__badge careers-hero__badge--br">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Small team, big impact</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="careers-hero__stats" role="list" aria-label="Company facts">
+      {% for stat in h.stats %}
+      <div class="careers-hero__stat" role="listitem">
+        <span class="careers-hero__stat-num">{{ stat.number }}</span>
+        <span class="careers-hero__stat-label">{{ stat.label }}</span>
+      </div>
+      <div class="careers-hero__stat-divider" aria-hidden="true"></div>
+      {% endfor %}
+      <div class="careers-hero__stat" role="listitem">
+        <span class="careers-hero__stat-num">{{ open_count }}</span>
+        <span class="careers-hero__stat-label">Open roles</span>
+      </div>
+    </div>
+  </div>
+</section>

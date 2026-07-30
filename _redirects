@@ -6,6 +6,11 @@
 /privacy-policy.html   /privacy-policy/     301
 /terms-of-service.html /terms-of-service/   301
 /data-processing.html  /data-processing/    301
+/how-it-works.html     /how-it-works/       301
+/pricing.html          /pricing/            301
+/contact.html          /contact/            301
+/case-studies.html     /case-studies/       301
+/blog.html             /blog/               301
 
 # Enforce www (configure in DNS/CDN, not here — kept as reference)
 # http://leapath.tech/*    https://www.leapath.tech/:splat    301

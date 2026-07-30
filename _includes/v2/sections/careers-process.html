@@ -1,0 +1,30 @@
+{% assign m = site.v2_content | where: "slug", "careers-misc" | first %}
+{% assign steps = site.v2_careers_process | sort: "number" %}
+<section class="careers-process" aria-labelledby="process-heading">
+  <div class="careers-process__bg" aria-hidden="true">
+    <div class="careers-process__orb careers-process__orb--1"></div>
+    <div class="careers-process__orb careers-process__orb--2"></div>
+  </div>
+  <div class="container">
+    <div class="text-center reveal mb-lg" style="position:relative;z-index:1">
+      <p class="careers-process__eyebrow">{{ m.process_eyebrow }}</p>
+      <h2 class="careers-process__heading" id="process-heading">{{ m.process_heading }}</h2>
+      <p class="careers-process__sub">{{ m.process_sub }}</p>
+    </div>
+
+    <div class="careers-process__timeline" role="list">
+      {% for step in steps %}
+      <div class="careers-process__step reveal reveal-delay-{{ forloop.index }}" role="listitem">
+        <div class="careers-process__step-head">
+          <span class="careers-process__step-num" aria-hidden="true">{{ step.number }}</span>
+          <div class="careers-process__step-meta">
+            <span class="careers-process__step-title">{{ step.title }}</span>
+            <span class="careers-process__step-duration">{{ step.duration }}</span>
+          </div>
+        </div>
+        <p class="careers-process__step-desc">{{ step.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{% assign roles = site.v2_roles | sort: "path" %}
+<section class="roles">
+  <div class="container">
+    <div class="roles__hd">
+      <div>
+        <div class="stag">Built for everyone in the room</div>
+        <h2 class="d1" style="margin-top:.75rem">One platform.<br><em>Three perspectives.</em></h2>
+      </div>
+      <p class="roles__sub">Leapath speaks to the Career Services team, the student, and the employer differently, as they each need something different from the same data. Explore what this platform offers for your role.</p>
+    </div>
+    <div class="rgrid">
+      {% for r in roles %}
+      <a href="{{ r.href }}" class="rcard">
+        <div class="rcard__top {{ r.top_class }}"><img class="rcard__photo" src="{{ r.photo }}" alt="{{ r.photo_alt }}" loading="lazy"><div class="rcard__badge">{{ r.badge }}</div></div>
+        <div class="rcard__body">
+          <div class="rcard__tag">{{ r.tag }}</div>
+          <div class="rcard__title">{{ r.title }}</div>
+          <p class="rcard__desc">{{ r.desc }}</p>
+          <div class="rcard__feats">
+            {% for feat in r.feats %}<div class="rcard__feat">{{ feat }}</div>{% endfor %}
+          </div>
+          <div class="rcard__cta {{ r.cta_class }}">{{ r.cta_text }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

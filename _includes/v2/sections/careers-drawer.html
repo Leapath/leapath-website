@@ -1,0 +1,202 @@
+<div class="careers-overlay" id="careers-overlay" aria-hidden="true"></div>
+
+<aside
+  class="careers-drawer"
+  id="careers-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Role details and application"
+  hidden
+>
+  <div class="careers-drawer__header">
+    <div class="careers-drawer__header-info">
+      <div class="careers-drawer__badges" id="drawer-badges"></div>
+      <h2 class="careers-drawer__title" id="drawer-title"></h2>
+      <div class="careers-drawer__meta" id="drawer-meta"></div>
+    </div>
+    <button class="careers-drawer__close" id="drawer-close" aria-label="Close role details">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="careers-drawer__body" id="drawer-body">
+
+    <div class="careers-drawer__detail" id="drawer-detail">
+      <p class="careers-drawer__description" id="drawer-description"></p>
+
+      <div class="careers-drawer__ninety" id="drawer-ninety">
+        <div class="careers-drawer__ninety-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Your first 90 days
+        </div>
+        <p id="drawer-ninety-text"></p>
+      </div>
+
+      <div class="careers-drawer__section">
+        <h3 class="careers-drawer__section-title">What you'll do</h3>
+        <ul class="careers-drawer__list" id="drawer-responsibilities"></ul>
+      </div>
+
+      <div class="careers-drawer__section">
+        <h3 class="careers-drawer__section-title">What we're looking for</h3>
+        <ul class="careers-drawer__list" id="drawer-requirements"></ul>
+      </div>
+
+      <div class="careers-drawer__section careers-drawer__section--soft">
+        <h3 class="careers-drawer__section-title">Nice to have</h3>
+        <ul class="careers-drawer__list careers-drawer__list--soft" id="drawer-niceToHave"></ul>
+      </div>
+
+      <div class="careers-drawer__divider" aria-hidden="true"></div>
+
+      <button class="btn btn-grad btn-lg careers-drawer__start-apply" id="drawer-start-apply" style="width:100%">
+        Apply for this role →
+      </button>
+    </div>
+
+    <div class="careers-drawer__form-wrap" id="drawer-form-wrap" hidden>
+
+      <div class="careers-form-progress" aria-label="Application progress">
+        <div class="careers-form-progress__bar">
+          <div class="careers-form-progress__fill" id="form-progress-fill"></div>
+        </div>
+        <div class="careers-form-progress__steps">
+          <span class="careers-form-progress__step active" data-step="1">Your Details</span>
+          <span class="careers-form-progress__step" data-step="2">Your Work</span>
+          <span class="careers-form-progress__step" data-step="3">Almost Done</span>
+        </div>
+      </div>
+
+      <form
+        class="careers-app-form"
+        id="careers-app-form"
+        action="https://info.leapath.tech/api/careers-job"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate
+        aria-label="Job application form"
+      >
+        <input type="hidden" name="_subject" id="form-subject" value="New Application" />
+        <input type="hidden" name="role_id" id="form-role-id" />
+        <input type="hidden" name="role_title" id="form-role-title" />
+        <input type="hidden" name="_redirect" value="false" />
+
+        <fieldset class="careers-form-step active" data-step="1" aria-label="Step 1: Your details">
+          <legend class="careers-form-step__legend">Tell us about yourself</legend>
+          <div class="careers-form-row">
+            <div class="careers-form-field">
+              <label for="app-name">Full name <span aria-hidden="true" class="req-star">*</span></label>
+              <input type="text" id="app-name" name="name" required autocomplete="name" placeholder="Priya Sharma" />
+            </div>
+            <div class="careers-form-field">
+              <label for="app-email">Email address <span aria-hidden="true" class="req-star">*</span></label>
+              <input type="email" id="app-email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="careers-form-row">
+            <div class="careers-form-field">
+              <label for="app-phone">Phone number</label>
+              <input type="tel" id="app-phone" name="phone" autocomplete="tel" placeholder="+91 98765 43210" />
+            </div>
+            <div class="careers-form-field">
+              <label for="app-location">Current city</label>
+              <input type="text" id="app-location" name="location" autocomplete="address-level2" placeholder="Bangalore" />
+            </div>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-linkedin">LinkedIn URL</label>
+            <input type="url" id="app-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-portfolio">Portfolio / GitHub / personal site</label>
+            <input type="url" id="app-portfolio" name="portfolio" placeholder="https://github.com/yourhandle" />
+          </div>
+        </fieldset>
+
+        <fieldset class="careers-form-step" data-step="2" aria-label="Step 2: Your work" hidden>
+          <legend class="careers-form-step__legend">Show us what you've built</legend>
+          <div class="careers-form-field">
+            <label for="app-resume">Resume / CV <span aria-hidden="true" class="req-star">*</span></label>
+            <div class="careers-upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Upload resume — click or drag and drop">
+              <div class="careers-upload-zone__inner" id="upload-inner">
+                <svg class="careers-upload-zone__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span class="careers-upload-zone__text">Drop your resume here, or <span class="careers-upload-zone__link">browse</span></span>
+                <span class="careers-upload-zone__hint">PDF, DOC, DOCX — max 5 MB</span>
+              </div>
+              <div class="careers-upload-zone__preview" id="upload-preview" hidden>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span id="upload-filename"></span>
+                <button type="button" class="careers-upload-zone__remove" id="upload-remove" aria-label="Remove file">✕</button>
+              </div>
+              <input type="file" id="app-resume" name="resume" accept=".pdf,.doc,.docx" class="careers-upload-zone__input" aria-hidden="true" tabindex="-1" />
+            </div>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-cover">Cover letter <span class="careers-form-field__opt">(optional but encouraged)</span></label>
+            <textarea id="app-cover" name="cover_letter" rows="4" placeholder="What drew you to this role? What will you bring that is not on your resume?"></textarea>
+          </div>
+          <div id="drawer-questions-wrap"></div>
+        </fieldset>
+
+        <fieldset class="careers-form-step" data-step="3" aria-label="Step 3: Final details" hidden>
+          <legend class="careers-form-step__legend">One last thing</legend>
+          <div class="careers-form-field">
+            <label for="app-referral">How did you hear about this role?</label>
+            <select id="app-referral" name="referral_source">
+              <option value="">Select one</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="referral">Referred by someone at Leapath</option>
+              <option value="website">Leapath website</option>
+              <option value="twitter">Twitter / X</option>
+              <option value="job_board">Job board (Naukri, Instahyre, etc.)</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="careers-form-field">
+            <label for="app-referrer-name">Referrer's name <span class="careers-form-field__opt">(if referred)</span></label>
+            <input type="text" id="app-referrer-name" name="referrer_name" placeholder="Who sent you?" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-noticePeriod">Notice period / earliest start date</label>
+            <input type="text" id="app-noticePeriod" name="notice_period" placeholder="e.g. Immediate / 30 days / 60 days" />
+          </div>
+          <div class="careers-form-field">
+            <label for="app-video">Intro video link <span class="careers-form-field__opt">(optional — 60 sec Loom or similar)</span></label>
+            <input type="url" id="app-video" name="intro_video" placeholder="https://loom.com/share/..." />
+            <span class="careers-form-field__hint">Record a 60-second video introducing yourself. It dramatically improves your chances — most candidates skip this.</span>
+          </div>
+          <div class="careers-form-consent">
+            <label class="careers-form-consent__label">
+              <input type="checkbox" id="app-consent" name="consent" required />
+              <span>I agree that Leapath may store my application details for up to 12 months and contact me regarding this or future relevant openings. <span aria-hidden="true" class="req-star">*</span></span>
+            </label>
+          </div>
+          <div class="careers-form-trust">
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> We respond to every application</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> No spam, ever</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Response within 5 days</span>
+          </div>
+        </fieldset>
+
+        <div class="careers-form-success" id="form-success" hidden role="status" aria-live="polite">
+          <div class="careers-form-success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Application received.</h3>
+          <p>We will review your application and respond within 5 days — no matter what. Check your inbox (and spam, just in case).</p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="careers-drawer__footer" id="drawer-footer">
+    <button class="btn btn-out" id="drawer-back" hidden>← Back</button>
+    <button class="btn btn-grad" id="drawer-next">Next step →</button>
+    <button class="btn btn-grad" id="drawer-submit" hidden type="submit" form="careers-app-form">
+      Submit Application
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+    <span class="careers-drawer__footer-note" id="drawer-footer-note"></span>
+  </div>
+</aside>

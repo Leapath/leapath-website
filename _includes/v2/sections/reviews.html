@@ -1,0 +1,176 @@
+{% assign r = site.v2_content | where: "slug", "reviews" | first %}
+<section class="reviews">
+  <div class="reviews__top">
+    <div class="reviews__hd">
+      <div class="rv-rating">
+        <div class="rv-rating__stars">★★★★★</div>
+        <div class="rv-rating__val">{{ r.rating }}</div>
+        <div class="rv-rating__div"></div>
+        <div class="rv-rating__meta">{{ r.rating_meta }}</div>
+      </div>
+      <div class="stag">What placement teams say —</div>
+      <h2 class="d1">Real results. <em>Real voices.</em></h2>
+    </div>
+  </div>
+
+  <div class="rv-marquee-wrap">
+    <div class="rv-marquee-row" id="rvRow">
+      {% assign testimonials = site.v2_testimonials %}
+      {% for t in testimonials %}
+      <div class="rvm">
+        <div class="rvm__top">
+          <div class="rvm__stars">★★★★★</div>
+          <span class="rvm__badge {{ t.badge_class }}">{{ t.badge }}</span>
+        </div>
+        <p class="rvm__txt">&ldquo;{{ t.quote }}&rdquo;</p>
+        <div class="rvm__foot">
+          <div class="rvm__av" style="background:{{ t.avatar_bg }}">{{ t.initials }}</div>
+          <div>
+            <div class="rvm__name">{{ t.name }}</div>
+            <div class="rvm__role">{{ t.role }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="rv-dots" id="rvDots" role="group" aria-label="Testimonials">
+      {% for t in testimonials %}
+      <button class="rv-dot{% if forloop.first %} is-active{% endif %}" type="button" aria-label="Show testimonial {{ forloop.index }} of {{ testimonials.size }}"{% if forloop.first %} aria-current="true"{% endif %}></button>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var row = document.getElementById('rvRow');
+  var dots = document.querySelectorAll('#rvDots .rv-dot');
+  if(!row || !dots.length) return;
+  var cards = row.querySelectorAll('.rvm');
+  var current = 0;
+
+  // Manual eased scroll instead of native scrollTo({behavior:'smooth'}) —
+  // some browsers interrupt/cancel native smooth-scroll when combined with
+  // CSS scroll-snap, which silently killed auto-advance. Driving scrollLeft
+  // by hand every frame sidesteps that entirely.
+  var scrollAnim = null;
+  function animateScrollTo(target){
+    if(scrollAnim) cancelAnimationFrame(scrollAnim);
+    var start = row.scrollLeft;
+    var change = target - start;
+    var duration = 450;
+    var startTime = null;
+    function ease(t){ return 1 - Math.pow(1 - t, 3); }
+    function step(ts){
+      if(startTime === null) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      row.scrollLeft = start + change * ease(progress);
+      if(progress < 1){ scrollAnim = requestAnimationFrame(step); }
+      else { scrollAnim = null; }
+    }
+    scrollAnim = requestAnimationFrame(step);
+  }
+
+  function goTo(i){
+    var card = cards[i];
+    if(!card) return;
+    current = i;
+    animateScrollTo(card.offsetLeft - row.offsetLeft);
+  }
+
+  dots.forEach(function(dot, i){
+    dot.addEventListener('click', function(){ pauseThenResume(); goTo(i); });
+  });
+
+  var ticking = false;
+  row.addEventListener('scroll', function(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var rowLeft = row.scrollLeft;
+      var closest = 0, closestDist = Infinity;
+      cards.forEach(function(card, i){
+        var dist = Math.abs((card.offsetLeft - row.offsetLeft) - rowLeft);
+        if(dist < closestDist){ closestDist = dist; closest = i; }
+      });
+      current = closest;
+      dots.forEach(function(d, i){
+        d.classList.toggle('is-active', i === closest);
+        if(i === closest){ d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
+      });
+      ticking = false;
+    });
+  });
+
+  // Auto-advance one full card at a time (never mid-scroll, so cards are
+  // never cropped). Hover pauses/resumes immediately (desktop). Touch/click
+  // interactions (mobile — there's no "mouseleave" to resume on) pause and
+  // then resume on their own after a short idle period, instead of stopping
+  // forever the moment someone taps or swipes once.
+  var timer = null;
+  var resumeTimer = null;
+  function startAuto(){
+    if(cards.length < 2) return;
+    stopAuto();
+    timer = setInterval(function(){
+      goTo((current + 1) % cards.length);
+    }, 4500);
+  }
+  function stopAuto(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+  function pauseThenResume(){
+    stopAuto();
+    if(resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(startAuto, 6000);
+  }
+
+  // Hovering pauses immediately and resumes on mouseleave — but also carries
+  // the same idle-resume safety net as touch, so a cursor that merely rests
+  // over the carousel (without the user ever "leaving") doesn't freeze it
+  // forever.
+  row.addEventListener('mouseenter', pauseThenResume);
+  row.addEventListener('mouseleave', function(){ if(resumeTimer) clearTimeout(resumeTimer); startAuto(); });
+  row.addEventListener('touchstart', pauseThenResume, { passive: true });
+  row.addEventListener('pointerdown', pauseThenResume);
+
+  // A plain mouse wheel only reports vertical delta — without this, hovering
+  // the row and scrolling does nothing, since the row only scrolls
+  // horizontally. Convert vertical wheel motion into horizontal scroll.
+  row.addEventListener('wheel', function(e){
+    var horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+    if(horizontal) return; // let native horizontal trackpad scroll behave normally
+    if(scrollAnim){ cancelAnimationFrame(scrollAnim); scrollAnim = null; }
+    row.scrollLeft += e.deltaY;
+    e.preventDefault();
+    pauseThenResume();
+  }, { passive: false });
+
+  // Click-and-drag scrolling for mouse users (touch already scrolls
+  // natively via the browser).
+  var isDragging = false, dragStartX = 0, dragStartScroll = 0, dragMoved = false;
+  row.addEventListener('mousedown', function(e){
+    isDragging = true; dragMoved = false;
+    dragStartX = e.pageX; dragStartScroll = row.scrollLeft;
+    row.classList.add('is-dragging');
+    if(scrollAnim){ cancelAnimationFrame(scrollAnim); scrollAnim = null; }
+  });
+  window.addEventListener('mousemove', function(e){
+    if(!isDragging) return;
+    var delta = e.pageX - dragStartX;
+    if(Math.abs(delta) > 4) dragMoved = true;
+    row.scrollLeft = dragStartScroll - delta;
+  });
+  window.addEventListener('mouseup', function(){
+    if(!isDragging) return;
+    isDragging = false;
+    row.classList.remove('is-dragging');
+    if(dragMoved) pauseThenResume();
+  });
+  // Suppress the click-through on a card immediately after a drag (so
+  // dragging doesn't feel like it accidentally "clicked" something).
+  row.addEventListener('click', function(e){ if(dragMoved){ e.preventDefault(); e.stopPropagation(); dragMoved = false; } }, true);
+
+  startAuto();
+})();
+</script>

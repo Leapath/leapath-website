@@ -1,0 +1,24 @@
+{% assign trusted = site.v2_posts | where: "category", "case-study" | sort: "date" | reverse %}
+<section class="cos">
+  <div class="container">
+    <div class="cos__lbl">Trusted by placement teams at</div>
+    <div class="cos__row">
+      {% for t in trusted %}
+      <div class="cologo">
+        <div class="cologo__mark" style="background:
+          {%- case t.cs_cover_class -%}
+            {%- when 'cs-cover--1' -%}linear-gradient(135deg,#3D1E7A,#6B2FB8)
+            {%- when 'cs-cover--2' -%}linear-gradient(135deg,#0F5C4A,#12866A)
+            {%- when 'cs-cover--3' -%}linear-gradient(135deg,#8A4A00,#C97A12)
+            {%- when 'cs-cover--4' -%}linear-gradient(135deg,#1E3A8A,#2E5CD6)
+            {%- when 'cs-cover--5' -%}linear-gradient(135deg,#7A1E4A,#B82F72)
+            {%- else -%}var(--grad)
+          {%- endcase -%}
+        ">{{ t.mono }}</div>
+        <span class="cologo__name">{{ t.institution | split: " · " | first }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="cos__note"><strong>+34%</strong> average placement-rate uplift across partner institutions</div>
+  </div>
+</section>

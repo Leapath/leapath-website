@@ -1,0 +1,197 @@
+{% assign open_roles = site.v2_open_roles %}
+{% assign open_count = open_roles.size %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for role in open_roles %}
+    {
+      "@type": "JobPosting",
+      "title": "{{ role.title }}",
+      "description": "{{ role.description | strip_html | strip_newlines }}",
+      "datePosted": "2026-06-01",
+      "validThrough": "2026-12-31",
+      "employmentType": "{% if role.type_slug == 'internship' %}INTERN{% elsif role.type_slug == 'advisory' %}CONTRACTOR{% else %}FULL_TIME{% endif %}",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Leapath",
+        "sameAs": "https://www.leapath.tech",
+        "logo": "https://www.leapath.tech/assets/v2/icon-512.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressCountry": "IN", "addressRegion": "India" }
+      },
+      "jobLocationType": "TELECOMMUTE",
+      "url": "https://www.leapath.tech/careers/#{{ role.id }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<script type="application/json" id="careers-json">
+[{% for role in open_roles %}{
+  "id": {{ role.id | jsonify }},
+  "title": {{ role.title | jsonify }},
+  "department": {{ role.department | jsonify }},
+  "dept_slug": {{ role.dept_slug | jsonify }},
+  "location": {{ role.location | jsonify }},
+  "type": {{ role.type | jsonify }},
+  "type_slug": {{ role.type_slug | jsonify }},
+  "comp": {{ role.comp | jsonify }},
+  "exp": {{ role.exp | jsonify }},
+  "headline": {{ role.headline | jsonify }},
+  "description": {{ role.description | jsonify }},
+  "responsibilities": {{ role.responsibilities | jsonify }},
+  "requirements": {{ role.requirements | jsonify }},
+  "nice_to_have": {{ role.nice_to_have | jsonify }},
+  "questions": {{ role.questions | jsonify }},
+  "ninety_days": {{ role.ninety_days | jsonify }}
+}{% unless forloop.last %},{% endunless %}{% endfor %}]
+</script>
+
+<section class="careers-roles section section--mid" id="open-roles" aria-labelledby="roles-heading">
+  <div class="container">
+
+    <div class="careers-roles__head reveal">
+      <div>
+        <div class="section-label"><span class="label">Open positions</span></div>
+        <h2 class="display-2" id="roles-heading">
+          <span id="roles-count">{{ open_count }}</span> open role{% if open_count != 1 %}s{% endif %} right now
+        </h2>
+      </div>
+      <a href="#open-application" class="btn btn-out careers-roles__head-link">Don't see yours? →</a>
+    </div>
+
+    {% if open_count > 0 %}
+
+    <div class="careers-filters reveal" role="group" aria-label="Filter roles">
+
+      <div class="careers-filters__top">
+        <div class="careers-filters__row" role="group" aria-label="Filter by department">
+          <div class="careers-filters__row-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Department
+          </div>
+          <div class="careers-filters__pills">
+            <button class="careers-filter-pill active" data-filter="dept" data-value="all" aria-pressed="true">
+              All
+              <span class="careers-filter-pill__count">{{ open_count }}</span>
+            </button>
+            {% assign depts = open_roles | map: "department" | uniq %}
+            {% for dept in depts %}
+            {% assign dept_role = open_roles | where: "department", dept | first %}
+            {% assign dept_count = open_roles | where: "department", dept | size %}
+            <button class="careers-filter-pill" data-filter="dept" data-value="{{ dept_role.dept_slug }}" aria-pressed="false">
+              {{ dept }}
+              <span class="careers-filter-pill__count">{{ dept_count }}</span>
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="careers-filters__divider" aria-hidden="true"></div>
+
+        <div class="careers-filters__row" role="group" aria-label="Filter by type">
+          <div class="careers-filters__row-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Type
+          </div>
+          <div class="careers-filters__pills">
+            <button class="careers-filter-pill active" data-filter="type" data-value="all" aria-pressed="true">
+              All
+              <span class="careers-filter-pill__count">{{ open_count }}</span>
+            </button>
+            {% assign types = open_roles | map: "type" | uniq %}
+            {% for type in types %}
+            {% assign type_role = open_roles | where: "type", type | first %}
+            {% assign type_count = open_roles | where: "type", type | size %}
+            <button class="careers-filter-pill" data-filter="type" data-value="{{ type_role.type_slug }}" aria-pressed="false">
+              {{ type }}
+              <span class="careers-filter-pill__count">{{ type_count }}</span>
+            </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="careers-filters__footer">
+        <span class="careers-filters__result" id="filter-result-text">
+          Showing all <strong>{{ open_count }}</strong> open role{% if open_count != 1 %}s{% endif %}
+        </span>
+        <button class="careers-filters__reset" id="roles-reset-filters" aria-label="Reset all filters" hidden>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Reset filters
+        </button>
+      </div>
+
+    </div>
+
+    <div class="careers-roles__grid" id="roles-grid" aria-live="polite" aria-label="Job listings">
+      {% for role in open_roles %}
+      <article
+        class="careers-role-card reveal"
+        data-dept="{{ role.dept_slug }}"
+        data-type="{{ role.type_slug }}"
+        data-role-id="{{ role.id }}"
+        aria-label="{{ role.title }}"
+      >
+        <div class="careers-role-card__dept-bar" style="background: linear-gradient(90deg, {% if role.dept_slug == 'growth' %}#7226FF, #F042FF{% elsif role.dept_slug == 'partnerships' %}#5B2D9E, #7226FF{% elsif role.dept_slug == 'advisory' %}#0F5E6B, #1ABFB4{% else %}#3A1B85, #C4AFF0{% endif %});" aria-hidden="true"></div>
+        <div class="careers-role-card__body">
+          <div class="careers-role-card__badges">
+            <span class="careers-role-card__dept-badge careers-role-card__dept-badge--{{ role.dept_slug }}">{{ role.department }}</span>
+            <span class="careers-role-card__type-badge">{{ role.type }}</span>
+          </div>
+          <h3 class="careers-role-card__title">{{ role.title }}</h3>
+          <p class="careers-role-card__headline">{{ role.headline }}</p>
+          <div class="careers-role-card__meta">
+            <span class="careers-role-card__meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ role.location }}
+            </span>
+            <span class="careers-role-card__meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              {{ role.exp }} experience
+            </span>
+            <span class="careers-role-card__comp">{{ role.comp }}</span>
+          </div>
+        </div>
+        <button
+          class="careers-role-card__cta btn btn-grad"
+          data-role-id="{{ role.id }}"
+          aria-label="View {{ role.title }} details and apply"
+        >View & Apply →</button>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="careers-roles__empty" id="roles-empty" hidden aria-live="polite">
+      <div class="careers-roles__empty-icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="28"/><path d="M22 32h20M32 22v20"/></svg>
+      </div>
+      <p class="careers-roles__empty-title">No roles match those filters right now.</p>
+      <p class="careers-roles__empty-sub">
+        We're always growing. <a href="#open-application">Drop your resume</a> and we'll reach out when something fits.
+      </p>
+      <button class="btn btn-out" id="roles-clear-filters">Clear filters</button>
+    </div>
+
+    {% else %}
+
+    <div class="careers-no-roles reveal" aria-label="No open positions">
+      <div class="careers-no-roles__inner">
+        <div class="careers-no-roles__icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="careers-no-roles__title">We're not actively hiring right now.</h3>
+        <p class="careers-no-roles__sub">That changes. If you believe in what we're building, drop your resume and we will reach out when the right opportunity opens up.</p>
+        <a href="#open-application" class="btn btn-grad">Stay in Touch →</a>
+      </div>
+    </div>
+
+    {% endif %}
+
+  </div>
+</section>

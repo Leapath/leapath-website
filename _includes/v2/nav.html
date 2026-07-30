@@ -1,0 +1,55 @@
+{% assign cta_text = page.nav_cta_text | default: "Request a Demo" %}
+{% assign cta_href = page.nav_cta_href | default: "/contact/" %}
+<nav class="nav">
+  <div class="nav__bar">
+    <a href="/" class="nav__logo">Leapath<span class="nav__logo-dot">.</span></a>
+    <span class="nav__beta">Global Beta</span>
+    <ul class="nav__items">
+      <li><a href="/" class="nav__btn" style="text-decoration:none">Home</a></li>
+      <li><a href="/how-it-works/" class="nav__btn" style="text-decoration:none">How It Works</a></li>
+      <li class="nav__item">
+        <button class="nav__btn">Resources <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="mega mega--sm">
+          <a href="/blog/" class="mega__smi">Insights &amp; Blog</a>
+          <a href="/case-studies/" class="mega__smi">Case Studies</a>
+        </div>
+      </li>
+      <li class="nav__item">
+        <button class="nav__btn">Company <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="mega mega--sm">
+          <a href="/contact/" class="mega__smi">Contact Us</a>
+          <a href="/careers/" class="mega__smi">Careers</a>
+          <a href="/partnership/" class="mega__smi">Partnership Programme</a>
+        </div>
+      </li>
+      <li><a href="/pricing/" class="nav__btn" style="text-decoration:none">Pricing</a></li>
+    </ul>
+    <div class="nav__right">
+      <a href="https://app.leapath.tech/login" class="btn btn-out" style="font-size:.82rem;padding:.44rem 1rem;text-decoration:none" target="_blank" rel="noopener">Log In</a>
+      <a href="{{ cta_href }}" class="btn btn-grad">{{ cta_text }} →</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu" id="navHamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+  <div class="nav__mobile" id="navMobile">
+    <a href="/" class="nav__mobile-pricing">Home</a>
+    <a href="/how-it-works/" class="nav__mobile-pricing">How It Works</a>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-label">Resources</div>
+      <a href="/blog/">Insights &amp; Blog</a>
+      <a href="/case-studies/">Case Studies</a>
+    </div>
+    <div class="nav__mobile-group">
+      <div class="nav__mobile-label">Company</div>
+      <a href="/contact/">Contact Us</a>
+      <a href="/careers/">Careers</a>
+      <a href="/partnership/">Partnership Programme</a>
+    </div>
+    <a href="/pricing/" class="nav__mobile-pricing">Pricing</a>
+    <div class="nav__mobile-ctas">
+      <a href="https://app.leapath.tech/login" class="btn btn-out" style="width:100%;justify-content:center;text-decoration:none" target="_blank" rel="noopener">Log In</a>
+      <a href="{{ cta_href }}" class="btn btn-grad" style="width:100%;justify-content:center">{{ cta_text }} →</a>
+    </div>
+  </div>

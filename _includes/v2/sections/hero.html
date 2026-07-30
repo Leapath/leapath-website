@@ -1,0 +1,22 @@
+{% assign h = site.v2_content | where: "slug", "hero" | first %}
+<section class="hero">
+  <div class="hero__grain"></div>
+  <div class="container">
+    <div class="hero__center">
+      <h1 class="hero__h1 fu">{{ h.heading }}</h1>
+      <p class="hero__sub fu2">{{ h.sub }}</p>
+      <div class="hero__ctas fu3">
+        <a href="{{ h.cta_primary_href }}" class="btn btn-grad btn-xl">{{ h.cta_primary_text }} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:.2rem"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="{{ h.cta_secondary_href }}" class="hero__btn-demo">{{ h.cta_secondary_text }}</a>
+      </div>
+      <p class="hero__micro fu3">{{ h.microcopy }}</p>
+      <div class="hero__trust fu4">
+        {% for stat in h.trust_stats %}
+        <div class="htrust"><div class="htrust__n">{{ stat.n }}</div><div class="htrust__l">{{ stat.l }}</div></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {{ h.content }}
+</section>

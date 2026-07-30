@@ -27,6 +27,28 @@ collections:
     output: false
   onboarding_steps:
     output: false
+  v2_content:
+    output: false
+  v2_roles:
+    output: false
+  v2_capabilities:
+    output: false
+  v2_pricing_tiers:
+    output: false
+  v2_how_steps:
+    output: false
+  v2_open_roles:
+    output: false
+  v2_testimonials:
+    output: false
+  v2_careers_values:
+    output: false
+  v2_careers_process:
+    output: false
+  v2_careers_pride:
+    output: false
+  v2_posts:
+    output: true
 
 # Plugins
 plugins:

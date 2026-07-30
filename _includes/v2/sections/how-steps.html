@@ -1,0 +1,22 @@
+{% assign steps = site.v2_how_steps | sort: "num" %}
+<section class="how" style="padding-top:5.5rem">
+  <div class="container">
+    <div class="how__rows">
+      {% for s in steps %}
+      <div class="how__row{% if s.flip %} how__row--flip{% endif %}">
+        <div>
+          <div class="how__step-num"><div class="how__badge">{{ s.num }}</div><span class="how__tag">{{ s.tag }}</span></div>
+          <div class="how__title">{{ s.title }}</div>
+          <p class="how__body">{{ s.body }}</p>
+          <div class="how__bullets">
+            {% for b in s.bullets %}<div class="how__bullet"><div class="how__bico">✓</div>{{ b }}</div>{% endfor %}
+          </div>
+        </div>
+        <div class="how__panel {{ s.panel_class }}">
+          {{ s.content }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

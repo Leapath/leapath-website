@@ -1,0 +1,36 @@
+---
+id: "founders-office-intern-growth"
+title: "Founder's Office Intern — Growth"
+department: "Growth"
+dept_slug: "growth"
+location: "Remote — India"
+type: "Internship"
+type_slug: "internship"
+comp: "Unpaid · Certificate + PPO opportunity"
+exp: "Student / Fresher"
+headline: "Work directly with the founders to shape and execute Leapath's GTM strategy from the ground up."
+description: "This is not a traditional internship where you shadow someone and write reports. You will work directly with the founders on the actual go-to-market strategy — identifying who we sell to, how we reach them, and what messaging works. You will run real outreach, see real pipeline data, and make decisions that affect how Leapath grows. If you want to understand how a B2B SaaS startup builds its market from scratch, this is that opportunity."
+responsibilities:
+  - "Assist in developing and executing the GTM strategy for a B2B SaaS product in the edtech space"
+  - "Identify and define Ideal Customer Profiles (ICPs) through research and outreach data"
+  - "Support outreach initiatives including cold emails, LinkedIn engagement, and other acquisition channels"
+  - "Conduct market research and competitor analysis to inform positioning"
+  - "Help build and optimize growth funnels and messaging strategies"
+  - "Track and analyze performance metrics for campaigns — weekly, with clear goals"
+  - "Collaborate closely with founders on strategic initiatives and product direction"
+requirements:
+  - "Pursuing a degree in Marketing, Business, Communications, or a related field"
+  - "Strong written and verbal communication skills in English"
+  - "Go-getter attitude — you take ownership without being asked twice"
+  - "Ability to work independently in a remote setup with minimal supervision"
+  - "Detail-oriented and well-organised"
+nice_to_have:
+  - "Basic understanding of digital marketing concepts (funnels, ICPs, outreach)"
+  - "Familiarity with tools like Google Analytics, CRM systems, or LinkedIn Sales Navigator"
+  - "Prior experience in any customer-facing or outreach role"
+  - "Genuine interest in edtech or B2B SaaS"
+questions:
+  - "Why do you want to work at an early-stage startup specifically — not a larger company or agency?"
+  - "Describe a time you had to figure something out with zero guidance. What did you do and what happened?"
+ninety_days: "By week 1 you understand the product, ICP, and where we currently stand on GTM. By month 1 you have run your first outreach campaign and have real data to share. By month 2 you own specific acquisition channels end-to-end. By the end of the internship you have a documented playbook of what worked and what did not — and your name is on it."
+---

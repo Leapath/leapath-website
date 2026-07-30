@@ -1,0 +1,61 @@
+{% assign caps = site.v2_capabilities | sort: "num" %}
+<section class="capf">
+  <div class="container">
+    <div class="capf__hd">
+      <div class="stag c">Inside the platform</div>
+      <h2 class="d1 d1--narrow" style="margin-top:.75rem">Built to run inside your university,<br><em>not around it.</em></h2>
+      <p class="capf__sub">Comes with the infrastructure and features needed for the everyday work and priorities of your Career Services team.</p>
+    </div>
+
+    <div class="capf__grid">
+      <div class="capf__list" id="capfList">
+        {% for c in caps %}
+        <div class="capf__item{% if forloop.first %} is-active{% endif %}" data-panel="{{ c.num }}">
+          <div class="capf__stem"><div class="capf__num">{{ c.num }}</div>{% unless forloop.last %}<div class="capf__line"></div>{% endunless %}</div>
+          <div class="capf__body">
+            <div class="capf__title">{{ c.title }}</div>
+            <p class="capf__desc">{{ c.desc }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="capf__visual">
+        <div class="hw-win">
+          <div class="hw-chrome">
+            <div class="hw-dots"><div class="hw-dot hw-dot--r"></div><div class="hw-dot hw-dot--y"></div><div class="hw-dot hw-dot--g"></div></div>
+            <div class="hw-url"><span style="font-size:.65rem"><svg class="icon" aria-hidden="true"><use href="#ic-lock"></use></svg></span><span class="hw-url-txt" id="capfUrl">{{ caps.first.url_text }}</span></div>
+          </div>
+          <div style="background:#F4F3FB;padding:1.5rem;min-height:460px">
+            {% for c in caps %}
+            <div class="capf__panel{% if forloop.first %} is-active{% endif %}" data-panel="{{ c.num }}">
+              {{ c.content }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('#capfList .capf__item');
+  var panels = document.querySelectorAll('.capf__panel');
+  var urlText = {
+    {% for c in caps %}'{{ c.num }}':'{{ c.url_text }}'{% unless forloop.last %},{% endunless %}{% endfor %}
+  };
+  var urlEl = document.getElementById('capfUrl');
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      var id = item.getAttribute('data-panel');
+      items.forEach(function(i){ i.classList.remove('is-active'); });
+      panels.forEach(function(p){ p.classList.remove('is-active'); });
+      item.classList.add('is-active');
+      document.querySelector('.capf__panel[data-panel="'+id+'"]').classList.add('is-active');
+      if(urlEl) urlEl.textContent = urlText[id];
+    });
+  });
+})();
+</script>

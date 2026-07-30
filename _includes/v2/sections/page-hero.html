@@ -1,0 +1,14 @@
+<div class="ph ph--{{ include.tone | default: 'purple' }}"{% if include.style %} style="{{ include.style }}"{% endif %}>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="ph__eyebrow">{{ include.eyebrow }}</div>
+    <h1 class="ph__h1">{{ include.title }}</h1>
+    <p class="ph__sub">{{ include.sub }}</p>
+    {% if include.stat1_n %}
+    <div class="ph__stats">
+      <div><div class="ph__stat-n">{{ include.stat1_n }}</div><div class="ph__stat-l">{{ include.stat1_l }}</div></div>
+      <div><div class="ph__stat-n">{{ include.stat2_n }}</div><div class="ph__stat-l">{{ include.stat2_l }}</div></div>
+      <div><div class="ph__stat-n">{{ include.stat3_n }}</div><div class="ph__stat-l">{{ include.stat3_l }}</div></div>
+    </div>
+    {% endif %}
+  </div>
+</div>

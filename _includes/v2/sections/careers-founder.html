@@ -1,0 +1,30 @@
+{% assign f = site.v2_content | where: "slug", "careers-founder" | first %}
+<section class="careers-founder section" aria-labelledby="founder-heading">
+  <div class="container">
+    <div class="careers-founder__card reveal">
+
+      <div class="careers-founder__left">
+        <div class="careers-founder__avatar-wrap">
+          <div class="careers-founder__avatar" aria-hidden="true">{{ f.initials }}</div>
+          <div class="careers-founder__avatar-ring" aria-hidden="true"></div>
+        </div>
+        <div class="careers-founder__identity">
+          <span class="careers-founder__name">{{ f.name }}</span>
+          <span class="careers-founder__role">{{ f.title }}</span>
+          <span class="careers-founder__company">Leapath</span>
+        </div>
+        <div class="careers-founder__badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Building since 2026
+        </div>
+      </div>
+
+      <div class="careers-founder__right">
+        <p class="careers-founder__label">A note from the founder</p>
+        <span class="careers-founder__deco" aria-hidden="true">"</span>
+        <blockquote class="careers-founder__quote" id="founder-heading">{{ f.note }}</blockquote>
+      </div>
+
+    </div>
+  </div>
+</section>
