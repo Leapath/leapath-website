@@ -88,6 +88,8 @@ extra_css: /css/v2/blog.css
   </div>
 </section>
 
+{% include v2/sections/reviews.html %}
+
 <script>
 (function(){
   var tabs = document.querySelectorAll('.cs-tab');

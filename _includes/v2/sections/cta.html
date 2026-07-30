@@ -1,12 +1,15 @@
 <section class="ip-section{% if include.soft %} ip-section--soft{% endif %}"{% if include.style %} style="{{ include.style }}"{% endif %}>
   <div class="container">
-    <div class="ip-cta"{% if include.cta_style %} style="{{ include.cta_style }}"{% endif %}>
+    {% capture cta_style %}{% if include.bg_img %}--cta-img:url('{{ include.bg_img }}');{% endif %}{% if include.accent == "violet" %}--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);{% endif %}{{ include.cta_style }}{% endcapture %}
+    <div class="ip-cta{% if include.bg_img %} ip-cta--photo{% endif %}"{% if cta_style != "" %} style="{{ cta_style | strip }}"{% endif %}>
+      {% if include.eyebrow %}<div class="ip-cta__eyebrow">{{ include.eyebrow }}</div>{% endif %}
       <div class="ip-cta__t">{{ include.title }}</div>
       <div class="ip-cta__sub">{{ include.sub }}</div>
       <div class="ip-cta__btns">
         <a href="{{ include.btn1_href }}" class="btn btn-grad btn-xl">{{ include.btn1_text }}</a>
         {% if include.btn2_text %}<a href="{{ include.btn2_href }}" class="btn btn-out btn-xl">{{ include.btn2_text }}</a>{% endif %}
       </div>
+      {% if include.meta %}<div class="ip-cta__meta">{{ include.meta }}</div>{% endif %}
     </div>
   </div>
 </section>

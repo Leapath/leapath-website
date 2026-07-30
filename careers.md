@@ -15,4 +15,5 @@ extra_js: /js/v2/careers.js
 {% include v2/sections/careers-process.html %}
 {% include v2/sections/careers-roles.html %}
 {% include v2/sections/careers-drawer.html %}
+{% include v2/sections/reviews.html %}
 {% include v2/sections/careers-open-apply.html %}

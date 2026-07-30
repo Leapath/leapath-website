@@ -57,6 +57,8 @@ canonical: "https://www.leapath.tech/case-studies/"
   </div>
 </section>
 
+{% include v2/sections/reviews.html %}
+
 <script>
 (function(){
   var tabs = document.querySelectorAll('.cs-tab');

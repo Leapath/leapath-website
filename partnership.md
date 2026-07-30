@@ -48,3 +48,5 @@ nav_cta_href: "#partnership-form"
     </div>
   </div>
 </section>
+
+{% include v2/sections/reviews.html %}

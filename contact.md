@@ -45,3 +45,5 @@ canonical: "https://www.leapath.tech/contact/"
     </div>
   </div>
 </section>
+
+{% include v2/sections/reviews.html %}
