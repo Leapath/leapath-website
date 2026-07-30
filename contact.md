@@ -6,7 +6,7 @@ description: "Get in touch with Leapath. We respond within one business day, eve
 canonical: "https://www.leapath.tech/contact/"
 ---
 
-{% include v2/sections/page-hero.html tone="purple" style="padding-bottom:3.5rem" eyebrow="Get in touch" title='We respond within <em>one business day.</em><br>Every time.' sub="No forms that vanish into a void. No automated reply sequences. When you write to us, a real person reads it and responds — usually the same day." %}
+{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/images/partnership-banner.jpg');padding-bottom:3.5rem" eyebrow="Get in touch" title='We respond within <em>one business day.</em><br>Every time.' sub="No forms that vanish into a void. No automated reply sequences. When you write to us, a real person reads it and responds — usually the same day." btn1_text="Request a Demo" btn1_href="#contact-form" btn2_text="See Pricing" btn2_href="/pricing/" %}
 
 <section class="ip-section">
   <div class="container">
@@ -33,8 +33,6 @@ canonical: "https://www.leapath.tech/contact/"
         <div class="ip-eyebrow">Other ways to reach us</div>
         <div class="ci-card"><div class="ci-card__ico"><svg class="icon" aria-hidden="true"><use href="#ic-mail"></use></svg></div><div class="ci-card__t">Email us directly</div><div class="ci-card__d"><a href="mailto:info@leapath.tech" style="color:var(--purple);font-weight:700;text-decoration:none">info@leapath.tech</a><br>For general enquiries, partnerships, and media.</div></div>
         <div class="ci-card"><div class="ci-card__ico"><svg class="icon" aria-hidden="true"><use href="#ic-phone"></use></svg></div><div class="ci-card__t">Book a call</div><div class="ci-card__d">30-minute product walkthroughs are available Mon–Fri, 10am–6pm IST. Use the form to request a slot.</div></div>
-        <div class="ci-card"><div class="ci-card__ico"><svg class="icon" aria-hidden="true"><use href="#ic-building"></use></svg></div><div class="ci-card__t">Registered office</div><div class="ci-card__d">Leapath Ventures Pvt Ltd<br>MS Bright Plaza, 3-84/22, Manikonda, Puppalaguda, Rangareddy, Hyderabad - 500089, Telangana</div></div>
-        <div class="ci-card"><div class="ci-card__ico"><svg class="icon" aria-hidden="true"><use href="#ic-handshake"></use></svg></div><div class="ci-card__t">Partnership enquiries</div><div class="ci-card__d">Looking to partner your institution? Use the <a href="/partnership/" style="color:var(--purple);font-weight:700;text-decoration:none">Partnership page</a> for a dedicated application — processed separately from general enquiries.</div></div>
         <div style="background:var(--bgsoft);border:1.5px solid var(--bd);border-radius:18px;padding:1.75rem;margin-top:.5rem">
           <div style="font-size:.8rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem">Common questions</div>
           <div class="acc-item"><div class="acc-q">How long does onboarding take? <span>+</span></div><div class="acc-a">Most institutions go live within 48 hours. We handle the full setup — you just confirm your recruiter list and batch details.</div></div>
@@ -47,3 +45,5 @@ canonical: "https://www.leapath.tech/contact/"
 </section>
 
 {% include v2/sections/reviews.html %}
+
+{% include v2/sections/cta.html bg_img="/assets/v2/images/insights/case-study.jpg" accent="violet" eyebrow="Still have questions?" title='Talk to a real person, <em>not a chatbot.</em>' sub="Book a 30-minute walkthrough and we'll answer every question live, no automated sequences, no waiting." btn1_text="Request a Demo" btn1_href="#contact-form" btn2_text="See Pricing" btn2_href="/pricing/" meta="Response within 1 business day · No commitment required" %}

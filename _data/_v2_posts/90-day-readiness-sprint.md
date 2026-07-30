@@ -112,7 +112,7 @@ mono: "LP"
 </section>
 <section class="ip-section">
   <div class="container">
-    <div class="ip-cta ip-cta--photo" style="--cta-img:url('/assets/images/partnership-banner.jpg');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
+    <div class="ip-cta" style="--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
       <div class="ip-cta__eyebrow">Ready when you are</div>
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
