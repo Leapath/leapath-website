@@ -1,7 +1,8 @@
 ---
 layout: v2/post
 og_type: article
-permalink: /blog/vardhman-mba-case-study/
+permalink: /case-studies/vardhman-mba-case-study/
+redirect_from: /blog/vardhman-mba-case-study/
 title: "How Vardhman Cut Recruiter No-Shows by 40% — Leapath Case Study"
 description: "How one B-school used JD-matched shortlists to make recruiter visits worth showing up for."
 category: case-study
@@ -21,7 +22,7 @@ blog_cover_style: "linear-gradient(135deg,rgba(138,74,0,.78),rgba(201,122,18,.55
   <div class="container cs-dhero__inner">
     <div class="cs-dhero__crumb"><a href="/">Home</a><span>/</span><a href="/case-studies/">Case Studies</a></div>
     <div class="cs-dhero__top">
-      <div class="cs-dhero__mono" style="background:linear-gradient(135deg,#8A4A00,#C97A12)">VS</div>
+      <div class="cs-dhero__mono">VS</div>
       <div>
         <div class="cs-dhero__inst">Vardhman School of Management · Pune</div>
         <div class="cs-dhero__badge">MBA &amp; B-School</div>
@@ -72,18 +73,18 @@ blog_cover_style: "linear-gradient(135deg,rgba(138,74,0,.78),rgba(201,122,18,.55
     <div class="ip-eyebrow">More case studies</div>
     <h3 class="ip-h2" style="font-size:1.6rem;margin-bottom:2rem">Related stories</h3>
     <div class="cs-related-grid">
-      <a href="/blog/psg-tech-case-study/" class="cs-card">
+      <a href="/case-studies/psg-tech-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--1" style="min-height:110px"><span class="cs-card__badge">Engineering</span><div class="cs-card__mono">PT</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">PSG Tech</div><div class="cs-card__t">34% placement rate lift in one season</div></div>
-      </a><a href="/blog/sri-sai-polytechnic-case-study/" class="cs-card">
+      </a><a href="/case-studies/sri-sai-polytechnic-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--2" style="min-height:110px"><span class="cs-card__badge">Polytechnic</span><div class="cs-card__mono">SS</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">Sri Sai Polytechnic</div><div class="cs-card__t">52% to 81% placement rate in two seasons</div></div>
-      </a><a href="/blog/government-college-nagpur-case-study/" class="cs-card">
+      </a><a href="/case-studies/government-college-nagpur-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--5" style="min-height:110px"><span class="cs-card__badge">Government</span><div class="cs-card__mono">GC</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">Government Engineering College, Nagpur</div><div class="cs-card__t">2.1× more offers, zero budget increase</div></div>
       </a>
     </div>
-    <div class="ip-cta" style="margin-top:4rem">
+    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/case-studies/vardhman.jpg');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

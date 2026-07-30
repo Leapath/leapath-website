@@ -102,8 +102,8 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 .btn-out{background:transparent;color:var(--txt2);border:1.5px solid var(--bd2)}
 /* On dark surfaces (.ip-cta, .ph hero bands, dark sections) the default ink-on-transparent
    outline button is unreadable — flip to a light outline/ink there. */
-.ip-cta .btn-out,.ph .btn-out,.ip-section--dark .btn-out,.hero__btn-demo{color:#fff;border-color:rgba(255,255,255,.35)}
-.ip-cta .btn-out:hover,.ip-section--dark .btn-out:hover{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
+.ip-cta .btn-out,.ph .btn-out,.ip-section--dark .btn-out,.hero__btn-demo,.cs-hero .btn-out{color:#fff;border-color:rgba(255,255,255,.35)}
+.ip-cta .btn-out:hover,.ip-section--dark .btn-out:hover,.cs-hero .btn-out:hover{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
 .btn-out:hover{border-color:var(--purple);color:var(--purple)}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--navy2);transform:translateY(-1px)}
@@ -703,6 +703,7 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 .footer__links{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 .footer__links a{color:rgba(255,255,255,.42);text-decoration:none;font-size:.855rem;transition:color .14s;font-weight:600}
 .footer__links a:hover{color:#fff}
+.footer__address{font-style:normal;font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.65;font-weight:500;margin-top:1.5rem}
 .footer__btm{border-top:1px solid rgba(255,255,255,.06);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer__copy{font-size:.76rem;color:rgba(255,255,255,.25);font-weight:600}
 .footer__blinks{display:flex;gap:1.5rem}
@@ -820,7 +821,7 @@ body.nav-open-lock{overflow:hidden}
 .ph--gold{background:linear-gradient(135deg,#5C3A00 0%,#8C5A00 100%)}
 .ph--slate{background:linear-gradient(135deg,#15102E 0%,#2A234A 100%)}
 .ph--green{background:linear-gradient(135deg,#064E3B 0%,#065F46 100%)}
-.ph--photo{background:#08040E url('/assets/v2/images/hero-bg.jpg') center 30%/cover no-repeat}
+.ph--photo{background:#08040E url('/assets/images/partnership-banner.jpg') center 55%/cover no-repeat}
 .ph::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.03) 1px,transparent 0);background-size:28px 28px}
 .ph::after{content:'';position:absolute;top:-140px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.09) 0%,transparent 70%);pointer-events:none}
 .ph--photo::before{
@@ -974,6 +975,32 @@ body.nav-open-lock{overflow:hidden}
 .ip-cta__btns .btn-grad{background:var(--cta-btn-grad,var(--gradbtn));box-shadow:0 12px 32px -8px var(--cta-btn-shadow,rgba(240,66,255,.45))}
 .ip-cta__btns .btn-grad:hover{background:var(--cta-btn-grad-h,var(--gradbtnh))}
 .ip-cta__meta{margin-top:1.75rem;font-size:.78rem;color:rgba(255,255,255,.4);font-weight:600;position:relative;z-index:1}
+
+/* Split layout — left copy, right decorative badge cluster */
+.ip-cta--split{
+  background-color:#3B1C78;
+  background-image:none;
+  text-align:left;padding:4rem;
+  display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;
+}
+.ip-cta--split::after{
+  background:radial-gradient(circle at 100% 50%,rgba(255,255,255,.08) 0%,transparent 55%);
+}
+.ip-cta--split .ip-cta__sub{margin:0 0 2.25rem}
+.ip-cta--split .ip-cta__btns{justify-content:flex-start}
+.ip-cta--split .ip-cta__meta{margin-top:1.5rem}
+.ip-cta__visual{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-content:center;max-width:280px;margin:0 auto}
+.ip-cta__badge{
+  width:58px;height:58px;border-radius:16px;background:#fff;color:var(--purple);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+  transform:translateY(calc(var(--d,0) * 10px - 10px));
+}
+@media (max-width:860px){
+  .ip-cta--split{grid-template-columns:1fr;text-align:center}
+  .ip-cta--split .ip-cta__btns{justify-content:center}
+  .ip-cta__visual{margin-top:1rem}
+}
 /* Partnership form */
 .pf{background:var(--surf);border:1.5px solid var(--bd);border-radius:24px;padding:3rem}
 /* Pill tags */

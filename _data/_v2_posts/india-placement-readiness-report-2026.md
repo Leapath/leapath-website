@@ -71,10 +71,10 @@ mono: "LP"
     <h3 class="ip-h2" style="font-size:1.6rem;margin-bottom:2rem">Related reading</h3>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="bp__related-grid">
       <a href="/blog/90-day-readiness-sprint/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--2"><svg class="icon" aria-hidden="true"><use href="#ic-target"></use></svg></div><div class="bc__body"><div class="bc__tag">TPO Playbook</div><div class="bc__t">How to run a 90-day placement readiness sprint before season opens</div></div></a>
-      <a href="/blog/psg-tech-case-study/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--3"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg></div><div class="bc__body"><div class="bc__tag">Case Study</div><div class="bc__t">How PSG Tech improved placement rate by 34% in a single season</div></div></a>
+      <a href="/case-studies/psg-tech-case-study/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--3"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg></div><div class="bc__body"><div class="bc__tag">Case Study</div><div class="bc__t">How PSG Tech improved placement rate by 34% in a single season</div></div></a>
       <a href="/blog/placement-readiness-five-countries/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--6"><svg class="icon" aria-hidden="true"><use href="#ic-globe"></use></svg></div><div class="bc__body"><div class="bc__tag">Research</div><div class="bc__t">Placement readiness across 5 countries — what's universal and what's not</div></div></a>
     </div>
-    <div class="ip-cta" style="margin-top:4rem">
+    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/insights/research-report.jpg');">
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

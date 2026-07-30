@@ -30,7 +30,7 @@ toc:
 
 ## 1. Introduction
 
-Leapath Technology ("**Leapath**", "we", "us", or "our") operates the Leapath Placement Intelligence Platform (the "**Platform**") accessible at [https://www.leapath.tech](https://www.leapath.tech). The Platform is provided to higher-education institutions, their Training and Placement Officers ("**TPOs**"), enrolled students, and authorised recruiters to support placement readiness, skill assessment, and employer-matching workflows.
+Leapath Ventures Pvt Ltd ("**Leapath**", "we", "us", or "our") operates the Leapath Placement Intelligence Platform (the "**Platform**") accessible at [https://www.leapath.tech](https://www.leapath.tech). The Platform is provided to higher-education institutions, their Training and Placement Officers ("**TPOs**"), enrolled students, and authorised recruiters to support placement readiness, skill assessment, and employer-matching workflows.
 
 This Privacy Policy explains what personal data we collect, why we collect it, the legal grounds on which we rely, how we share and protect it, and the rights available to data subjects. It is designed to comply with the Information Technology Act, 2000, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection Act, 2023, and is structured in alignment with the transparency standards of the EU General Data Protection Regulation (GDPR).
 
@@ -166,7 +166,7 @@ We may update this Privacy Policy from time to time to reflect changes in our pr
 
 For questions about this Policy or to exercise your rights, please contact:
 
-- **Leapath Technology — Privacy Office**
+- **Leapath Ventures Pvt Ltd — Privacy Office**
 - Email: [info@leapath.tech](mailto:info@leapath.tech)
 - Website: [https://www.leapath.tech](https://www.leapath.tech)
 

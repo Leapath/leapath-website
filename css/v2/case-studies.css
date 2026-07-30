@@ -3,29 +3,38 @@
    dark, stat-forward, logo/monogram-driven cards instead of text-first articles. */
 
 /* ---------- Listing page ---------- */
-.cs-hero{background:radial-gradient(circle at 15% 20%,rgba(240,66,255,.18),transparent 45%),radial-gradient(circle at 85% 0%,rgba(91,45,158,.35),transparent 50%),linear-gradient(135deg,#0D0824 0%,#1A0F3D 55%,#2A1258 100%);padding:6.5rem 0 5rem;position:relative;overflow:hidden}
-.cs-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.04) 1px,transparent 0);background-size:26px 26px}
+.cs-hero{background:#0A0418 url('/assets/v2/images/roles/employers.jpg') center 25%/cover no-repeat;padding:7rem 0 5.5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.cs-hero::before{content:'';position:absolute;inset:0;background:rgba(8,4,20,.82)}
 .cs-hero__inner{position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto}
-.cs-hero__eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.75);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.cs-hero__eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
 .cs-hero__h1{font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.25rem}
-.cs-hero__h1 em{font-style:normal;background:linear-gradient(90deg,#E9A6FF,#F042FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cs-hero__sub{font-size:1.02rem;color:rgba(255,255,255,.55);line-height:1.72;font-weight:500;max-width:560px;margin:0 auto 3rem}
-.cs-hero__stats{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap}
+.cs-hero__h1 em{font-style:normal;color:var(--lavender)}
+.cs-hero__sub{font-size:1.02rem;color:rgba(255,255,255,.6);line-height:1.72;font-weight:500;max-width:560px;margin:0 auto 2.5rem}
+.cs-hero__ctas{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.cs-hero__stats{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:2.25rem}
 .cs-hero__stat-n{font-size:2rem;font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1}
-.cs-hero__stat-n span{background:linear-gradient(90deg,#E9A6FF,#F042FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cs-hero__stat-l{font-size:.72rem;color:rgba(255,255,255,.4);font-weight:700;margin-top:.35rem;letter-spacing:.02em}
+.cs-hero__stat-n span{color:var(--lavender)}
+.cs-hero__stat-l{font-size:.72rem;color:rgba(255,255,255,.45);font-weight:700;margin-top:.35rem;letter-spacing:.02em}
 
 .cs-filters{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin:-1.75rem 0 3.5rem;position:relative;z-index:2}
 .cs-tab{cursor:pointer;font-size:.76rem;font-weight:800;padding:.55rem 1.25rem;border-radius:10px;background:var(--surf);border:1.5px solid var(--bd);color:var(--txt2);transition:all .15s}
 .cs-tab:hover{border-color:var(--purple);color:var(--purple)}
 .cs-tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
 
+.cs-pagination{display:flex;gap:.5rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:3rem}
+.cs-page{cursor:pointer;font-size:.82rem;font-weight:800;width:38px;height:38px;border-radius:10px;background:var(--surf);border:1.5px solid var(--bd);color:var(--txt2);transition:all .15s}
+.cs-page:hover:not(:disabled){border-color:var(--purple);color:var(--purple)}
+.cs-page.is-active{background:var(--navy);border-color:var(--navy);color:#fff}
+.cs-page--nav{width:auto;padding:0 1.1rem}
+.cs-page:disabled{opacity:.35;cursor:not-allowed}
+
 .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
 .cs-card{display:flex;flex-direction:column;border-radius:22px;overflow:hidden;background:var(--surf);border:1.5px solid var(--bd);text-decoration:none;transition:all .25s ease;box-shadow:var(--s)}
 .cs-card:hover{transform:translateY(-5px);box-shadow:var(--sl);border-color:rgba(91,45,158,.25)}
-.cs-card__cover{position:relative;padding:1.75rem;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
-.cs-card__badge{align-self:flex-start;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px}
-.cs-card__mono{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.05rem;margin-top:1rem}
+.cs-card__cover{position:relative;padding:1.75rem;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden}
+.cs-card__cover::before{content:'';position:absolute;inset:0;background:rgba(6,4,16,.4)}
+.cs-card__badge{position:relative;z-index:1;align-self:flex-start;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px}
+.cs-card__mono{position:relative;z-index:1;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.05rem;margin-top:1rem}
 .cs-card__body{padding:1.5rem 1.5rem 1.75rem;flex:1;display:flex;flex-direction:column}
 .cs-card__inst{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:.6rem}
 .cs-card__t{font-size:1.05rem;font-weight:800;color:var(--navy);line-height:1.38;letter-spacing:-.02em;margin-bottom:1.1rem;flex:1}
@@ -34,21 +43,22 @@
 .cs-card__stat-l{font-size:.72rem;color:var(--txt3);font-weight:700}
 .cs-card__cta{font-size:.8rem;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:.4rem}
 
-/* Cover color variants */
-.cs-cover--1{background:linear-gradient(135deg,rgba(61,30,122,.82),rgba(107,47,184,.6)),url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
-.cs-cover--2{background:linear-gradient(135deg,rgba(15,92,74,.82),rgba(18,134,106,.6)),url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
-.cs-cover--3{background:linear-gradient(135deg,rgba(138,74,0,.82),rgba(201,122,18,.6)),url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
-.cs-cover--4{background:linear-gradient(135deg,rgba(30,58,138,.82),rgba(46,92,214,.6)),url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
-.cs-cover--5{background:linear-gradient(135deg,rgba(122,30,74,.82),rgba(184,47,114,.6)),url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
+/* Cover images — real photos, no color tint (a single neutral scrim is
+   applied once via .cs-card__cover::before for badge/mono legibility) */
+.cs-cover--1{background:url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
+.cs-cover--2{background:url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
+.cs-cover--3{background:url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
+.cs-cover--4{background:url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
+.cs-cover--5{background:url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
 
 /* ---------- Detail page ---------- */
-.cs-dhero{background:radial-gradient(circle at 85% 15%,rgba(240,66,255,.2),transparent 45%),linear-gradient(135deg,#0D0824 0%,#1A0F3D 60%,#2A1258 100%);padding:5.5rem 0 4rem;position:relative;overflow:hidden}
-.cs-dhero--1{background:radial-gradient(circle at 85% 15%,rgba(196,120,255,.22),transparent 45%),linear-gradient(115deg,rgba(13,8,36,.94) 0%,rgba(26,15,61,.9) 40%,rgba(61,30,122,.72) 100%),url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
-.cs-dhero--2{background:radial-gradient(circle at 85% 15%,rgba(18,134,106,.25),transparent 45%),linear-gradient(115deg,rgba(6,10,9,.94) 0%,rgba(10,26,22,.9) 40%,rgba(15,92,74,.72) 100%),url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
-.cs-dhero--3{background:radial-gradient(circle at 85% 15%,rgba(240,192,96,.22),transparent 45%),linear-gradient(115deg,rgba(20,12,3,.94) 0%,rgba(41,24,4,.9) 40%,rgba(138,74,0,.72) 100%),url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
-.cs-dhero--4{background:radial-gradient(circle at 85% 15%,rgba(96,146,255,.22),transparent 45%),linear-gradient(115deg,rgba(6,9,20,.94) 0%,rgba(13,21,53,.9) 40%,rgba(30,58,138,.72) 100%),url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
-.cs-dhero--5{background:radial-gradient(circle at 85% 15%,rgba(240,66,255,.22),transparent 45%),linear-gradient(115deg,rgba(20,6,15,.94) 0%,rgba(41,13,29,.9) 40%,rgba(122,30,74,.72) 100%),url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
-.cs-dhero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.04) 1px,transparent 0);background-size:26px 26px}
+.cs-dhero{background:#0A0418;padding:6rem 0 4.5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.cs-dhero--1{background:#0A0418 url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
+.cs-dhero--2{background:#0A0418 url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
+.cs-dhero--3{background:#0A0418 url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
+.cs-dhero--4{background:#0A0418 url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
+.cs-dhero--5{background:#0A0418 url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
+.cs-dhero::before{content:'';position:absolute;inset:0;background:rgba(8,4,20,.82)}
 .cs-dhero__inner{position:relative;z-index:1}
 .cs-dhero__crumb{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:2rem}
 .cs-dhero__crumb a{color:rgba(255,255,255,.65);text-decoration:none}
@@ -58,7 +68,7 @@
 .cs-dhero__inst{font-size:.95rem;font-weight:800;color:#fff}
 .cs-dhero__badge{display:inline-block;margin-top:.25rem;font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .cs-dhero__h1{font-size:clamp(2rem,3.6vw,3.2rem);font-weight:900;color:#fff;line-height:1.12;letter-spacing:-.04em;max-width:820px;margin-bottom:2.5rem}
-.cs-dhero__h1 em{font-style:normal;background:linear-gradient(90deg,#E9A6FF,#F042FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cs-dhero__h1 em{font-style:normal;color:var(--lavender)}
 .cs-dhero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:640px;padding-top:2rem;border-top:1px solid rgba(255,255,255,.12)}
 .cs-dhero__stat-n{font-size:1.9rem;font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1}
 .cs-dhero__stat-l{font-size:.72rem;color:rgba(255,255,255,.4);font-weight:700;margin-top:.4rem}

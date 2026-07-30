@@ -73,7 +73,7 @@ mono: "LP"
       <a href="/blog/recruiters-readiness-scores/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--5"><svg class="icon" aria-hidden="true"><use href="#ic-building"></use></svg></div><div class="bc__body"><div class="bc__tag">Recruiter Insights</div><div class="bc__t">Why campus recruiters are switching from GPA filters to readiness scores</div></div></a>
       <a href="/blog/90-day-readiness-sprint/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--2"><svg class="icon" aria-hidden="true"><use href="#ic-target"></use></svg></div><div class="bc__body"><div class="bc__tag">TPO Playbook</div><div class="bc__t">How to run a 90-day placement readiness sprint before season opens</div></div></a>
     </div>
-    <div class="ip-cta" style="margin-top:4rem">
+    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/roles/employers.jpg');">
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

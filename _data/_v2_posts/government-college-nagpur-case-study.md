@@ -1,7 +1,8 @@
 ---
 layout: v2/post
 og_type: article
-permalink: /blog/government-college-nagpur-case-study/
+permalink: /case-studies/government-college-nagpur-case-study/
+redirect_from: /blog/government-college-nagpur-case-study/
 title: "How a Government College Doubled Offers With Zero Budget Increase — Leapath Case Study"
 description: "How a government engineering college closed its industry-readiness gap without any additional placement-cell budget."
 category: case-study
@@ -21,7 +22,7 @@ blog_cover_style: "linear-gradient(135deg,rgba(122,30,74,.78),rgba(184,47,114,.5
   <div class="container cs-dhero__inner">
     <div class="cs-dhero__crumb"><a href="/">Home</a><span>/</span><a href="/case-studies/">Case Studies</a></div>
     <div class="cs-dhero__top">
-      <div class="cs-dhero__mono" style="background:linear-gradient(135deg,#7A1E4A,#B82F72)">GC</div>
+      <div class="cs-dhero__mono">GC</div>
       <div>
         <div class="cs-dhero__inst">Government Engineering College · Nagpur</div>
         <div class="cs-dhero__badge">Government Institution</div>
@@ -72,18 +73,18 @@ blog_cover_style: "linear-gradient(135deg,rgba(122,30,74,.78),rgba(184,47,114,.5
     <div class="ip-eyebrow">More case studies</div>
     <h3 class="ip-h2" style="font-size:1.6rem;margin-bottom:2rem">Related stories</h3>
     <div class="cs-related-grid">
-      <a href="/blog/psg-tech-case-study/" class="cs-card">
+      <a href="/case-studies/psg-tech-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--1" style="min-height:110px"><span class="cs-card__badge">Engineering</span><div class="cs-card__mono">PT</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">PSG Tech</div><div class="cs-card__t">34% placement rate lift in one season</div></div>
-      </a><a href="/blog/sri-sai-polytechnic-case-study/" class="cs-card">
+      </a><a href="/case-studies/sri-sai-polytechnic-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--2" style="min-height:110px"><span class="cs-card__badge">Polytechnic</span><div class="cs-card__mono">SS</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">Sri Sai Polytechnic</div><div class="cs-card__t">52% to 81% placement rate in two seasons</div></div>
-      </a><a href="/blog/nexus-university-network-case-study/" class="cs-card">
+      </a><a href="/case-studies/nexus-university-network-case-study/" class="cs-card">
         <div class="cs-card__cover cs-cover--4" style="min-height:110px"><span class="cs-card__badge">Multi-Campus</span><div class="cs-card__mono">NU</div></div>
         <div class="cs-card__body"><div class="cs-card__inst">Nexus University Network</div><div class="cs-card__t">One scorecard across 5 campuses</div></div>
       </a>
     </div>
-    <div class="ip-cta" style="margin-top:4rem">
+    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/v2/images/case-studies/govt-college.jpg');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

@@ -33,7 +33,7 @@ toc:
 
 ## 1. Purpose and Scope
 
-This Data Processing & Security Policy (the "**Policy**") describes how Leapath Technology ("**Leapath**") processes personal data on behalf of its institutional and recruiter customers, the safeguards we apply, and the operational practices that support our commitments under the Privacy Policy and Terms of Service.
+This Data Processing & Security Policy (the "**Policy**") describes how Leapath Ventures Pvt Ltd ("**Leapath**") processes personal data on behalf of its institutional and recruiter customers, the safeguards we apply, and the operational practices that support our commitments under the Privacy Policy and Terms of Service.
 
 This Policy supplements, and is incorporated by reference into, any Master Agreement or Data Processing Agreement ("**DPA**") executed between Leapath and a customer. In the event of a conflict, the executed DPA prevails for the customer concerned.
 

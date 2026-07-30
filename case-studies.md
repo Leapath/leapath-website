@@ -10,9 +10,13 @@ canonical: "https://www.leapath.tech/case-studies/"
 
 <div class="cs-hero">
   <div class="container cs-hero__inner">
-    <div class="cs-hero__eyebrow">Customer stories</div>
+    <div class="cs-hero__eyebrow"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg>Customer stories</div>
     <h1 class="cs-hero__h1">Real institutions.<br><em>Real job readiness outcomes.</em></h1>
     <p class="cs-hero__sub">Universities, colleges, and multi-campus networks. Every case study here is a Career Services team that moved a real number, in one hiring cycle.</p>
+    <div class="cs-hero__ctas">
+      <a href="/contact/" class="btn btn-grad btn-xl">Book a Free Demo →</a>
+      <a href="/partnership/" class="btn btn-out btn-xl">Apply for the Pilot</a>
+    </div>
     <div class="cs-hero__stats">
       <div><div class="cs-hero__stat-n"><span>{{ case_studies.size }}</span></div><div class="cs-hero__stat-l">Featured institutions</div></div>
       <div><div class="cs-hero__stat-n"><span>+34%</span></div><div class="cs-hero__stat-l">Average job readiness uplift</div></div>
@@ -48,8 +52,15 @@ canonical: "https://www.leapath.tech/case-studies/"
       {% endfor %}
     </div>
     <p class="cs-empty" style="display:none;text-align:center;color:var(--txt3);font-weight:600;padding:3rem 0">No case studies in this category yet.</p>
+    <nav class="cs-pagination" id="csPagination" aria-label="Case studies pages"></nav>
+  </div>
+</section>
 
-    <div class="ip-cta" style="margin-top:5rem">
+{% include v2/sections/reviews.html %}
+
+<section class="ip-section">
+  <div class="container">
+    <div class="ip-cta ip-cta--photo" style="--cta-img:url('/assets/images/role.png')">
       <div class="ip-cta__t">Want to be our <em>next case study?</em></div>
       <div class="ip-cta__sub">Join the current pilot cohort and we'll build your placement season's numbers together.</div>
       <div class="ip-cta__btns"><a href="/partnership/" class="btn btn-grad btn-xl">Apply for the pilot →</a></div>
@@ -57,26 +68,73 @@ canonical: "https://www.leapath.tech/case-studies/"
   </div>
 </section>
 
-{% include v2/sections/reviews.html %}
-
 <script>
 (function(){
+  var PAGE_SIZE = 6;
   var tabs = document.querySelectorAll('.cs-tab');
-  var cards = document.querySelectorAll('.cs-grid .cs-card');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.cs-grid .cs-card'));
   var empty = document.querySelector('.cs-empty');
+  var pagination = document.getElementById('csPagination');
+  var currentFilter = 'all';
+  var currentPage = 1;
+
+  function matching(){
+    return cards.filter(function(card){
+      return currentFilter === 'all' || card.getAttribute('data-cat') === currentFilter;
+    });
+  }
+
+  function render(){
+    var visible = matching();
+    var totalPages = Math.max(1, Math.ceil(visible.length / PAGE_SIZE));
+    if(currentPage > totalPages) currentPage = totalPages;
+
+    cards.forEach(function(card){ card.style.display = 'none'; });
+    visible.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE).forEach(function(card){
+      card.style.display = '';
+    });
+    empty.style.display = visible.length === 0 ? 'block' : 'none';
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages){
+    pagination.innerHTML = '';
+    if(totalPages <= 1) return;
+
+    function makeBtn(label, page, opts){
+      opts = opts || {};
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cs-page' + (opts.active ? ' is-active' : '') + (opts.nav ? ' cs-page--nav' : '');
+      btn.textContent = label;
+      if(opts.disabled){ btn.disabled = true; }
+      else{
+        btn.addEventListener('click', function(){
+          currentPage = page;
+          render();
+          document.querySelector('.cs-filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+      return btn;
+    }
+
+    pagination.appendChild(makeBtn('← Prev', currentPage - 1, { nav: true, disabled: currentPage === 1 }));
+    for(var i = 1; i <= totalPages; i++){
+      pagination.appendChild(makeBtn(String(i), i, { active: i === currentPage }));
+    }
+    pagination.appendChild(makeBtn('Next →', currentPage + 1, { nav: true, disabled: currentPage === totalPages }));
+  }
+
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){
       tabs.forEach(function(t){ t.classList.remove('on'); });
       tab.classList.add('on');
-      var filter = tab.getAttribute('data-filter');
-      var visible = 0;
-      cards.forEach(function(card){
-        var show = filter === 'all' || card.getAttribute('data-cat') === filter;
-        card.style.display = show ? '' : 'none';
-        if(show) visible++;
-      });
-      empty.style.display = visible === 0 ? 'block' : 'none';
+      currentFilter = tab.getAttribute('data-filter');
+      currentPage = 1;
+      render();
     });
   });
+
+  render();
 })();
 </script>

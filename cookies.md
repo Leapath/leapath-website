@@ -24,7 +24,7 @@ toc:
 
 ## 1. Introduction
 
-This Cookie Policy explains how Leapath Technology ("**Leapath**", "we", "us", or "our") uses cookies and similar technologies on the Leapath Placement Intelligence Platform (the "**Platform**") accessible at [https://www.leapath.tech](https://www.leapath.tech). It should be read alongside our [Privacy Policy](/privacy-policy/), which explains how we handle personal data more broadly.
+This Cookie Policy explains how Leapath Ventures Pvt Ltd ("**Leapath**", "we", "us", or "our") uses cookies and similar technologies on the Leapath Placement Intelligence Platform (the "**Platform**") accessible at [https://www.leapath.tech](https://www.leapath.tech). It should be read alongside our [Privacy Policy](/privacy-policy/), which explains how we handle personal data more broadly.
 
 ## 2. What Are Cookies
 
@@ -62,6 +62,6 @@ We may update this Cookie Policy from time to time to reflect changes in the tec
 
 For questions about this Policy, please contact:
 
-- **Leapath Technology — Privacy Office**
+- **Leapath Ventures Pvt Ltd — Privacy Office**
 - Email: [info@leapath.tech](mailto:info@leapath.tech)
 - Website: [https://www.leapath.tech](https://www.leapath.tech)

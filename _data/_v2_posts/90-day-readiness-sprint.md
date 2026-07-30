@@ -73,9 +73,9 @@ mono: "LP"
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="bp__related-grid">
       <a href="/blog/india-placement-readiness-report-2026/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--1"><svg class="icon" aria-hidden="true"><use href="#ic-bar-chart"></use></svg></div><div class="bc__body"><div class="bc__tag">Research</div><div class="bc__t">The India Placement Readiness Report 2026</div></div></a>
       <a href="/blog/eight-week-study-plan/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--4"><svg class="icon" aria-hidden="true"><use href="#ic-bulb"></use></svg></div><div class="bc__body"><div class="bc__tag">Student Guide</div><div class="bc__t">The 8-week study plan that moved 200 students from borderline to placed</div></div></a>
-      <a href="/blog/psg-tech-case-study/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--3"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg></div><div class="bc__body"><div class="bc__tag">Case Study</div><div class="bc__t">How PSG Tech improved placement rate by 34% in a single season</div></div></a>
+      <a href="/case-studies/psg-tech-case-study/" class="bc" style="text-decoration:none"><div class="bc__img bc__img--3"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg></div><div class="bc__body"><div class="bc__tag">Case Study</div><div class="bc__t">How PSG Tech improved placement rate by 34% in a single season</div></div></a>
     </div>
-    <div class="ip-cta" style="margin-top:4rem">
+    <div class="ip-cta ip-cta--photo" style="margin-top:4rem;--cta-img:url('/assets/images/gap.png');">
       <div class="ip-cta__t">See your own placement <em>readiness numbers.</em></div>
       <div class="ip-cta__sub">Book a 30-minute walkthrough and we'll show you what Leapath surfaces for a batch your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

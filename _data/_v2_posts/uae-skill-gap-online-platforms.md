@@ -95,7 +95,7 @@ mono: "LP"
         </div>
       </a>
     </div>
-    <div class="ip-cta" style="margin-top:0">
+    <div class="ip-cta ip-cta--photo" style="margin-top:0;--cta-img:url('/assets/v2/images/insights/tpo-playbook.jpg');">
       <div class="ip-cta__t">See your own job readiness <em>numbers.</em></div>
       <div class="ip-cta__sub">Book a free consultation and we'll show you what Leapath surfaces for a cohort your size.</div>
       <div class="ip-cta__btns"><a href="/contact/" class="btn btn-grad btn-xl">Request Demo →</a></div>

@@ -36,7 +36,7 @@ toc:
 
 ## 1. Agreement to Terms
 
-These Terms of Service (the "**Terms**") govern access to and use of the Leapath Placement Intelligence Platform (the "**Platform**"), operated by Leapath Technology ("**Leapath**", "we", "us", or "our") at [https://www.leapath.tech](https://www.leapath.tech). By accessing the Platform, registering an account, or using any feature, you ("**User**") agree to be bound by these Terms.
+These Terms of Service (the "**Terms**") govern access to and use of the Leapath Placement Intelligence Platform (the "**Platform**"), operated by Leapath Ventures Pvt Ltd ("**Leapath**", "we", "us", or "our") at [https://www.leapath.tech](https://www.leapath.tech). By accessing the Platform, registering an account, or using any feature, you ("**User**") agree to be bound by these Terms.
 
 Where access is provided pursuant to a separately executed agreement between Leapath and an institution or recruiter (a "**Master Agreement**"), that Master Agreement governs in the event of conflict, and these Terms apply to the extent not inconsistent with it.
 
@@ -187,6 +187,6 @@ Notwithstanding the foregoing, either party may seek interim or injunctive relie
 
 For questions regarding these Terms, please contact:
 
-- **Leapath Technology — Legal**
+- **Leapath Ventures Pvt Ltd — Legal**
 - Email: [legal@leapath.tech](mailto:info@leapath.tech)
 - Website: [https://www.leapath.tech](https://www.leapath.tech)
