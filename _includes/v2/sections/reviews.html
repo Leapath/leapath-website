@@ -13,11 +13,28 @@
     </div>
   </div>
 
+  {% assign testimonials = site.v2_testimonials %}
   <div class="rv-marquee-wrap">
-    <div class="rv-marquee-row" id="rvRow">
-      {% assign testimonials = site.v2_testimonials %}
+    <div class="rv-marquee-row" id="rvRow" data-count="{{ testimonials.size }}">
       {% for t in testimonials %}
       <div class="rvm">
+        <div class="rvm__top">
+          <div class="rvm__stars">★★★★★</div>
+          <span class="rvm__badge {{ t.badge_class }}">{{ t.badge }}</span>
+        </div>
+        <p class="rvm__txt">&ldquo;{{ t.quote }}&rdquo;</p>
+        <div class="rvm__foot">
+          <div class="rvm__av" style="background:{{ t.avatar_bg }}">{{ t.initials }}</div>
+          <div>
+            <div class="rvm__name">{{ t.name }}</div>
+            <div class="rvm__role">{{ t.role }}</div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {% comment %} Duplicate set — enables a seamless infinite loop. Hidden from AT/tab order since it's a visual echo of the set above. {% endcomment %}
+      {% for t in testimonials %}
+      <div class="rvm" aria-hidden="true">
         <div class="rvm__top">
           <div class="rvm__stars">★★★★★</div>
           <span class="rvm__badge {{ t.badge_class }}">{{ t.badge }}</span>
@@ -46,84 +63,86 @@
   var row = document.getElementById('rvRow');
   var dots = document.querySelectorAll('#rvDots .rv-dot');
   if(!row || !dots.length) return;
-  var cards = row.querySelectorAll('.rvm');
-  var current = 0;
+  var count = parseInt(row.dataset.count, 10);
+  var combined = row.querySelectorAll('.rvm'); // real set followed by an identical duplicate set
+  if(!count || combined.length !== count * 2) return;
 
-  // Manual eased scroll instead of native scrollTo({behavior:'smooth'}) —
-  // some browsers interrupt/cancel native smooth-scroll when combined with
-  // CSS scroll-snap, which silently killed auto-advance. Driving scrollLeft
-  // by hand every frame sidesteps that entirely.
-  var scrollAnim = null;
-  function animateScrollTo(target){
-    if(scrollAnim) cancelAnimationFrame(scrollAnim);
-    var start = row.scrollLeft;
-    var change = target - start;
-    var duration = 450;
-    var startTime = null;
-    function ease(t){ return 1 - Math.pow(1 - t, 3); }
-    function step(ts){
-      if(startTime === null) startTime = ts;
-      var progress = Math.min((ts - startTime) / duration, 1);
-      row.scrollLeft = start + change * ease(progress);
-      if(progress < 1){ scrollAnim = requestAnimationFrame(step); }
-      else { scrollAnim = null; }
-    }
-    scrollAnim = requestAnimationFrame(step);
-  }
+  // Width of one full real set — reaching this in scrollLeft means we've
+  // scrolled exactly onto the duplicate set, which is pixel-identical to the
+  // real set, so wrapping back by this amount is an invisible seam. That's
+  // what makes the drift loop forever instead of snapping backwards from the
+  // last card to the first.
+  var setWidth = combined[count].offsetLeft - combined[0].offsetLeft;
+  var realOffsets = [];
+  for(var i = 0; i < count; i++){ realOffsets.push(combined[i].offsetLeft - row.offsetLeft); }
 
-  function goTo(i){
-    var card = cards[i];
-    if(!card) return;
-    current = i;
-    animateScrollTo(card.offsetLeft - row.offsetLeft);
-  }
-
-  dots.forEach(function(dot, i){
-    dot.addEventListener('click', function(){ pauseThenResume(); goTo(i); });
-  });
-
-  var ticking = false;
-  row.addEventListener('scroll', function(){
-    if(ticking) return;
-    ticking = true;
-    requestAnimationFrame(function(){
-      var rowLeft = row.scrollLeft;
-      var closest = 0, closestDist = Infinity;
-      cards.forEach(function(card, i){
-        var dist = Math.abs((card.offsetLeft - row.offsetLeft) - rowLeft);
-        if(dist < closestDist){ closestDist = dist; closest = i; }
-      });
-      current = closest;
-      dots.forEach(function(d, i){
-        d.classList.toggle('is-active', i === closest);
-        if(i === closest){ d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
-      });
-      ticking = false;
+  function updateDotsFromScroll(){
+    var x = row.scrollLeft % setWidth;
+    var closest = 0, closestDist = Infinity;
+    realOffsets.forEach(function(off, i){
+      var dist = Math.abs(off - x);
+      if(dist < closestDist){ closestDist = dist; closest = i; }
     });
-  });
+    dots.forEach(function(d, i){
+      d.classList.toggle('is-active', i === closest);
+      if(i === closest){ d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
+    });
+  }
 
-  // Auto-advance one full card at a time (never mid-scroll, so cards are
-  // never cropped). Hover pauses/resumes immediately (desktop). Touch/click
-  // interactions (mobile — there's no "mouseleave" to resume on) pause and
-  // then resume on their own after a short idle period, instead of stopping
-  // forever the moment someone taps or swipes once.
-  var timer = null;
-  var resumeTimer = null;
+  // Continuous gentle drift (a real marquee) instead of long-pause-then-jump
+  // — a steady crawl reads as "alive"; discrete per-card jumps read as
+  // stuck/broken between advances.
+  var speed = 32; // px/sec
+  var rafId = null, lastTs = null;
+  function frame(ts){
+    if(lastTs === null) lastTs = ts;
+    var dt = ts - lastTs;
+    lastTs = ts;
+    var next = row.scrollLeft + speed * dt / 1000;
+    row.scrollLeft = next >= setWidth ? next - setWidth : next;
+    updateDotsFromScroll();
+    rafId = requestAnimationFrame(frame);
+  }
   function startAuto(){
-    if(cards.length < 2) return;
-    stopAuto();
-    timer = setInterval(function(){
-      goTo((current + 1) % cards.length);
-    }, 4500);
+    if(count < 2 || rafId) return;
+    lastTs = null;
+    rafId = requestAnimationFrame(frame);
   }
   function stopAuto(){
-    if(timer){ clearInterval(timer); timer = null; }
+    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
   }
+
+  var resumeTimer = null;
   function pauseThenResume(){
     stopAuto();
     if(resumeTimer) clearTimeout(resumeTimer);
     resumeTimer = setTimeout(startAuto, 6000);
   }
+
+  // Eased jump for explicit dot navigation (drift resumes from wherever it lands).
+  function goToReal(i){
+    stopAuto();
+    var start = row.scrollLeft;
+    var target = realOffsets[i];
+    // Take the shorter direction around the loop.
+    if(target - start > setWidth / 2) target -= setWidth;
+    if(start - target > setWidth / 2) target += setWidth;
+    var duration = 450, startTime = null;
+    function ease(t){ return 1 - Math.pow(1 - t, 3); }
+    function step(ts){
+      if(startTime === null) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var x = start + (target - start) * ease(progress);
+      row.scrollLeft = ((x % setWidth) + setWidth) % setWidth;
+      updateDotsFromScroll();
+      if(progress < 1){ requestAnimationFrame(step); }
+    }
+    requestAnimationFrame(step);
+  }
+
+  dots.forEach(function(dot, i){
+    dot.addEventListener('click', function(){ pauseThenResume(); goToReal(i); });
+  });
 
   // Hovering pauses immediately and resumes on mouseleave — but also carries
   // the same idle-resume safety net as touch, so a cursor that merely rests
@@ -140,8 +159,9 @@
   row.addEventListener('wheel', function(e){
     var horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
     if(horizontal) return; // let native horizontal trackpad scroll behave normally
-    if(scrollAnim){ cancelAnimationFrame(scrollAnim); scrollAnim = null; }
+    stopAuto();
     row.scrollLeft += e.deltaY;
+    updateDotsFromScroll();
     e.preventDefault();
     pauseThenResume();
   }, { passive: false });
@@ -153,19 +173,21 @@
     isDragging = true; dragMoved = false;
     dragStartX = e.pageX; dragStartScroll = row.scrollLeft;
     row.classList.add('is-dragging');
-    if(scrollAnim){ cancelAnimationFrame(scrollAnim); scrollAnim = null; }
+    stopAuto();
   });
   window.addEventListener('mousemove', function(e){
     if(!isDragging) return;
     var delta = e.pageX - dragStartX;
     if(Math.abs(delta) > 4) dragMoved = true;
-    row.scrollLeft = dragStartScroll - delta;
+    var x = dragStartScroll - delta;
+    row.scrollLeft = ((x % setWidth) + setWidth) % setWidth;
+    updateDotsFromScroll();
   });
   window.addEventListener('mouseup', function(){
     if(!isDragging) return;
     isDragging = false;
     row.classList.remove('is-dragging');
-    if(dragMoved) pauseThenResume();
+    if(dragMoved) pauseThenResume(); else startAuto();
   });
   // Suppress the click-through on a card immediately after a drag (so
   // dragging doesn't feel like it accidentally "clicked" something).
