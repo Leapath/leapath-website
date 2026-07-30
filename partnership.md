@@ -8,7 +8,7 @@ nav_cta_text: "Apply Now"
 nav_cta_href: "#partnership-form"
 ---
 
-{% include v2/sections/page-hero.html tone="gold" eyebrow="Institutional partnership programme" title='Build the next layer of student job readiness, <em>with us.</em>' sub="We partner with a small, hand-picked cohort of institutions each semester. Partners receive full platform access, a direct line into our product roadmap, and founding partner status, at zero cost during pilot." stat1_n="Zero cost" stat1_l="During pilot semester" stat2_n="1 day" stat2_l="Response time on application" stat3_n="Founding" stat3_l="Partner status included" %}
+{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/v2/images/insights/case-study.jpg')" eyebrow="Institutional partnership programme" title='Build the next layer of student job readiness, <em>with us.</em>' sub="We partner with a small, hand-picked cohort of institutions each semester. Partners receive full platform access, a direct line into our product roadmap, and founding partner status, at zero cost during pilot." btn1_text="Apply Now" btn1_href="#partnership-form" btn2_text="See Pricing" btn2_href="/pricing/" stat1_n="Zero cost" stat1_l="During pilot semester" stat2_n="1 day" stat2_l="Response time on application" stat3_n="Founding" stat3_l="Partner status included" %}
 
 <section class="ip-section">
   <div class="container">
@@ -50,3 +50,5 @@ nav_cta_href: "#partnership-form"
 </section>
 
 {% include v2/sections/reviews.html %}
+
+{% include v2/sections/cta.html bg_img="/assets/v2/images/roles/employers.jpg" accent="violet" eyebrow="Ready to apply?" title='Join the founding <em>partner cohort.</em>' sub="Applications are reviewed personally, and we respond within one business day. No procurement complexity, no cost during the pilot semester." btn1_text="Apply Now" btn1_href="#partnership-form" btn2_text="See Pricing" btn2_href="/pricing/" meta="Response within 1 business day · Zero cost during pilot" %}
