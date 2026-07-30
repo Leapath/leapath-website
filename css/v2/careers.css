@@ -2178,8 +2178,8 @@
   background:
     radial-gradient(ellipse 50% 70% at 0%   50%,  rgba(114, 38, 255, 0.18) 0%, transparent 65%),
     radial-gradient(ellipse 45% 60% at 100% 30%,  rgba(240, 66, 255, 0.14) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 40% at 50%  110%,  rgba(30,  10, 80, 0.60) 0%, transparent 65%),
-    #0C0C14;
+    linear-gradient(180deg, rgba(12,12,20,.88) 0%, rgba(12,12,20,.94) 100%),
+    url('/assets/v2/images/roles/career-services.jpg') center/cover no-repeat;
   overflow: hidden;
 }
 .careers-open-apply::before {
