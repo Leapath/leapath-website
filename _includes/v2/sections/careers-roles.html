@@ -67,68 +67,6 @@
 
     {% if open_count > 0 %}
 
-    <div class="careers-filters reveal" role="group" aria-label="Filter roles">
-
-      <div class="careers-filters__top">
-        <div class="careers-filters__row" role="group" aria-label="Filter by department">
-          <div class="careers-filters__row-label">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            Department
-          </div>
-          <div class="careers-filters__pills">
-            <button class="careers-filter-pill active" data-filter="dept" data-value="all" aria-pressed="true">
-              All
-              <span class="careers-filter-pill__count">{{ open_count }}</span>
-            </button>
-            {% assign depts = open_roles | map: "department" | uniq %}
-            {% for dept in depts %}
-            {% assign dept_role = open_roles | where: "department", dept | first %}
-            {% assign dept_count = open_roles | where: "department", dept | size %}
-            <button class="careers-filter-pill" data-filter="dept" data-value="{{ dept_role.dept_slug }}" aria-pressed="false">
-              {{ dept }}
-              <span class="careers-filter-pill__count">{{ dept_count }}</span>
-            </button>
-            {% endfor %}
-          </div>
-        </div>
-
-        <div class="careers-filters__divider" aria-hidden="true"></div>
-
-        <div class="careers-filters__row" role="group" aria-label="Filter by type">
-          <div class="careers-filters__row-label">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Type
-          </div>
-          <div class="careers-filters__pills">
-            <button class="careers-filter-pill active" data-filter="type" data-value="all" aria-pressed="true">
-              All
-              <span class="careers-filter-pill__count">{{ open_count }}</span>
-            </button>
-            {% assign types = open_roles | map: "type" | uniq %}
-            {% for type in types %}
-            {% assign type_role = open_roles | where: "type", type | first %}
-            {% assign type_count = open_roles | where: "type", type | size %}
-            <button class="careers-filter-pill" data-filter="type" data-value="{{ type_role.type_slug }}" aria-pressed="false">
-              {{ type }}
-              <span class="careers-filter-pill__count">{{ type_count }}</span>
-            </button>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-
-      <div class="careers-filters__footer">
-        <span class="careers-filters__result" id="filter-result-text">
-          Showing all <strong>{{ open_count }}</strong> open role{% if open_count != 1 %}s{% endif %}
-        </span>
-        <button class="careers-filters__reset" id="roles-reset-filters" aria-label="Reset all filters" hidden>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          Reset filters
-        </button>
-      </div>
-
-    </div>
-
     <div class="careers-roles__grid" id="roles-grid" aria-live="polite" aria-label="Job listings">
       {% for role in open_roles %}
       <article
