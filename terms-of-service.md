@@ -3,6 +3,7 @@ permalink: /terms-of-service/
 redirect_from: /terms-of-service.html
 layout: legal
 page_title: "Terms of Service"
+hero_description: "The terms governing access to and use of the Leapath Placement Intelligence Platform by institutions, TPOs, students, and recruiters."
 effective_date: "5 May 2026"
 last_updated: "5 May 2026"
 title: "Terms of Service — Leapath"
@@ -11,6 +12,26 @@ robots: "index, follow"
 canonical: "https://www.leapath.tech/terms-of-service/"
 favicon_end_color: "%23F042FF"
 include_legal_jsonld: true
+extra_css: /css/v2/legal.css
+toc:
+  - { id: "1-agreement-to-terms", label: "Agreement to Terms" }
+  - { id: "2-eligibility-and-categories-of-users", label: "Eligibility & User Categories" }
+  - { id: "3-account-registration-and-access-control", label: "Account Registration" }
+  - { id: "4-acceptable-use", label: "Acceptable Use" }
+  - { id: "5-user-responsibilities", label: "User Responsibilities" }
+  - { id: "6-data-accuracy-and-decision-support-disclaimer", label: "Data Accuracy Disclaimer" }
+  - { id: "7-intellectual-property", label: "Intellectual Property" }
+  - { id: "8-service-availability", label: "Service Availability" }
+  - { id: "9-disclaimers", label: "Disclaimers" }
+  - { id: "10-limitation-of-liability", label: "Limitation of Liability" }
+  - { id: "11-indemnification", label: "Indemnification" }
+  - { id: "12-suspension-and-termination", label: "Suspension & Termination" }
+  - { id: "13-confidentiality", label: "Confidentiality" }
+  - { id: "14-changes-to-the-terms", label: "Changes to the Terms" }
+  - { id: "15-governing-law-and-jurisdiction", label: "Governing Law" }
+  - { id: "16-dispute-resolution", label: "Dispute Resolution" }
+  - { id: "17-general-provisions", label: "General Provisions" }
+  - { id: "18-contact", label: "Contact" }
 ---
 
 ## 1. Agreement to Terms

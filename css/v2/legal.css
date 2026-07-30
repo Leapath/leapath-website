@@ -1,0 +1,63 @@
+/* Legal document pages (Privacy Policy, Terms of Service, Data Processing).
+   Loaded after theme.css. Reuses .ph/.ip-* design system; adds the photo
+   hero treatment and the two-column article + TOC layout specific to
+   long-form legal content. */
+
+/* ── Hero: real photo background instead of a flat gradient ── */
+.ph--photo{
+  background:#08040E url('/assets/v2/images/hero-bg.jpg') center 30%/cover no-repeat;
+  padding:8.5rem 0 5.5rem;
+}
+.ph--photo::before{
+  background:
+    linear-gradient(180deg,rgba(8,4,22,.88) 0%,rgba(8,4,22,.8) 45%,rgba(8,4,22,.92) 100%),
+    linear-gradient(90deg,rgba(91,45,158,.28) 0%,transparent 65%);
+}
+.ph--photo::after{display:none}
+
+.ph--photo .ph__eyebrow .icon{margin-right:.4rem}
+
+.legal-meta{display:flex;gap:.75rem;flex-wrap:wrap;position:relative;z-index:1}
+.legal-meta__pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.65);font-size:.78rem;font-weight:600;padding:.5rem 1rem;border-radius:100px}
+.legal-meta__pill strong{color:#fff;font-weight:800}
+
+/* ── Body: sticky TOC + article ── */
+.legal-layout{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;max-width:1140px;margin:0 auto}
+
+.legal-toc{position:sticky;top:96px}
+.legal-toc__label{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--txt4);margin-bottom:1rem}
+.legal-toc a{display:block;font-size:.82rem;font-weight:700;color:var(--txt3);text-decoration:none;padding:.5rem 0 .5rem .9rem;border-left:2px solid var(--bd);transition:all .15s;line-height:1.4}
+.legal-toc a:hover{color:var(--purple);border-color:var(--purple)}
+
+.legal-article{max-width:860px}
+.legal-article p{font-size:1.02rem;color:var(--txt2);line-height:1.85;font-weight:500;margin-bottom:1.5rem;text-align:justify;text-justify:inter-word;hyphens:auto}
+.legal-article h2{font-size:1.4rem;font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1.3;margin:3rem 0 1.25rem;padding-left:1.1rem;position:relative}
+.legal-article h2:first-child{margin-top:0}
+.legal-article h2::before{content:'';position:absolute;left:0;top:.15em;bottom:.15em;width:4px;border-radius:4px;background:var(--grad)}
+.legal-article h3{font-size:1.1rem;font-weight:800;color:var(--navy);margin:2rem 0 .85rem}
+.legal-article ul,.legal-article ol{margin:0 0 1.5rem 1.25rem;padding:0}
+.legal-article li{font-size:.975rem;color:var(--txt2);line-height:1.78;font-weight:500;margin-bottom:.6rem}
+.legal-article a{color:var(--purple);font-weight:700}
+.legal-article strong{color:var(--navy);font-weight:800}
+
+.legal-table-wrap{overflow-x:auto;margin:0 0 1.75rem;border:1.5px solid var(--bd);border-radius:14px}
+.legal-table-wrap table{width:100%;border-collapse:collapse;font-size:.9rem}
+.legal-table-wrap th{background:var(--bgsoft);color:var(--navy);font-weight:800;text-align:left;padding:.85rem 1.1rem;border-bottom:1.5px solid var(--bd)}
+.legal-table-wrap td{padding:.85rem 1.1rem;color:var(--txt2);font-weight:500;line-height:1.6;border-bottom:1px solid var(--bd)}
+.legal-table-wrap tr:last-child td{border-bottom:none}
+
+/* ── Related policies ── */
+.legal-related-section{padding:3.5rem 0}
+.legal-related__label{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--txt4);margin-bottom:1.1rem;max-width:1140px;margin-left:auto;margin-right:auto}
+.legal-related{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;max-width:1140px;margin:0 auto}
+.legal-related__card{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--surf);border:1.5px solid var(--bd);border-radius:14px;padding:1.1rem 1.4rem;text-decoration:none;font-size:.92rem;font-weight:800;color:var(--navy);transition:all .2s}
+.legal-related__card:hover{border-color:var(--purple);box-shadow:0 8px 24px rgba(91,45,158,.1);transform:translateY(-1px)}
+.legal-related__card .icon{color:var(--purple)}
+
+@media (max-width:860px){
+  .legal-layout{grid-template-columns:1fr!important}
+  .legal-toc{display:none}
+}
+@media (max-width:640px){
+  .legal-related{grid-template-columns:1fr}
+}

@@ -3,6 +3,7 @@ permalink: /privacy-policy/
 redirect_from: /privacy-policy.html
 layout: legal
 page_title: "Privacy Policy"
+hero_description: "How we collect, use, and protect the personal data of students, TPOs, institutions, and recruiters on the Leapath Platform."
 effective_date: "5 May 2026"
 last_updated: "5 May 2026"
 title: "Privacy Policy — Leapath"
@@ -11,6 +12,20 @@ robots: "index, follow"
 canonical: "https://www.leapath.tech/privacy-policy/"
 favicon_end_color: "%23F042FF"
 include_legal_jsonld: true
+extra_css: /css/v2/legal.css
+toc:
+  - { id: "1-introduction", label: "Introduction" }
+  - { id: "2-information-we-collect", label: "Information We Collect" }
+  - { id: "3-how-we-use-your-information", label: "How We Use Your Information" }
+  - { id: "4-legal-basis-for-processing", label: "Legal Basis for Processing" }
+  - { id: "5-how-we-share-information", label: "How We Share Information" }
+  - { id: "6-data-retention", label: "Data Retention" }
+  - { id: "7-data-security", label: "Data Security" }
+  - { id: "8-your-rights", label: "Your Rights" }
+  - { id: "9-cookies-and-similar-technologies", label: "Cookies" }
+  - { id: "10-students-and-younger-users", label: "Students & Younger Users" }
+  - { id: "11-updates-to-this-policy", label: "Updates to this Policy" }
+  - { id: "12-contact-and-grievance-officer", label: "Contact & Grievance Officer" }
 ---
 
 ## 1. Introduction
@@ -135,7 +150,7 @@ Where data is processed on behalf of an institution, requests should ordinarily 
 
 The Platform uses cookies and similar technologies for authentication, session management, preference storage, security, and analytics. Strictly necessary cookies are required for the Platform to function. Optional analytics cookies may be controlled through browser settings or, where available, an in-product preference centre.
 
-Disabling certain cookies may limit Platform functionality.
+Disabling certain cookies may limit Platform functionality. For details on the categories of cookies we use and how to manage your preferences, see our [Cookie Policy](/cookies/).
 
 ## 10. Students and Younger Users
 

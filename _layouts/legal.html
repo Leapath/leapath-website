@@ -1,14 +1,42 @@
 ---
 layout: v2/default
 ---
-<div class="ph ph--purple" style="padding-bottom:3rem">
+<div class="ph ph--photo" style="padding-bottom:3.5rem">
   <div class="container" style="position:relative;z-index:1">
+    <div class="ph__eyebrow"><svg class="icon" aria-hidden="true"><use href="#ic-lock"></use></svg>Legal</div>
     <h1 class="ph__h1" id="legal-title">{{ page.page_title }}</h1>
-    <p class="ph__sub"><strong>Effective Date:</strong> {{ page.effective_date }} &middot; <strong>Last Updated:</strong> {{ page.last_updated }}</p>
+    {% if page.hero_description %}<p class="ph__sub">{{ page.hero_description }}</p>{% endif %}
+    <div class="legal-meta">
+      <span class="legal-meta__pill"><strong>Effective</strong>&nbsp;{{ page.effective_date }}</span>
+      <span class="legal-meta__pill"><strong>Last updated</strong>&nbsp;{{ page.last_updated }}</span>
+    </div>
   </div>
 </div>
 <section class="ip-section" aria-labelledby="legal-title">
-  <div class="container cs-article">
-    {{ content }}
+  <div class="container legal-layout">
+    {% if page.toc %}
+    <nav class="legal-toc" aria-label="On this page">
+      <div class="legal-toc__label">On this page</div>
+      {% for item in page.toc %}<a href="#{{ item.id }}">{{ item.label }}</a>{% endfor %}
+    </nav>
+    {% endif %}
+    <div class="legal-article">
+      {{ content }}
+    </div>
+  </div>
+</section>
+<section class="ip-section ip-section--soft legal-related-section">
+  <div class="legal-related__label">Related policies</div>
+  {% assign legal_pages = "Privacy Policy|/privacy-policy/,Terms of Service|/terms-of-service/,Data Processing & Security Policy|/data-processing/,Cookie Policy|/cookies/" | split: "," %}
+  <div class="legal-related">
+    {% for entry in legal_pages %}
+      {% assign parts = entry | split: "|" %}
+      {% unless parts[1] == page.url %}
+      <a class="legal-related__card" href="{{ parts[1] }}">
+        <span>{{ parts[0] }}</span>
+        <svg class="icon" aria-hidden="true"><use href="#ic-arrow-right"></use></svg>
+      </a>
+      {% endunless %}
+    {% endfor %}
   </div>
 </section>

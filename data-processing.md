@@ -3,6 +3,7 @@ permalink: /data-processing/
 redirect_from: /data-processing.html
 layout: legal
 page_title: "Data Processing & Security Policy"
+hero_description: "The safeguards, sub-processors, retention practices, and incident-response commitments behind every institutional deployment of Leapath."
 effective_date: "5 May 2026"
 last_updated: "5 May 2026"
 title: "Data Processing & Security Policy — Leapath"
@@ -11,6 +12,23 @@ robots: "index, follow"
 canonical: "https://www.leapath.tech/data-processing/"
 include_legal_jsonld: true
 favicon_end_color: "%23F042FF"
+extra_css: /css/v2/legal.css
+toc:
+  - { id: "1-purpose-and-scope", label: "Purpose and Scope" }
+  - { id: "2-definitions", label: "Definitions" }
+  - { id: "3-data-roles-and-responsibilities", label: "Data Roles & Responsibilities" }
+  - { id: "4-purposes-of-processing", label: "Purposes of Processing" }
+  - { id: "5-data-minimisation", label: "Data Minimisation" }
+  - { id: "6-security-practices", label: "Security Practices" }
+  - { id: "7-data-isolation-and-tenancy", label: "Data Isolation & Tenancy" }
+  - { id: "8-sub-processors", label: "Sub-processors" }
+  - { id: "9-international-data-transfers", label: "International Data Transfers" }
+  - { id: "10-incident-and-breach-response", label: "Incident & Breach Response" }
+  - { id: "11-data-retention-and-deletion", label: "Data Retention & Deletion" }
+  - { id: "12-data-subject-requests", label: "Data Subject Requests" }
+  - { id: "13-audits-and-assurance", label: "Audits & Assurance" }
+  - { id: "14-continuous-improvement", label: "Continuous Improvement" }
+  - { id: "15-contact", label: "Contact" }
 ---
 
 ## 1. Purpose and Scope
