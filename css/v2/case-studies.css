@@ -86,7 +86,8 @@
 .cs-step__t{font-size:1.2rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:.6rem}
 .cs-step__d{font-size:.95rem;color:var(--txt2);line-height:1.75;font-weight:500}
 
-.cs-article{max-width:720px;margin:0 auto}
+.cs-layout{display:grid;grid-template-columns:1fr 280px;gap:2.75rem;align-items:start;max-width:1060px;margin:0 auto}
+.cs-article{max-width:720px;margin:0}
 .cs-article p{font-size:1.02rem;color:var(--txt2);line-height:1.85;font-weight:500;margin-bottom:1.5rem}
 .cs-article h2{font-size:1.5rem;font-weight:900;color:var(--navy);letter-spacing:-.02em;margin:2.5rem 0 1rem}
 .cs-article h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin:2rem 0 .85rem}
@@ -99,6 +100,9 @@
 
 @media (max-width:900px){
   .cs-grid,.cs-related-grid{grid-template-columns:1fr 1fr!important}
+  .cs-layout{grid-template-columns:1fr}
+  .cs-layout .bp__side{position:static;flex-direction:row;flex-wrap:wrap;margin-top:3rem}
+  .cs-layout .bp__side-card{flex:1;min-width:220px}
 }
 @media (max-width:640px){
   .cs-grid,.cs-related-grid{grid-template-columns:1fr!important}
