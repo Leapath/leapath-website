@@ -820,9 +820,17 @@ body.nav-open-lock{overflow:hidden}
 .ph--gold{background:linear-gradient(135deg,#5C3A00 0%,#8C5A00 100%)}
 .ph--slate{background:linear-gradient(135deg,#15102E 0%,#2A234A 100%)}
 .ph--green{background:linear-gradient(135deg,#064E3B 0%,#065F46 100%)}
+.ph--photo{background:#08040E url('/assets/v2/images/hero-bg.jpg') center 30%/cover no-repeat}
 .ph::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.03) 1px,transparent 0);background-size:28px 28px}
 .ph::after{content:'';position:absolute;top:-140px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.09) 0%,transparent 70%);pointer-events:none}
+.ph--photo::before{
+  background:
+    linear-gradient(180deg,rgba(8,4,22,.88) 0%,rgba(8,4,22,.8) 45%,rgba(8,4,22,.92) 100%),
+    linear-gradient(90deg,rgba(91,45,158,.28) 0%,transparent 65%);
+}
+.ph--photo::after{display:none}
 .ph__eyebrow,.ph__h1,.ph__sub,.ph__stats,.ph__ctas{position:relative;z-index:1}
+.ph--photo .ph__eyebrow .icon{margin-right:.4rem}
 
 /* ══ SCROLL REVEAL ══ */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity var(--dur-slow,.45s) var(--ease-out,cubic-bezier(.16,1,.3,1)) var(--reveal-delay,0ms),transform var(--dur-slow,.45s) var(--ease-out,cubic-bezier(.16,1,.3,1)) var(--reveal-delay,0ms);will-change:opacity,transform}

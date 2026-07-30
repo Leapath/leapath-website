@@ -3,19 +3,9 @@
    hero treatment and the two-column article + TOC layout specific to
    long-form legal content. */
 
-/* ── Hero: real photo background instead of a flat gradient ── */
-.ph--photo{
-  background:#08040E url('/assets/v2/images/hero-bg.jpg') center 30%/cover no-repeat;
-  padding:8.5rem 0 5.5rem;
-}
-.ph--photo::before{
-  background:
-    linear-gradient(180deg,rgba(8,4,22,.88) 0%,rgba(8,4,22,.8) 45%,rgba(8,4,22,.92) 100%),
-    linear-gradient(90deg,rgba(91,45,158,.28) 0%,transparent 65%);
-}
-.ph--photo::after{display:none}
-
-.ph--photo .ph__eyebrow .icon{margin-right:.4rem}
+/* Legal hero runs a bit taller than the standard .ph, given the extra
+   meta-pill row below the subhead. */
+.legal-hero{padding:8.5rem 0 5.5rem}
 
 .legal-meta{display:flex;gap:.75rem;flex-wrap:wrap;position:relative;z-index:1}
 .legal-meta__pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.65);font-size:.78rem;font-weight:600;padding:.5rem 1rem;border-radius:100px}
