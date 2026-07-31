@@ -16,7 +16,7 @@ canonical: "https://www.leapath.tech/contact/"
         <h2 class="ip-h2" style="margin-bottom:2rem">Tell us what you <em>need.</em></h2>
         <form id="contact-form" class="cf" action="https://info.leapath.tech/api/contact" method="POST" enctype="multipart/form-data" aria-labelledby="contact-form-heading" data-leapath-form>
           <div class="cf-row">
-            <div class="cf-field"><label for="cf-name">Your name *</label><input type="text" id="cf-name" name="name" placeholder="Dr. Ramesh Kumar" required autocomplete="name"/></div>
+            <div class="cf-field"><label for="cf-name">Your name *</label><input type="text" id="cf-name" name="tpo_name" placeholder="Dr. Ramesh Kumar" required autocomplete="name"/></div>
             <div class="cf-field"><label for="cf-email">Work email *</label><input type="email" id="cf-email" name="email" placeholder="tpo@institution.edu.in" required autocomplete="email"/></div>
           </div>
           <div class="cf-row">
