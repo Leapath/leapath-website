@@ -2,7 +2,7 @@
 
 Production site: **https://www.leapath.tech**
 
-Jekyll 4.3 static site. All content lives in `.md` files under `_data/`. Each page section is an isolated `_includes/sections/` partial. Zero build tooling beyond Jekyll itself.
+Jekyll 4.3 static site, "v2" design system. All pages use `layout: v2/default` (or `layout: legal` for policy pages). Content lives in `.md` files at the repo root plus namespaced `_data/_v2_*` collections. Zero build tooling beyond Jekyll itself.
 
 ---
 
@@ -21,64 +21,72 @@ Requires Ruby ≥ 3.0. Bundler is installed automatically if missing.
 
 ```
 leapath-website/
-├── index.html                    ← home page (18 section includes)
-├── privacy-policy.md             ← legal pages — edit these for copy changes
+├── index.md                      ← home page
+├── pricing.md
+├── careers.md
+├── case-studies.md
+├── blog.md
+├── how-it-works.md
+├── partnership.md
+├── contact.md
+├── privacy-policy.md             ← legal pages (layout: legal)
 ├── terms-of-service.md
 ├── data-processing.md
-├── partnership.html              ← kept as HTML (contains a form + custom layout)
-├── 404.html
+├── cookies.md
+├── 404.md
 │
 ├── _layouts/
-│   ├── default.html              ← thin shell: head + nav + content + footer + scripts
+│   ├── v2/default.html           ← thin shell: head + nav + content + footer + scripts
+│   ├── v2/post.html              ← blog post / case study layout
 │   └── legal.html                ← wraps legal pages: container + section header + {{ content }}
 │
-├── _includes/
+├── _includes/v2/
 │   ├── head.html                 ← <head> block (meta, OG, SEO, fonts, CSS)
 │   ├── nav.html                  ← sticky navbar + mobile drawer
-│   ├── footer.html               ← site footer + legal links
-│   ├── scripts.html              ← deferred JS tags
-│   └── sections/                 ← one file per page section
-│       ├── hero.html
-│       ├── product-showcase.html
-│       ├── credibility.html
-│       ├── colleges.html
-│       ├── students.html
-│       ├── employers.html
-│       ├── product.html
-│       ├── training.html
-│       ├── analytics.html
-│       ├── transformation.html
-│       ├── powers.html
-│       ├── how-it-works.html
-│       ├── testimonials.html
-│       ├── onboarding.html
-│       ├── insights.html
-│       ├── marquee.html
-│       ├── why-now.html
+│   ├── footer.html                ← site footer + legal links
+│   ├── scripts.html               ← deferred JS tags
+│   ├── icons.html                ← inline SVG sprite defs
+│   └── sections/                  ← one file per reusable page section
+│       ├── page-hero.html         ← shared hero used by careers/how-it-works/blog/partnership/contact
+│       ├── hero.html              ← homepage hero
+│       ├── capabilities.html
+│       ├── reviews.html
+│       ├── how-steps.html
+│       ├── careers-values.html
+│       ├── careers-process.html
+│       ├── careers-roles.html
+│       ├── careers-drawer.html
+│       ├── careers-open-apply.html
 │       └── cta.html
 │
-├── _data/                        ← all content + collections live here
-│   ├── _content/                 ← section content (.md, one per section)
-│   ├── _product_cards/
-│   ├── _steps/
-│   ├── _training_cards/
-│   ├── _powers_cards/
-│   ├── _insight_cards/
-│   ├── _testimonial_cards/
-│   └── _onboarding_steps/
+├── _data/                        ← namespaced content collections
+│   ├── _v2_content/               ← page-level copy blocks (hero, reviews, insights, pricing-body, ...)
+│   ├── _v2_capabilities/
+│   ├── _v2_careers_process/
+│   ├── _v2_careers_values/
+│   ├── _v2_how_steps/
+│   ├── _v2_open_roles/
+│   ├── _v2_posts/                 ← blog posts + case studies
+│   ├── _v2_roles/
+│   ├── _v2_testimonials/
+│   └── _v2_views/
 │
-├── css/
-│   ├── styles.css                ← design system + all component styles
-│   └── responsive.css            ← breakpoint overrides
+├── css/v2/
+│   ├── theme.css                  ← design tokens (--navy/--purple/--txt/... ) + shared components
+│   ├── home.css                   ← homepage-only styles (loaded via page.extra_css)
+│   ├── careers.css                ← careers-only styles
+│   ├── case-studies.css
+│   ├── blog.css / blog-post.css
+│   └── legal.css
 │
-├── js/
-│   ├── main.js                   ← sticky nav, hamburger, scroll-reveal
-│   ├── forms.js                  ← form submission handler + client validation
-│   ├── animations.js             ← hero intro stagger + parallax
-│   ├── auth.js                   ← login dropdown + auth modal (UI only)
-│   └── region-selector.js        ← first-visit region modal + banner
+├── js/v2/
+│   ├── main.js                    ← sticky nav, hamburger, scroll-reveal (site-wide)
+│   ├── home.js                    ← homepage-only JS
+│   └── careers.js                 ← careers-only JS (application drawer, etc.)
+├── js/forms.js                    ← form submission handler + client validation (site-wide)
 │
-├── assets/images/                ← product screenshots, banners
+├── assets/v2/                     ← v2 images, favicons, og-image
+├── assets/images/, assets/logos/  ← a handful of legacy-path images still referenced by live v2 pages
 ├── _config.yml
 ├── Gemfile
 ├── robots.txt
@@ -93,79 +101,39 @@ leapath-website/
 
 ## Editing content
 
-All copy lives in `_data/_content/<section>.md` as YAML front matter. No HTML to touch for copy changes.
+Page-level copy blocks live in `_data/_v2_content/<name>.md` as YAML front matter, referenced from `_includes/v2/sections/*.html` via `site.data.v2_content.<name>`.
+
+Card/list collections (roles, testimonials, posts, capabilities, etc.) are individual `.md` files under their `_data/_v2_*` folder — add a file and the section picks it up automatically (usually sorted by a `num` or `date` field).
+
+Per-page CSS/JS is opted into via front matter, not loaded globally:
 
 ```yaml
-# _data/_content/hero.md
----
-slug: "hero"
-heading: "Your headline here"
-subheading: "Supporting copy"
----
+extra_css: /css/v2/careers.css
+extra_js: /js/v2/careers.js
 ```
 
-Card collections (training, insights, etc.) are individual `.md` files in their collection folder. Add a file → section picks it up automatically.
+Only `css/v2/theme.css`, `case-studies.css`, and `blog-post.css` are loaded on every page (see `_includes/v2/head.html`); everything else is per-page.
 
 ---
 
 ## Design system
 
-CSS variables are defined in `css/styles.css` `:root` in three layers:
+CSS variables are defined in `css/v2/theme.css` `:root`:
 
 | Layer | Purpose |
 |---|---|
-| Raw palette (`--c-*`) | Exact hex values, never used directly in components |
-| Semantic tokens | `--text`, `--surface`, `--accent`, `--gradient-brand`, etc. |
-| Legacy aliases | `--navy`, `--teal`, `--lavender` — re-pointed at semantic tokens |
+| Brand palette (`--navy`, `--purple`, `--magenta`, `--violet`, `--gold`, ...) | Raw hex values |
+| Semantic tokens (`--bg`, `--surf`, `--txt`, `--txt2`/`--txt3`/`--txt4`, `--bd`, `--grad`, `--gradbtn`) | What components actually use |
 
-To re-skin the site, edit semantic tokens only:
+`--txt3`/`--txt4` and `--gradbtn` are tuned specifically to pass WCAG AA contrast — don't reintroduce lighter grays for body copy or use the decorative `--grad` under normal-weight button text without checking contrast.
 
-```css
---accent:          #5B2D9E;
---gradient-brand:  linear-gradient(135deg, #5B2D9E 0%, #F042FF 100%);
---bg:              #FBFAFD;
---surface:         #FFFFFF;
-```
-
----
-
-## Auth (UI only)
-
-The Login dropdown opens a modal for Student / TPO login. No backend is wired.
-
-```js
-// Wire to your auth provider here:
-window.Leapath.auth.onSubmit((payload) => {
-  // payload: { role, mode, email, password, name?, institution? }
-})
-
-// Open programmatically:
-window.Leapath.auth.open({ role: 'student', mode: 'login' })
-```
-
-Trigger from any element with data attributes:
-
-```html
-<button data-auth-role="student" data-auth-mode="login">Student Login</button>
-```
+`.d1` is the canonical section-heading class (aliased by `.ip-h2`) — don't fork a third heading size.
 
 ---
 
 ## Forms
 
-All forms POST to the Leapath API (`info.leapath.tech`). `forms.js` auto-binds to `#contact-form`, `#partnership-form`, and any `[data-leapath-form]` element. Validates client-side, submits via `fetch`, shows inline success state, falls back to native submit on error.
-
----
-
-## Region selector
-
-First-visit modal stores the user's region in `localStorage` under `leapath.region` (`IN`, `EU`, `ME`). Sets `<html data-region="…">` for region-scoped CSS/JS.
-
-```js
-window.Leapath.region.get()        // → 'IN' | 'EU' | 'ME' | null
-window.Leapath.region.set('EU')
-window.Leapath.region.onChange(fn)
-```
+Forms POST to the Leapath API (`info.leapath.tech`). `js/forms.js` auto-binds to `#contact-form`, `#partnership-form`, and any `[data-leapath-form]` element. Validates client-side, submits via `fetch`, shows inline success state, falls back to native submit on error.
 
 ---
 
@@ -178,5 +146,5 @@ Deploys as a standard Jekyll static site. Compatible with Netlify, Vercel, Cloud
 - `robots.txt` — blocks AI training crawlers; crawl-delay for all others
 - `sitemap.xml` — auto-generated by `jekyll-sitemap`
 
-Build command: `bundle exec jekyll build`  
+Build command: `bundle exec jekyll build`
 Output directory: `_site/`

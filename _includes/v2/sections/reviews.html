@@ -98,7 +98,7 @@
   // Continuous gentle drift (a real marquee) instead of long-pause-then-jump
   // — a steady crawl reads as "alive"; discrete per-card jumps read as
   // stuck/broken between advances.
-  var speed = 32; // px/sec
+  var speed = 70; // px/sec
   var rafId = null, lastTs = null;
   function frame(ts){
     if(lastTs === null) lastTs = ts;
