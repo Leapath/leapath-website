@@ -167,7 +167,7 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 .hero__pill-dot{width:6px;height:6px;border-radius:50%;background:var(--magenta);animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
 .hero__h1{font-size:clamp(3rem,5.2vw,5rem);font-weight:900;line-height:1.04;letter-spacing:-.055em;color:var(--navy);margin-bottom:1.75rem;text-shadow:0 2px 20px rgba(255,255,255,.5)}
-.hero__h1 .grad-text{background:linear-gradient(90deg,var(--purple) 0%,var(--magenta) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero__h1 .grad-text{background:linear-gradient(90deg,var(--purple) 0%,var(--magenta) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block;padding:0 .04em;margin:0 -.04em}
 .hero__h1 .gold-text{color:#A0700A}
 .hero__sub{font-size:1.08rem;color:var(--txt2);line-height:1.78;margin-bottom:2.75rem;max-width:600px;margin-left:auto;margin-right:auto;font-weight:500}
 .hero__sub strong{color:var(--navy);font-weight:700}
@@ -557,7 +557,7 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 .dbar--lo{background:rgba(196,175,240,.2)}
 
 /* ══ REVIEWS ══ */
-.reviews{padding:7rem 0 0;background:var(--bg);overflow:hidden}
+.reviews{padding:7rem 0;background:var(--bg);overflow:hidden}
 .reviews__top{max-width:1200px;margin:0 auto;padding:0 2rem}
 .reviews__hd{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:3.5rem}
 .rv-rating{display:inline-flex;align-items:center;gap:.875rem;background:var(--surf);border:1px solid var(--bd);border-radius:100px;padding:.55rem 1.4rem;margin-bottom:1.75rem;box-shadow:var(--s)}
@@ -598,6 +598,7 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 }
 .rv-marquee-row.is-dragging{cursor:grabbing}
 .rv-marquee-row::-webkit-scrollbar{display:none}
+.rv-marquee-row:focus-visible{outline:2px solid var(--purple);outline-offset:6px;border-radius:12px}
 .rv-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.5rem}
 .rv-dot{width:8px;height:8px;border-radius:50%;background:var(--bd2);border:none;padding:0;cursor:pointer;transition:all .2s}
 .rv-dot:hover{background:rgba(91,45,158,.4)}
@@ -608,17 +609,18 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
 .rvm__top{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-bottom:.75rem;flex-shrink:0}
 .rvm__stars span{color:var(--gold);font-size:.9rem}
 .rvm__txt{font-size:.92rem;color:var(--txt2);line-height:1.6;font-style:italic;font-weight:500;margin-bottom:1.1rem;overflow:hidden;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
-.rvm__foot{display:flex;align-items:center;gap:.7rem;padding-top:.9rem;border-top:1px solid var(--bd);margin-top:auto;flex-shrink:0}
-.rvm__av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.8rem;color:#fff;flex-shrink:0}
-.rvm__name{font-size:.9rem;font-weight:800;color:var(--navy);line-height:1.25}
-.rvm__role{font-size:.74rem;color:var(--txt3);font-weight:600;line-height:1.3}
+.rvm__foot{display:flex;align-items:flex-start;gap:.7rem;padding-top:.9rem;border-top:1px solid var(--bd);margin-top:auto;flex-shrink:0}
+.rvm__av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.8rem;color:#fff;flex-shrink:0;margin-top:.1rem}
+.rvm__name{font-size:.9rem;font-weight:800;color:var(--navy);line-height:1.3}
+.rvm__title{font-size:.74rem;color:var(--txt2);font-weight:700;line-height:1.35;margin-top:.1rem}
+.rvm__inst{font-size:.74rem;color:var(--txt3);font-weight:600;line-height:1.35}
 .rvm__badge{font-size:.62rem;font-weight:800;padding:.2rem .65rem;border-radius:20px;flex-shrink:0;white-space:nowrap}
 .rvm__badge--tpo{background:rgba(91,45,158,.1);color:var(--purple)}
 .rvm__badge--stu{background:rgba(240,192,96,.12);color:#92400E}
 .rvm__badge--rec{background:var(--greenl);color:var(--greend)}
 @media (max-width:640px){
   .rv-marquee-wrap{padding:0 1.25rem}
-  .rvm{width:86vw}
+  .rvm{width:86vw;scroll-snap-align:center;scroll-snap-stop:always}
 }
 
 /* ══ COMPANIES ══ */

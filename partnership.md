@@ -20,7 +20,7 @@ nav_cta_href: "#partnership-form"
       <div class="feat-card"><div style="font-size:1.5rem;font-weight:900;color:var(--purple);margin-bottom:.75rem">03 / Support</div><div class="feat-card__t">Priority onboarding</div><div class="feat-card__d">A dedicated implementation lead, hands-on training for your Career Services team, and a direct support channel, not a ticket queue.</div></div>
       <div class="feat-card"><div style="font-size:1.5rem;font-weight:900;color:var(--purple);margin-bottom:.75rem">04 / Recognition</div><div class="feat-card__t">Founding partner status</div><div class="feat-card__d">Co-published case studies, benchmark inclusion in our annual reports, and preferred terms when the platform graduates from pilot.</div></div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:flex-start">
+    <div class="ip-2col" style="grid-template-columns:1fr 1.2fr;gap:4rem;align-items:flex-start">
       <div>
         <div class="ip-eyebrow">Why apply now?</div>
         <h2 class="ip-h2">We accept a limited cohort <em>each semester.</em></h2>

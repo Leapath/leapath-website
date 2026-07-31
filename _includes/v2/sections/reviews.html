@@ -14,8 +14,8 @@
   </div>
 
   {% assign testimonials = site.v2_testimonials %}
-  <div class="rv-marquee-wrap">
-    <div class="rv-marquee-row" id="rvRow" data-count="{{ testimonials.size }}">
+  <div class="rv-marquee-wrap" role="region" aria-roledescription="carousel" aria-label="Testimonials from placement teams">
+    <div class="rv-marquee-row" id="rvRow" data-count="{{ testimonials.size }}" tabindex="0">
       {% for t in testimonials %}
       <div class="rvm">
         <div class="rvm__top">
@@ -27,7 +27,9 @@
           <div class="rvm__av" style="background:{{ t.avatar_bg }}">{{ t.initials }}</div>
           <div>
             <div class="rvm__name">{{ t.name }}</div>
-            <div class="rvm__role">{{ t.role }}</div>
+            {% assign role_parts = t.role | split: " · " %}
+            <div class="rvm__title">{{ role_parts[0] }}</div>
+            <div class="rvm__inst">{{ role_parts[1] }}</div>
           </div>
         </div>
       </div>
@@ -44,7 +46,9 @@
           <div class="rvm__av" style="background:{{ t.avatar_bg }}">{{ t.initials }}</div>
           <div>
             <div class="rvm__name">{{ t.name }}</div>
-            <div class="rvm__role">{{ t.role }}</div>
+            {% assign role_parts = t.role | split: " · " %}
+            <div class="rvm__title">{{ role_parts[0] }}</div>
+            <div class="rvm__inst">{{ role_parts[1] }}</div>
           </div>
         </div>
       </div>
@@ -76,6 +80,7 @@
   var realOffsets = [];
   for(var i = 0; i < count; i++){ realOffsets.push(combined[i].offsetLeft - row.offsetLeft); }
 
+  var currentIndex = 0;
   function updateDotsFromScroll(){
     var x = row.scrollLeft % setWidth;
     var closest = 0, closestDist = Infinity;
@@ -83,6 +88,7 @@
       var dist = Math.abs(off - x);
       if(dist < closestDist){ closestDist = dist; closest = i; }
     });
+    currentIndex = closest;
     dots.forEach(function(d, i){
       d.classList.toggle('is-active', i === closest);
       if(i === closest){ d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
@@ -142,6 +148,17 @@
 
   dots.forEach(function(dot, i){
     dot.addEventListener('click', function(){ pauseThenResume(); goToReal(i); });
+  });
+
+  // Keyboard navigation: focus the row (Tab into it), then Left/Right steps
+  // one testimonial at a time, wrapping around at either end.
+  row.addEventListener('keydown', function(e){
+    if(e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    var next = e.key === 'ArrowRight' ? currentIndex + 1 : currentIndex - 1;
+    next = ((next % count) + count) % count;
+    pauseThenResume();
+    goToReal(next);
   });
 
   // Hovering pauses immediately and resumes on mouseleave — but also carries
