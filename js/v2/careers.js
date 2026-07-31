@@ -7,6 +7,16 @@
 (function () {
   'use strict';
 
+  const SUBMIT_TIMEOUT_MS = 20000;
+
+  // Without this, a stalled server/connection leaves the request awaiting
+  // forever and the submit button stuck on "Sending…" indefinitely.
+  function fetchWithTimeout(url, options) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), SUBMIT_TIMEOUT_MS);
+    return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(timer));
+  }
+
   /* ── Role data from Jekyll ────────────────────────────── */
   let ROLES = [];
   try {
@@ -468,7 +478,7 @@
 
         try {
           const data = new FormData(appForm);
-          const res  = await fetch(appForm.action, {
+          const res  = await fetchWithTimeout(appForm.action, {
             method: 'POST',
             body: data,
             headers: { Accept: 'application/json' },
@@ -490,7 +500,10 @@
             showFormError(appForm, msg);
           }
         } catch (err) {
-          showFormError(appForm, 'Network error. Please check your connection and try again.');
+          const msg = err.name === 'AbortError'
+            ? 'This is taking longer than expected. Please check your connection and try again.'
+            : 'Network error. Please check your connection and try again.';
+          showFormError(appForm, msg);
         } finally {
           submitBtn?.classList.remove('loading');
         }
@@ -536,7 +549,7 @@
 
         try {
           const data = new FormData(oaForm);
-          const res  = await fetch(oaForm.action, {
+          const res  = await fetchWithTimeout(oaForm.action, {
             method: 'POST',
             body: data,
             headers: { Accept: 'application/json' },
@@ -564,8 +577,11 @@
             showFormError(oaForm, msg);
             if (btn) { btn.disabled = false; btn.classList.remove('is-loading'); btn.textContent = 'Send my application →'; }
           }
-        } catch {
-          showFormError(oaForm, 'Network error. Please check your connection.');
+        } catch (err) {
+          const msg = err.name === 'AbortError'
+            ? 'This is taking longer than expected. Please check your connection and try again.'
+            : 'Network error. Please check your connection.';
+          showFormError(oaForm, msg);
           if (btn) { btn.disabled = false; btn.classList.remove('is-loading'); btn.textContent = 'Send my application →'; }
         }
       });
