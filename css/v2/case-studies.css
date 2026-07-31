@@ -3,7 +3,7 @@
    dark, stat-forward, logo/monogram-driven cards instead of text-first articles. */
 
 /* ---------- Listing page ---------- */
-.cs-hero{background:#0A0418 url('/assets/v2/images/roles/employers.jpg') center 25%/cover no-repeat;padding:7rem 0 5.5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.cs-hero{background:#0A0418 url('/assets/v2/images/roles/employers.jpg') center 25%/cover no-repeat;padding:6rem 0 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .cs-hero::before{content:'';position:absolute;inset:0;background:rgba(8,4,20,.82)}
 .cs-hero__inner{position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto}
 .cs-hero__eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
@@ -52,7 +52,7 @@
 .cs-cover--5{background:url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
 
 /* ---------- Detail page ---------- */
-.cs-dhero{background:#0A0418;padding:6rem 0 4.5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.cs-dhero{background:#0A0418;padding:6rem 0 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .cs-dhero--1{background:#0A0418 url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
 .cs-dhero--2{background:#0A0418 url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
 .cs-dhero--3{background:#0A0418 url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}

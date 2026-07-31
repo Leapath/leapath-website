@@ -560,6 +560,7 @@
 
           if (res.ok) {
             oaForm.reset();
+            resetUploadZone('oa-upload-zone', 'oa-upload-inner', 'oa-upload-preview', 'oa-upload-filename', 'oa-resume');
             if (window.Leapath && window.Leapath.thankYou) {
               window.Leapath.thankYou.open({
                 message: "We've received your application and will be in touch if there's a fit.",

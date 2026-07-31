@@ -3,9 +3,7 @@
    hero treatment and the two-column article + TOC layout specific to
    long-form legal content. */
 
-/* Legal hero runs a bit taller than the standard .ph, given the extra
-   meta-pill row below the subhead. */
-.legal-hero{padding:8.5rem 0 5.5rem}
+.legal-hero{padding:6rem 0 5rem}
 
 .legal-meta{display:flex;gap:.75rem;flex-wrap:wrap;position:relative;z-index:1}
 .legal-meta__pill{display:inline-flex;align-items:center;gap:.35rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.65);font-size:.78rem;font-weight:600;padding:.5rem 1rem;border-radius:100px}
@@ -37,7 +35,6 @@
 .legal-table-wrap tr:last-child td{border-bottom:none}
 
 /* ── Related policies ── */
-.legal-related-section{padding:3.5rem 0}
 .legal-related__label{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--txt4);margin-bottom:1.1rem;max-width:1140px;margin-left:auto;margin-right:auto}
 .legal-related{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;max-width:1140px;margin:0 auto}
 .legal-related__card{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--surf);border:1.5px solid var(--bd);border-radius:14px;padding:1.1rem 1.4rem;text-decoration:none;font-size:.92rem;font-weight:800;color:var(--navy);transition:all .2s}
