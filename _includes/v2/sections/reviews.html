@@ -99,7 +99,21 @@
   // outside of the auto-drift/drag/dot-nav code paths above — without this,
   // the dots only ever reflected wherever the last auto-drift frame left
   // them, desyncing from whatever card the user actually scrolled to.
-  row.addEventListener('scroll', updateDotsFromScroll, { passive: true });
+  //
+  // Native scrolling (unlike the auto-drift frame loop and the click-drag
+  // handler below) isn't confined to the real-card range [0, setWidth) —
+  // the row's actual scrollable width covers the duplicate set too, so a
+  // swipe/trackpad drag can push scrollLeft well past setWidth into
+  // pixel-identical duplicate cards. Dots are only computed against the
+  // real-card offsets, so once scrollLeft crosses setWidth the closest-match
+  // wraps back to a low/"middle" index even though the row visually looks
+  // like it's still scrolling forward — rewind by setWidth the instant that
+  // happens so native scrolling loops the same invisible seam the auto-drift
+  // already uses, instead of drifting into the untracked duplicate range.
+  row.addEventListener('scroll', function(){
+    if(row.scrollLeft >= setWidth){ row.scrollLeft -= setWidth; }
+    updateDotsFromScroll();
+  }, { passive: true });
 
   // Continuous gentle drift (a real marquee) instead of long-pause-then-jump
   // — a steady crawl reads as "alive"; discrete per-card jumps read as
