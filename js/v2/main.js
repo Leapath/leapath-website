@@ -96,6 +96,41 @@
     });
   }
 
+  /* FAQ accordion ("Common questions" on contact/pricing): collapsed by
+     default, toggled open/closed on click or Enter/Space. The answer's
+     text is wrapped in an inner element so the outer .acc-a can animate
+     via a CSS grid-rows 0fr→1fr transition, which tracks content height
+     across reflow/resize without needing a JS-measured pixel height. */
+  var accCounter = 0;
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var q = item.querySelector('.acc-q');
+    var a = item.querySelector('.acc-a');
+    if(!q || !a) return;
+
+    var inner = document.createElement('div');
+    inner.className = 'acc-a__inner';
+    inner.innerHTML = a.innerHTML;
+    a.innerHTML = '';
+    a.appendChild(inner);
+
+    accCounter += 1;
+    var answerId = 'acc-a-' + accCounter;
+    a.id = answerId;
+    q.setAttribute('role', 'button');
+    q.setAttribute('tabindex', '0');
+    q.setAttribute('aria-expanded', 'false');
+    q.setAttribute('aria-controls', answerId);
+
+    function toggle(){
+      var isOpen = item.classList.toggle('is-open');
+      q.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    q.addEventListener('click', toggle);
+    q.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
+  });
+
   /* Scroll-reveal: fade+rise cards into view once. Headings are deliberately excluded
      so primary content is never hidden pending JS (no-JS / crawler / perf safety). */
   var revealSelector = '.feat-card,.bc,.job-card,.ben-card,.rcard,.stu-card,.team-card,'

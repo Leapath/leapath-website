@@ -1013,8 +1013,14 @@ body.nav-open-lock{overflow:hidden}
 .ptag--a{background:rgba(240,192,96,.12);color:#92400E}
 /* Accordion */
 .acc-item{border-bottom:1px solid var(--bd);padding:1.25rem 0}
-.acc-q{font-size:.975rem;font-weight:800;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;letter-spacing:-.01em}
-.acc-a{font-size:.88rem;color:var(--txt2);line-height:1.72;padding:.75rem 0 0;font-weight:500}
+.acc-q{font-size:.975rem;font-weight:800;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;letter-spacing:-.01em;gap:1rem}
+.acc-q span{flex-shrink:0;transition:transform .2s var(--ease);color:var(--purple);font-weight:900}
+.acc-item.is-open .acc-q span{transform:rotate(45deg)}
+/* Collapsed by default; grid-rows 0fr→1fr auto-tracks content height across
+   reflow/resize without JS-measured pixel heights. */
+.acc-a{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .3s var(--ease),opacity .25s var(--ease),padding-top .3s var(--ease);padding-top:0}
+.acc-a__inner{overflow:hidden;min-height:0;font-size:.88rem;color:var(--txt2);line-height:1.72;font-weight:500}
+.acc-item.is-open .acc-a{grid-template-rows:1fr;opacity:1;padding-top:.75rem}
 /* Student profile card */
 .stu-card{background:var(--surf);border:1.5px solid var(--bd);border-radius:20px;padding:1.75rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all .2s}
 .stu-card:hover{box-shadow:var(--sl);border-color:rgba(91,45,158,.2)}
