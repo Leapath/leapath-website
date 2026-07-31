@@ -21,9 +21,13 @@ canonical: "https://www.leapath.tech/contact/"
           </div>
           <div class="cf-row">
             <div class="cf-field"><label for="cf-org">Institution / Organisation *</label><input type="text" id="cf-org" name="college" placeholder="PSG Tech, Coimbatore" required autocomplete="organization"/></div>
+            <div class="cf-field"><label for="cf-mobile">Mobile *</label><input type="tel" id="cf-mobile" name="mobile" placeholder="+91 98765 43210" required autocomplete="tel" pattern="[0-9+\-\s]{7,}"/></div>
+          </div>
+          <div class="cf-row">
+            <div class="cf-field"><label for="cf-students">No. of students</label><input type="text" id="cf-students" name="student_count" placeholder="e.g. 1,200"/></div>
             <div class="cf-field"><label for="cf-role">Your role</label><select id="cf-role" name="role"><option value="">Select role</option><option>TPO / Placement Head</option><option>Principal / Director</option><option>Dean</option><option>Faculty</option><option>Student</option><option>Employer / Recruiter</option><option>Other</option></select></div>
           </div>
-          <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
+          <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="requirement" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
           <button type="submit" class="btn btn-grad btn-xl" style="width:100%">Send message →</button>
           <p style="font-size:.75rem;color:var(--txt3);text-align:center;margin-top:.875rem;font-weight:600">We respond within 1 business day · Your data stays confidential</p>
           <div class="form-success" id="cf-success" role="status" aria-live="polite" hidden>Thank you — your message has been received. We'll respond within one business day.</div>
