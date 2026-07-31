@@ -95,6 +95,12 @@
     });
   }
 
+  // Native touch-swipe and trackpad scrolling move row.scrollLeft directly,
+  // outside of the auto-drift/drag/dot-nav code paths above — without this,
+  // the dots only ever reflected wherever the last auto-drift frame left
+  // them, desyncing from whatever card the user actually scrolled to.
+  row.addEventListener('scroll', updateDotsFromScroll, { passive: true });
+
   // Continuous gentle drift (a real marquee) instead of long-pause-then-jump
   // — a steady crawl reads as "alive"; discrete per-card jumps read as
   // stuck/broken between advances.
