@@ -176,18 +176,13 @@
   row.addEventListener('touchstart', pauseThenResume, { passive: true });
   row.addEventListener('pointerdown', pauseThenResume);
 
-  // A plain mouse wheel only reports vertical delta — without this, hovering
-  // the row and scrolling does nothing, since the row only scrolls
-  // horizontally. Convert vertical wheel motion into horizontal scroll.
-  row.addEventListener('wheel', function(e){
-    var horizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
-    if(horizontal) return; // let native horizontal trackpad scroll behave normally
-    stopAuto();
-    row.scrollLeft += e.deltaY;
-    updateDotsFromScroll();
-    e.preventDefault();
-    pauseThenResume();
-  }, { passive: false });
+  // Deliberately no vertical-wheel-to-horizontal-scroll conversion here: it
+  // used to hijack any vertical wheel/trackpad delta while hovering the
+  // carousel (via preventDefault), which blocked normal page scroll entirely
+  // whenever the cursor was over a review card. Horizontal navigation is
+  // limited to drag, touch swipe, and the dots — a plain mouse wheel over
+  // the carousel now just scrolls the page, as expected.
+  row.addEventListener('wheel', function(){ pauseThenResume(); }, { passive: true });
 
   // Click-and-drag scrolling for mouse users (touch already scrolls
   // natively via the browser).
