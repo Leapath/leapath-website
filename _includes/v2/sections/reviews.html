@@ -111,11 +111,17 @@
   }
   function startAuto(){
     if(count < 2 || rafId) return;
+    // CSS scroll-snap fights a continuous programmatic scrollLeft drift —
+    // the browser keeps snapping back toward the nearest card, so the
+    // drift never visibly moves. Snapping is only needed for user-driven
+    // scroll (touch/drag), so switch it off for the duration of the drift.
+    row.classList.add('is-auto');
     lastTs = null;
     rafId = requestAnimationFrame(frame);
   }
   function stopAuto(){
     if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+    row.classList.remove('is-auto');
   }
 
   var resumeTimer = null;

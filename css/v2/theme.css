@@ -597,6 +597,7 @@ body{padding-top:68px;font-family:'Nunito',system-ui,sans-serif;background:var(-
   scrollbar-width:none;cursor:grab;-webkit-user-select:none;user-select:none;
 }
 .rv-marquee-row.is-dragging{cursor:grabbing}
+.rv-marquee-row.is-auto{scroll-snap-type:none}
 .rv-marquee-row::-webkit-scrollbar{display:none}
 .rv-marquee-row:focus-visible{outline:2px solid var(--purple);outline-offset:6px;border-radius:12px}
 .rv-dots{display:flex;justify-content:center;gap:.5rem;margin-top:.5rem}
