@@ -20,7 +20,7 @@ canonical: "https://www.leapath.tech/contact/"
             <div class="cf-field"><label for="cf-email">Work email *</label><input type="email" id="cf-email" name="email" placeholder="tpo@institution.edu.in" required autocomplete="email"/></div>
           </div>
           <div class="cf-row">
-            <div class="cf-field"><label for="cf-org">Institution / Organisation</label><input type="text" id="cf-org" name="organization" placeholder="PSG Tech, Coimbatore" autocomplete="organization"/></div>
+            <div class="cf-field"><label for="cf-org">Institution / Organisation *</label><input type="text" id="cf-org" name="college" placeholder="PSG Tech, Coimbatore" required autocomplete="organization"/></div>
             <div class="cf-field"><label for="cf-role">Your role</label><select id="cf-role" name="role"><option value="">Select role</option><option>TPO / Placement Head</option><option>Principal / Director</option><option>Dean</option><option>Faculty</option><option>Student</option><option>Employer / Recruiter</option><option>Other</option></select></div>
           </div>
           <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
