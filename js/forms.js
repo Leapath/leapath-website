@@ -34,19 +34,19 @@
   function showSuccess(form) {
     form.reset();
     const successEl = form.querySelector('.form-success');
-    if (successEl) {
+    const message = (successEl && successEl.textContent.trim()) || 'Your submission has been received.';
+
+    if (window.Leapath && window.Leapath.thankYou) {
+      window.Leapath.thankYou.open({ message });
+    } else if (successEl) {
+      // Fallback for the (unexpected) case the shared modal isn't on the page.
       successEl.hidden = false;
       successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    // Disable the form to prevent re-submission
-    Array.from(form.elements).forEach((el) => {
-      if (el.tagName !== 'BUTTON' && !el.disabled) el.setAttribute('readonly', 'readonly');
-    });
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = '✓ Received';
-    }
+
+    // Leave the form itself interactive so another submission (e.g. a second
+    // enquiry) doesn't require a page refresh — only the button's transient
+    // "sending" state needs resetting, handled in handleSubmit's finally path.
   }
 
   function showError(form, message) {
@@ -72,10 +72,18 @@
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalLabel = submitBtn ? submitBtn.textContent : '';
+    const originalLabel = submitBtn ? submitBtn.dataset.originalLabel || submitBtn.textContent : '';
     if (submitBtn) {
       submitBtn.disabled = true;
+      submitBtn.classList.add('is-loading');
       submitBtn.textContent = 'Sending…';
+    }
+
+    function resetButton() {
+      if (!submitBtn) return;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('is-loading');
+      submitBtn.textContent = originalLabel;
     }
 
     try {
@@ -90,6 +98,7 @@
 
       if (response.ok) {
         showSuccess(form);
+        resetButton();
       } else {
         let msg = 'Something went wrong. Please try again or email us directly.';
         if (json) {
@@ -113,17 +122,11 @@
           }
         }
         showError(form, msg);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-        }
+        resetButton();
       }
     } catch (err) {
       showError(form, 'Something went wrong. Please try again or email us directly.');
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
-      }
+      resetButton();
     }
   }
 
@@ -131,6 +134,8 @@
     const forms = findForms();
     forms.forEach((form) => {
       form.setAttribute('novalidate', 'novalidate');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.dataset.originalLabel = submitBtn.textContent;
       form.addEventListener('submit', (e) => handleSubmit(e, form));
     });
   }

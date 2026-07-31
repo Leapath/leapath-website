@@ -3,7 +3,33 @@
 
   {% include v2/head.html %}
 
-  <body>
+  <body class="is-preloading">
+
+    <div id="preloader">
+      <div class="preloader__mark" aria-hidden="true">L</div>
+      <div class="preloader__bar"><span></span></div>
+    </div>
+    <script>
+      // Inlined (not deferred to main.js) so the preloader is guaranteed to
+      // hide as soon as the page has actually finished loading, independent
+      // of when the deferred bundle downloads/executes.
+      (function(){
+        var MIN_VISIBLE_MS = 350; // avoids an imperceptible flash on very fast loads
+        var shownAt = Date.now();
+        function hide(){
+          var wait = Math.max(0, MIN_VISIBLE_MS - (Date.now() - shownAt));
+          setTimeout(function(){
+            var pre = document.getElementById('preloader');
+            document.body.classList.remove('is-preloading');
+            if(!pre) return;
+            pre.classList.add('is-hidden');
+            pre.addEventListener('transitionend', function remove(){ pre.remove(); }, { once: true });
+          }, wait);
+        }
+        if(document.readyState === 'complete'){ hide(); }
+        else { window.addEventListener('load', hide); }
+      })();
+    </script>
 
     <a class="skip-link" href="#main-content">Skip to content</a>
 
@@ -15,6 +41,7 @@
     </main>
 
     {% include v2/footer.html %}
+    {% include v2/thank-you-modal.html %}
 
     {% include v2/scripts.html %}
 

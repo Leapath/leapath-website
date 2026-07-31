@@ -1,5 +1,48 @@
-/* Shared site behavior — mega-menu hover/click and mobile nav toggle.
-   Loaded on every page. */
+/* Shared site behavior — mega-menu hover/click, mobile nav toggle, and the
+   site-wide "thank you" modal. Loaded on every page. */
+
+(function(){
+  var overlay = document.getElementById('tyModalOverlay');
+  if(overlay){
+    var modal      = overlay.querySelector('.ty-modal');
+    var titleEl    = document.getElementById('tyModalTitle');
+    var messageEl  = document.getElementById('tyModalMessage');
+    var closeBtn   = document.getElementById('tyModalClose');
+    var okBtn      = document.getElementById('tyModalOk');
+    var lastFocused = null;
+
+    function openModal(opts){
+      opts = opts || {};
+      titleEl.textContent = opts.title || 'Thank you!';
+      messageEl.textContent = opts.message || 'Your submission has been received.';
+      lastFocused = document.activeElement;
+      overlay.hidden = false;
+      document.body.classList.add('nav-open-lock');
+      requestAnimationFrame(function(){
+        overlay.classList.add('is-open');
+        modal.focus();
+      });
+    }
+    function closeModal(){
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('nav-open-lock');
+      overlay.addEventListener('transitionend', function done(){
+        overlay.hidden = true;
+        overlay.removeEventListener('transitionend', done);
+      }, { once: true });
+      if(lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+    closeBtn.addEventListener('click', closeModal);
+    okBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+    });
+
+    window.Leapath = window.Leapath || {};
+    window.Leapath.thankYou = { open: openModal, close: closeModal };
+  }
+})();
 
 (function(){
   var items = document.querySelectorAll('.nav__item');

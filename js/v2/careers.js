@@ -532,7 +532,7 @@
         }
 
         const btn = oaForm.querySelector('[type="submit"]');
-        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+        if (btn) { btn.disabled = true; btn.classList.add('is-loading'); btn.textContent = 'Sending…'; }
 
         try {
           const data = new FormData(oaForm);
@@ -547,17 +547,26 @@
 
           if (res.ok) {
             oaForm.reset();
-            oaForm.querySelectorAll('input, textarea, select, button').forEach(f => { f.disabled = true; });
-            if (oaSuccess) show(oaSuccess);
-            if (btn) hide(btn);
+            if (window.Leapath && window.Leapath.thankYou) {
+              window.Leapath.thankYou.open({
+                message: "We've received your application and will be in touch if there's a fit.",
+              });
+            } else if (oaSuccess) {
+              show(oaSuccess);
+            }
+            // Leave the form itself enabled — this section stays on the page
+            // (it's not a modal that gets a fresh instance next time), so the
+            // visitor can submit again immediately (e.g. for a different role)
+            // without needing a page refresh.
+            if (btn) { btn.disabled = false; btn.classList.remove('is-loading'); btn.textContent = 'Send my application →'; }
           } else {
             const msg = json?.error || 'Something went wrong. Please try again or email us at info@leapath.tech';
             showFormError(oaForm, msg);
-            if (btn) { btn.disabled = false; btn.textContent = 'Send my application →'; }
+            if (btn) { btn.disabled = false; btn.classList.remove('is-loading'); btn.textContent = 'Send my application →'; }
           }
         } catch {
           showFormError(oaForm, 'Network error. Please check your connection.');
-          if (btn) { btn.disabled = false; btn.textContent = 'Send my application →'; }
+          if (btn) { btn.disabled = false; btn.classList.remove('is-loading'); btn.textContent = 'Send my application →'; }
         }
       });
     }
