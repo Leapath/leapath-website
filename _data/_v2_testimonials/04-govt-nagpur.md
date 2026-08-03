@@ -1,9 +1,9 @@
 ---
-name: "Vikram Deshmukh"
-role: "Placement Officer · Government Engineering College, Nagpur"
-initials: "VD"
+name: "Ahmed Al-Sulaiti"
+role: "Placement Officer · Specialized Institute, Doha, Qatar"
+initials: "AS"
 avatar_bg: "linear-gradient(135deg,#7A1E4A,#B82F72)"
-badge: "Public University"
+badge: "Specialized Institute"
 badge_class: "rvm__badge--stu"
-quote: "We didn't get a bigger budget — we got a clearer picture. Pointing existing training hours at the right skill gaps doubled our offers."
+quote: "We run on a government budget so 'buy more training hours' was never really on the table. What changed was knowing which two or three skills were actually costing us offers, not guessing with a generic workshop."
 ---

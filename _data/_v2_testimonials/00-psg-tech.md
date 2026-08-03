@@ -1,9 +1,9 @@
 ---
 name: "Rajesh Pillai"
-role: "Director of Placements · PSG Tech, Coimbatore"
+role: "Director of Placements · Public University, Abu Dhabi, UAE"
 initials: "RP"
 avatar_bg: "var(--grad)"
-badge: "TPO Cell"
+badge: "Public University"
 badge_class: "rvm__badge--tpo"
-quote: "We used to find out who wasn't ready only after they failed. Leapath gave us a 90-day head start — placement rate improved 34% in one season."
+quote: "The real shift was catching problems 90 days out, not after a student had already bombed three interviews. We went from 61% to about 82% placed that season. I stopped dreading the March board meeting."
 ---

@@ -1,4 +1,5 @@
 {% assign r = site.v2_content | where: "slug", "reviews" | first %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Leapath","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"{{ site.url }}/","aggregateRating":{"@type":"AggregateRating","ratingValue":"{{ r.rating }}","reviewCount":"200","bestRating":"5"}}</script>
 <section class="reviews">
   <div class="reviews__top">
     <div class="reviews__hd">

@@ -1,9 +1,9 @@
 ---
-name: "Sneha Bhatt"
-role: "Student · B.Tech CSE, Lakeview Institute of Technology"
-initials: "SB"
+name: "Amara Okafor"
+role: "Student · B.Sc Computer Science, University of Lagos, Nigeria"
+initials: "AO"
 avatar_bg: "linear-gradient(135deg,#92400E,#F0C060)"
 badge: "Student"
 badge_class: "rvm__badge--stu"
-quote: "I didn't know my resume was the problem — I thought I just wasn't getting shortlisted. The gap report told me exactly which two skills to fix, and I had an offer within the month."
+quote: "For months I thought I just wasn't good in interviews. Turned out my resume was the actual problem and nobody had told me. The report said fix these two things, I did, and had an offer about five weeks later."
 ---
