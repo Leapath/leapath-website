@@ -88,7 +88,7 @@
 
 .cs-layout{display:grid;grid-template-columns:1fr 280px;gap:2.75rem;align-items:start;max-width:1060px;margin:0 auto}
 .cs-article{max-width:720px;margin:0}
-.cs-article p{font-size:1.02rem;color:var(--txt2);line-height:1.85;font-weight:500;margin-bottom:1.5rem}
+.cs-article p{font-size:1.02rem;color:var(--txt2);line-height:1.85;font-weight:500;margin-bottom:1.5rem;text-align:justify;text-justify:inter-word;hyphens:auto}
 .cs-article h2{font-size:1.5rem;font-weight:900;color:var(--navy);letter-spacing:-.02em;margin:2.5rem 0 1rem}
 .cs-article h3{font-size:1.15rem;font-weight:800;color:var(--navy);margin:2rem 0 .85rem}
 .cs-article ul,.cs-article ol{margin:0 0 1.5rem 1.25rem;padding:0}

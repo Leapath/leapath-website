@@ -1667,6 +1667,9 @@
   color: var(--text-muted);
   line-height: 1.75;
   margin: 0 0 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .careers-drawer__ninety {
@@ -1693,6 +1696,9 @@
   color: var(--text-muted);
   line-height: 1.65;
   margin: 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .careers-drawer__section {

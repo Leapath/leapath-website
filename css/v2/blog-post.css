@@ -34,7 +34,7 @@
 .bp__promo-t{font-size:.92rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;line-height:1.35}
 .bp__promo-d{font-size:.78rem;color:var(--txt3);line-height:1.6;margin-bottom:1.15rem;font-weight:500}
 .bp__promo .btn{width:100%;justify-content:center}
-.bp__p{margin-bottom:1.65rem;font-size:1.02rem;line-height:1.85}
+.bp__p{margin-bottom:1.65rem;font-size:1.02rem;line-height:1.85;text-align:justify;text-justify:inter-word;hyphens:auto}
 .bp__p:first-of-type{font-size:1.15rem;font-weight:600;color:var(--navy);line-height:1.7}
 .bp__article .ip-h2{font-size:1.6rem;margin-top:3rem;margin-bottom:1.25rem;position:relative;padding-left:1.1rem}
 .bp__article .ip-h2::before{content:'';position:absolute;left:0;top:.2em;bottom:.2em;width:4px;border-radius:4px;background:var(--grad)}
