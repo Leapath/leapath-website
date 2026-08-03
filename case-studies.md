@@ -2,7 +2,7 @@
 permalink: /case-studies/
 layout: v2/default
 title: "Case Studies — Leapath Placement Intelligence"
-description: "How public universities, private universities, multi-campus networks, and specialized institutes used Leapath to lift job readiness outcomes — in their own numbers."
+description: "How public universities, private universities, multi-campus networks, and specialized institutes used Leapath to lift job readiness outcomes."
 canonical: "https://www.leapath.tech/case-studies/"
 ---
 
@@ -60,7 +60,7 @@ canonical: "https://www.leapath.tech/case-studies/"
 
 <section class="ip-section">
   <div class="container">
-    <div class="ip-cta ip-cta--photo" style="--cta-img:url('/assets/images/role.png');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
+    <div class="ip-cta ip-cta--photo" style="--cta-img:url('/assets/images/role.webp');--cta-em-grad:linear-gradient(90deg,var(--lavender),#7C3AED);--cta-btn-grad:linear-gradient(135deg,#5B2D9E 0%,#4C1D95 100%);--cta-btn-grad-h:linear-gradient(135deg,#6B3AB8 0%,#5B21B6 100%);--cta-btn-shadow:rgba(76,29,149,.45);--cta-glow1:rgba(124,58,237,.20);--cta-glow2:rgba(91,45,158,.20);">
       <div class="ip-cta__eyebrow">Ready when you are</div>
       <div class="ip-cta__t">Want to be our <em>next case study?</em></div>
       <div class="ip-cta__sub">Join the current pilot cohort and we'll build your placement season's numbers together.</div>

@@ -2,7 +2,7 @@
 permalink: /how-it-works/
 layout: v2/default
 title: "How It Works — Leapath Placement Intelligence Platform"
-description: "Live in 48 hours. Onboard your cohort, get real-time job readiness scores, and act on at-risk students weeks before your next career fair, see exactly how Leapath works."
+description: "Live in 48 hours. Onboard your cohort, get real-time job readiness scores, and act on at-risk students weeks before your next career fair."
 canonical: "https://www.leapath.tech/how-it-works/"
 ---
 

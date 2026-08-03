@@ -4,6 +4,7 @@ og_type: article
 permalink: /blog/uae-skill-gap-online-platforms/
 title: "How Online Platforms Help Reduce the Skill Gap in the UAE — Leapath Research"
 description: "How online career-readiness platforms are helping UAE universities close the gap between what students learn and what employers need."
+og_image: "/assets/v2/images/hero-bg.jpg"
 category: research
 author: "Leapath Research"
 read_time: "6 min read"
@@ -99,7 +100,7 @@ mono: "LP"
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

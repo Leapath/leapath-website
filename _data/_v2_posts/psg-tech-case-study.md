@@ -5,6 +5,7 @@ permalink: /case-studies/psg-tech-case-study/
 redirect_from: /blog/psg-tech-case-study/
 title: "How a Public University Improved Student Job Readiness by 34% — Leapath Case Study"
 description: "A look inside how one public university used early readiness data to lift its student job readiness rate in a single hiring cycle."
+og_image: "/assets/v2/images/case-studies/psg-tech.jpg"
 category: case-study
 author: "Leapath Team"
 read_time: "4 min read"
@@ -108,7 +109,7 @@ blog_cover_style: "url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

@@ -47,6 +47,7 @@ canonical: "https://www.leapath.tech/contact/"
     </div>
   </div>
 </section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does onboarding take?","acceptedAnswer":{"@type":"Answer","text":"Most institutions go live within 48 hours. We handle the full setup, you just confirm your recruiter list and batch details."}},{"@type":"Question","name":"Is Leapath free for institutions?","acceptedAnswer":{"@type":"Answer","text":"Pilot institutions get full platform access at no cost for the first semester. Pricing for subsequent semesters is shared during the walkthrough."}},{"@type":"Question","name":"Does it work with existing LMS systems?","acceptedAnswer":{"@type":"Answer","text":"Yes. Leapath integrates with most common LMS platforms via our API. Our team handles all integration work during onboarding."}}]}</script>
 
 {% include v2/sections/reviews.html %}
 

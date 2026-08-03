@@ -2,7 +2,7 @@
 permalink: /pricing/
 layout: v2/default
 title: "Pricing — Leapath Placement Intelligence Platform"
-description: "Simple, transparent pricing catered to university career services teams. A free pilot semester, a Growth plan for active Career Services teams, and Enterprise for large institutions."
+description: "Simple, transparent pricing for university career services teams. A free pilot semester, a Growth plan for active teams, and Enterprise for large institutions."
 canonical: "https://www.leapath.tech/pricing/"
 ---
 

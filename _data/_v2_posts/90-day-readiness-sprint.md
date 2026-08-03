@@ -4,6 +4,7 @@ og_type: article
 permalink: /blog/90-day-readiness-sprint/
 title: "How to Run a 90-Day Placement Readiness Sprint — Leapath"
 description: "A week-by-week playbook for placement cells to close readiness gaps before recruiters arrive on campus."
+og_image: "/assets/v2/images/insights/tpo-playbook.jpg"
 category: playbook
 author: "Leapath Team"
 read_time: "5 min read"
@@ -100,7 +101,7 @@ mono: "LP"
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

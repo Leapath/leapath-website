@@ -5,6 +5,7 @@ permalink: /case-studies/government-college-nagpur-case-study/
 redirect_from: /blog/government-college-nagpur-case-study/
 title: "How a Specialized Institute in Qatar Doubled Offers With Zero Extra Budget — Leapath Case Study"
 description: "How a specialized institute closed its industry-readiness gap without any additional Career Services budget."
+og_image: "/assets/v2/images/case-studies/govt-college.jpg"
 category: case-study
 author: "Leapath Team"
 read_time: "4 min read"
@@ -108,7 +109,7 @@ blog_cover_style: "url(/assets/v2/images/case-studies/govt-college.jpg) center/c
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

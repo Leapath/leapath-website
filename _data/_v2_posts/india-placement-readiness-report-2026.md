@@ -4,6 +4,7 @@ og_type: article
 permalink: /blog/india-placement-readiness-report-2026/
 title: "The India Placement Readiness Report 2026 — Leapath"
 description: "What 2,500 students across 40+ institutions revealed about the gap between education and employment readiness."
+og_image: "/assets/v2/images/insights/research-report.jpg"
 category: research
 author: "Leapath Research"
 read_time: "8 min read"
@@ -99,7 +100,7 @@ mono: "LP"
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

@@ -4,7 +4,7 @@ slug: "pricing-body"
 <section class="ip-section">
   <div class="container">
     <div class="ip-eyebrow" style="text-align:center">Choose your plan</div>
-    <h2 class="ip-h2" style="text-align:center;margin-bottom:3.5rem">Pricing that scales <em>with your students, not your headcount.</em></h2>
+    <h1 class="ip-h2" style="text-align:center;margin-bottom:3.5rem">Pricing that scales <em>with your students, not your headcount.</em></h1>
     <div class="ip-3col" style="align-items:stretch">
 
       <div class="feat-card" style="display:flex;flex-direction:column">
@@ -69,3 +69,4 @@ slug: "pricing-body"
     </div>
   </div>
 </section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the pilot really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Full platform access at no cost for your first semester. No credit card, no limits."}},{"@type":"Question","name":"How is the Growth plan billed?","acceptedAnswer":{"@type":"Answer","text":"Billed per 100 active students per month, with a discount if you pay yearly. No setup fees, no hidden add-ons."}},{"@type":"Question","name":"What counts as an \"active student\"?","acceptedAnswer":{"@type":"Answer","text":"Any student with an active profile this term. Students who've graduated are removed automatically."}},{"@type":"Question","name":"Can we switch plans later?","acceptedAnswer":{"@type":"Answer","text":"Yes, anytime. Start on Pilot, move to Growth, then Enterprise as your student numbers grow."}},{"@type":"Question","name":"Do you offer discounts for public or non-profit institutions?","acceptedAnswer":{"@type":"Answer","text":"Yes. We offer reduced Growth pricing for government and non-profit institutions."}}]}</script>

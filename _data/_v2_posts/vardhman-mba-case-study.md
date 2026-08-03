@@ -5,6 +5,7 @@ permalink: /case-studies/vardhman-mba-case-study/
 redirect_from: /blog/vardhman-mba-case-study/
 title: "How a Private University in Bahrain Cut Employer No-Shows by 40% — Leapath Case Study"
 description: "How one private university used JD-matched shortlists to make employer visits worth showing up for."
+og_image: "/assets/v2/images/case-studies/vardhman.jpg"
 category: case-study
 author: "Leapath Team"
 read_time: "4 min read"
@@ -108,7 +109,7 @@ blog_cover_style: "url(/assets/v2/images/case-studies/vardhman.jpg) center/cover
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>

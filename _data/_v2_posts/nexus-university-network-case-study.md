@@ -5,6 +5,7 @@ permalink: /case-studies/nexus-university-network-case-study/
 redirect_from: /blog/nexus-university-network-case-study/
 title: "How a Multi-Campus University in Saudi Arabia Standardised Student Job Readiness — Leapath Case Study"
 description: "How a multi-campus university network replaced disconnected campus systems with one shared readiness scorecard."
+og_image: "/assets/v2/images/case-studies/nexus.jpg"
 category: case-study
 author: "Leapath Team"
 read_time: "4 min read"
@@ -108,7 +109,7 @@ blog_cover_style: "url(/assets/v2/images/case-studies/nexus.jpg) center/cover"
         </div>
       </div>
       <div class="bp__promo">
-        <img src="/assets/images/product-preview.png" alt="Leapath readiness dashboard product preview">
+        <img src="/assets/images/product-preview.jpg" alt="Leapath readiness dashboard product preview" loading="lazy">
         <div class="bp__promo-body">
           <div class="bp__promo-t">See job readiness scoring live</div>
           <p class="bp__promo-d">Book a 30-minute walkthrough — we'll onboard a sample of your cohort and show you the dashboard on the call.</p>
