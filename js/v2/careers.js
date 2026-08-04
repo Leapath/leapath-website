@@ -473,6 +473,12 @@
         e.preventDefault();
         if (!validateStep(3)) return;
 
+        const recaptchaField = appForm.querySelector('[name="g-recaptcha-response"]');
+        if (recaptchaField && !recaptchaField.value) {
+          showFormError(appForm, "Please verify you're not a robot.");
+          return;
+        }
+
         const submitBtn = drawerSubmit;
         submitBtn?.classList.add('loading');
 
@@ -541,6 +547,12 @@
           const firstError = oaForm.querySelector('.careers-field-error, [required]:invalid');
           firstError?.focus();
           firstError?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        const recaptchaField = oaForm.querySelector('[name="g-recaptcha-response"]');
+        if (recaptchaField && !recaptchaField.value) {
+          showFormError(oaForm, "Please verify you're not a robot.");
           return;
         }
 

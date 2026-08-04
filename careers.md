@@ -16,3 +16,5 @@ extra_js: /js/v2/careers.js
 {% include v2/sections/careers-drawer.html %}
 {% include v2/sections/reviews.html %}
 {% include v2/sections/careers-open-apply.html %}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

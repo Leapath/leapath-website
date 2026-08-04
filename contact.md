@@ -28,6 +28,7 @@ canonical: "https://www.leapath.tech/contact/"
             <div class="cf-field"><label for="cf-role">Your role</label><select id="cf-role" name="role"><option value="">Select role</option><option>TPO / Placement Head</option><option>Principal / Director</option><option>Dean</option><option>Faculty</option><option>Student</option><option>Employer / Recruiter</option><option>Other</option></select></div>
           </div>
           <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="requirement" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
+          <div class="g-recaptcha" data-sitekey="6Lcz9XQtAAAAAGviv0x4nLmzWJyXzutL5DqQTT0f" style="margin-bottom:1rem"></div>
           <button type="submit" class="btn btn-grad btn-xl" style="width:100%">Send message →</button>
           <p style="font-size:.75rem;color:var(--txt3);text-align:center;margin-top:.875rem;font-weight:600">We respond within 1 business day · Your data stays confidential</p>
           <div class="form-success" id="cf-success" role="status" aria-live="polite" hidden>Thank you — your message has been received. We'll respond within one business day.</div>
@@ -52,3 +53,5 @@ canonical: "https://www.leapath.tech/contact/"
 {% include v2/sections/reviews.html %}
 
 {% include v2/sections/cta.html bg_img="/assets/v2/images/insights/case-study.jpg" accent="violet" eyebrow="Still have questions?" title='Talk to a real person, <em>not a chatbot.</em>' sub="Book a 30-minute walkthrough and we'll answer every question live, no automated sequences, no waiting." btn1_text="Request a Demo" btn1_href="#contact-form" btn2_text="See Pricing" btn2_href="/pricing/" meta="Response within 1 business day · No commitment required" %}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
