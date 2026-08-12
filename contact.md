@@ -10,7 +10,7 @@ canonical: "https://www.leapath.tech/contact/"
 
 <section class="ip-section">
   <div class="container">
-    <div class="ip-2col" style="gap:4rem;align-items:flex-start">
+    <div class="ip-2col" style="grid-template-columns:1.2fr 1fr;gap:4rem;align-items:flex-start">
       <div class="pf">
         <div style="font-size:1.2rem;font-weight:900;color:var(--navy);letter-spacing:-.03em;margin-bottom:.5rem">Tell us what you need</div>
         <p style="font-size:.84rem;color:var(--txt2);margin-bottom:2rem;font-weight:500">Send us a message. We read and respond to every one personally.</p>
