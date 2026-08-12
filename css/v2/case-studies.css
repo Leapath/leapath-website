@@ -5,13 +5,13 @@
 /* ---------- Listing page ---------- */
 .cs-hero{background:#0A0418 url('/assets/v2/images/roles/employers.jpg') center 25%/cover no-repeat;padding:6rem 0 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
 .cs-hero::before{content:'';position:absolute;inset:0;background:rgba(8,4,20,.82)}
-.cs-hero__inner{position:relative;z-index:1;text-align:center;max-width:720px;margin:0 auto}
+.cs-hero__inner{position:relative;z-index:1}
 .cs-hero__eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
-.cs-hero__h1{font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.25rem}
+.cs-hero__h1{font-size:clamp(2.2rem,4.2vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.25rem;max-width:780px}
 .cs-hero__h1 em{font-style:normal;color:var(--lavender)}
-.cs-hero__sub{font-size:1.02rem;color:rgba(255,255,255,.6);line-height:1.72;font-weight:500;max-width:560px;margin:0 auto 2.5rem}
-.cs-hero__ctas{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
-.cs-hero__stats{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:2.25rem}
+.cs-hero__sub{font-size:1.02rem;color:rgba(255,255,255,.6);line-height:1.72;font-weight:500;max-width:560px;margin:0 0 2.5rem}
+.cs-hero__ctas{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:3rem}
+.cs-hero__stats{display:flex;gap:3.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:2.25rem}
 .cs-hero__stat-n{font-size:2rem;font-weight:900;color:#fff;letter-spacing:-.04em;line-height:1}
 .cs-hero__stat-n span{color:var(--lavender)}
 .cs-hero__stat-l{font-size:.72rem;color:rgba(255,255,255,.45);font-weight:700;margin-top:.35rem;letter-spacing:.02em}

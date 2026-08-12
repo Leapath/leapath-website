@@ -11,7 +11,7 @@ canonical: "https://www.leapath.tech/case-studies/"
 <div class="cs-hero">
   <div class="container cs-hero__inner">
     <div class="cs-hero__eyebrow"><svg class="icon" aria-hidden="true"><use href="#ic-trophy"></use></svg>Customer stories</div>
-    <h1 class="cs-hero__h1">Real institutions.<br><em>Real job readiness outcomes.</em></h1>
+    <h1 class="cs-hero__h1">Real institutions. <em>Real job readiness outcomes.</em></h1>
     <p class="cs-hero__sub">Universities, colleges, and multi-campus networks. Every case study here is a Career Services team that moved a real number, in one hiring cycle.</p>
     <div class="cs-hero__ctas">
       <a href="/contact/" class="btn btn-grad btn-xl">Book a Free Demo →</a>
