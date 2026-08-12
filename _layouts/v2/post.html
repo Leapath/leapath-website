@@ -1,4 +1,49 @@
 ---
 layout: v2/default
 ---
-{{ content }}
+<div class="ph ph--photo" style="background-image:url('{{ page.og_image }}');padding-bottom:3.5rem">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="bp__crumb"><a href="/">Home</a><span>/</span><a href="/blog/">Insights &amp; Blog</a></div>
+    <a href="/blog/" class="bp__back">← Back to Insights &amp; Blog</a>
+    <div class="ph__eyebrow">{{ page.eyebrow }}</div>
+    <h1 class="ph__h1" style="max-width:780px">{{ page.h1 }}</h1>
+    <p class="ph__sub" style="max-width:680px">{{ page.sub }}</p>
+    <div class="bp__byline">
+      <div class="bc__av" style="width:38px;height:38px;font-size:.8rem">{{ page.mono }}</div>
+      <div>
+        <div class="bp__byline-name">{{ page.author }}</div>
+        <div class="bp__byline-meta">{{ page.author_role }} · {{ page.read_time }} · {{ page.date | date: "%B %Y" }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ip-section">
+  <div class="container bp__layout">
+    <nav class="bp__toc">
+      <div class="bp__toc-label">On this page</div>
+      {% for t in page.toc %}<a href="#{{ t.anchor }}">{{ t.label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="bp__article">
+      {{ content }}
+      <div class="bp__author">
+        <div class="bc__av" style="width:44px;height:44px;font-size:.9rem">{{ page.mono }}</div>
+        <div>
+          <div class="bp__author-name">{{ page.author }}</div>
+          <div class="bp__author-role">{{ page.author_role }}</div>
+        </div>
+      </div>
+    </div>
+    <aside class="bp__side">
+      {% include v2/blog/share-buttons.html %}
+      {% include v2/blog/related-list.html items=page.related label="Related articles" %}
+      {% include v2/blog/promo-card.html %}
+    </aside>
+  </div>
+</section>
+<section class="ip-section ip-section--tight-top">
+  <div class="container">
+    {% include v2/sections/cta.html accent="violet" bg_img=page.cta.bg_img eyebrow=page.cta.eyebrow title=page.cta.title sub=page.cta.sub btn1_text=page.cta.btn_text btn1_href=page.cta.btn_href meta=page.cta.meta %}
+  </div>
+</section>
+{% include v2/blog/related-grid.html items=page.related_grid eyebrow=page.related_grid_eyebrow heading=page.related_grid_heading %}

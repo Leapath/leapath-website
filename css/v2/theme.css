@@ -695,6 +695,7 @@ body.nav-open-lock{overflow:hidden}
 .ip-section{padding:7rem 0}
 .ip-section--soft{background:var(--bgsoft)}
 .ip-section--dark{background:var(--navy)}
+.ip-section--tight-top{padding-top:0}
 .ip-2col{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .ip-2col--flip{direction:rtl}.ip-2col--flip>*{direction:ltr}
 .ip-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}

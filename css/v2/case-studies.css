@@ -45,19 +45,19 @@
 
 /* Cover images — real photos, no color tint (a single neutral scrim is
    applied once via .cs-card__cover::before for badge/mono legibility) */
-.cs-cover--1{background:url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
+.cs-cover--1{background:url(/assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg) center/cover}
 .cs-cover--2{background:url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
-.cs-cover--3{background:url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
-.cs-cover--4{background:url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
-.cs-cover--5{background:url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
+.cs-cover--3{background:url(/assets/v2/images/case-studies/vardhman-mba-case-study/vardhman.jpg) center/cover}
+.cs-cover--4{background:url(/assets/v2/images/case-studies/nexus-university-network-case-study/nexus.jpg) center/cover}
+.cs-cover--5{background:url(/assets/v2/images/case-studies/government-college-nagpur-case-study/govt-college.jpg) center/cover}
 
 /* ---------- Detail page ---------- */
 .cs-dhero{background:#0A0418;padding:6rem 0 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
-.cs-dhero--1{background:#0A0418 url(/assets/v2/images/case-studies/psg-tech.jpg) center/cover}
+.cs-dhero--1{background:#0A0418 url(/assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg) center/cover}
 .cs-dhero--2{background:#0A0418 url(/assets/v2/images/case-studies/sri-sai.jpg) center/cover}
-.cs-dhero--3{background:#0A0418 url(/assets/v2/images/case-studies/vardhman.jpg) center/cover}
-.cs-dhero--4{background:#0A0418 url(/assets/v2/images/case-studies/nexus.jpg) center/cover}
-.cs-dhero--5{background:#0A0418 url(/assets/v2/images/case-studies/govt-college.jpg) center/cover}
+.cs-dhero--3{background:#0A0418 url(/assets/v2/images/case-studies/vardhman-mba-case-study/vardhman.jpg) center/cover}
+.cs-dhero--4{background:#0A0418 url(/assets/v2/images/case-studies/nexus-university-network-case-study/nexus.jpg) center/cover}
+.cs-dhero--5{background:#0A0418 url(/assets/v2/images/case-studies/government-college-nagpur-case-study/govt-college.jpg) center/cover}
 .cs-dhero::before{content:'';position:absolute;inset:0;background:rgba(8,4,20,.82)}
 .cs-dhero__inner{position:relative;z-index:1}
 .cs-dhero__crumb{display:flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:2rem}

@@ -6,7 +6,7 @@ description: "How public universities, private universities, multi-campus networ
 canonical: "https://www.leapath.tech/case-studies/"
 ---
 
-{% assign case_studies = site.v2_posts | where: "category", "case-study" | sort: "date" | reverse %}
+{% assign case_studies = site.v2_case_studies | sort: "date" | reverse %}
 
 <div class="cs-hero">
   <div class="container cs-hero__inner">

@@ -1,0 +1,14 @@
+<div class="bp__side-card">
+  <div class="bp__side-label">{{ include.label }}</div>
+  <div class="bp__side-related">
+    {% for item in include.items %}
+    <a href="{{ item.url }}">
+      <div class="bp__side-related-ico"><svg class="icon" aria-hidden="true"><use href="#{{ item.icon }}"></use></svg></div>
+      <div>
+        <div class="bp__side-related-t">{{ item.title }}</div>
+        <div class="bp__side-related-m">{{ item.meta }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

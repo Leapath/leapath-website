@@ -66,7 +66,8 @@ leapath-website/
 │   ├── _v2_careers_values/
 │   ├── _v2_how_steps/
 │   ├── _v2_open_roles/
-│   ├── _v2_posts/                 ← blog posts + case studies
+│   ├── _v2_blog/                  ← blog posts
+│   ├── _v2_case_studies/          ← case studies
 │   ├── _v2_roles/
 │   ├── _v2_testimonials/
 │   └── _v2_views/

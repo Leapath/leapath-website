@@ -1,0 +1,14 @@
+<section class="ip-section ip-section--soft">
+  <div class="container">
+    <div class="ip-eyebrow">More case studies</div>
+    <h3 class="ip-h2" style="font-size:1.6rem;margin-bottom:2rem">Related stories</h3>
+    <div class="cs-related-grid">
+      {% for item in include.items %}
+      <a href="{{ item.url }}" class="cs-card">
+        <div class="cs-card__cover {{ item.cover_class }}" style="min-height:110px"><span class="cs-card__badge">{{ item.badge }}</span><div class="cs-card__mono">{{ item.mono }}</div></div>
+        <div class="cs-card__body"><div class="cs-card__inst">{{ item.inst }}</div><div class="cs-card__t">{{ item.title }}</div></div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

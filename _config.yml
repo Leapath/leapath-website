@@ -47,7 +47,9 @@ collections:
     output: false
   v2_careers_pride:
     output: false
-  v2_posts:
+  v2_blog:
+    output: true
+  v2_case_studies:
     output: true
 
 # Plugins
