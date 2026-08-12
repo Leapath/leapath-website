@@ -11,7 +11,7 @@ canonical: "https://www.leapath.tech/contact/"
 <section class="ip-section">
   <div class="container">
     <div class="ip-2col" style="gap:4rem;align-items:flex-start">
-      <div>
+      <div class="pf">
         <div class="ip-eyebrow">Send us a message</div>
         <h2 class="ip-h2" style="margin-bottom:2rem">Tell us what you <em>need.</em></h2>
         <form id="contact-form" class="cf" action="https://info.leapath.tech/api/contact" method="POST" enctype="multipart/form-data" aria-labelledby="contact-form-heading" data-leapath-form>
