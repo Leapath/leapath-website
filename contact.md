@@ -12,25 +12,25 @@ canonical: "https://www.leapath.tech/contact/"
   <div class="container">
     <div class="ip-2col" style="gap:4rem;align-items:flex-start">
       <div class="pf">
-        <div class="ip-eyebrow">Send us a message</div>
-        <h2 class="ip-h2" style="margin-bottom:2rem">Tell us what you <em>need.</em></h2>
+        <div style="font-size:1.2rem;font-weight:900;color:var(--navy);letter-spacing:-.03em;margin-bottom:.5rem">Tell us what you need</div>
+        <p style="font-size:.84rem;color:var(--txt2);margin-bottom:2rem;font-weight:500">Send us a message. We read and respond to every one personally.</p>
         <form id="contact-form" class="cf" action="https://info.leapath.tech/api/contact" method="POST" enctype="multipart/form-data" aria-labelledby="contact-form-heading" data-leapath-form>
-          <div class="cf-row">
-            <div class="cf-field"><label for="cf-name">Your name *</label><input type="text" id="cf-name" name="tpo_name" placeholder="Dr. Ramesh Kumar" required autocomplete="name"/></div>
-            <div class="cf-field"><label for="cf-email">Work email *</label><input type="email" id="cf-email" name="email" placeholder="tpo@institution.edu.in" required autocomplete="email"/></div>
+          <div class="cf-row" style="margin-bottom:1rem">
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-name">Your name *</label><input type="text" id="cf-name" name="tpo_name" placeholder="Dr. Ramesh Kumar" required autocomplete="name"/></div>
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-email">Work email *</label><input type="email" id="cf-email" name="email" placeholder="tpo@institution.edu.in" required autocomplete="email"/></div>
           </div>
-          <div class="cf-row">
-            <div class="cf-field"><label for="cf-org">Institution / Organisation *</label><input type="text" id="cf-org" name="college" placeholder="PSG Tech, Coimbatore" required autocomplete="organization"/></div>
-            <div class="cf-field"><label for="cf-mobile">Mobile *</label><input type="tel" id="cf-mobile" name="mobile" placeholder="+91 98765 43210" required autocomplete="tel" pattern="[0-9+\-\s]{7,}"/></div>
+          <div class="cf-row" style="margin-bottom:1rem">
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-org">Institution / Organisation *</label><input type="text" id="cf-org" name="college" placeholder="PSG Tech, Coimbatore" required autocomplete="organization"/></div>
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-mobile">Mobile *</label><input type="tel" id="cf-mobile" name="mobile" placeholder="+91 98765 43210" required autocomplete="tel" pattern="[0-9+\-\s]{7,}"/></div>
           </div>
-          <div class="cf-row">
-            <div class="cf-field"><label for="cf-students">No. of students</label><input type="text" id="cf-students" name="student_count" placeholder="e.g. 1,200"/></div>
-            <div class="cf-field"><label for="cf-role">Your role</label><select id="cf-role" name="role"><option value="">Select role</option><option>TPO / Placement Head</option><option>Principal / Director</option><option>Dean</option><option>Faculty</option><option>Student</option><option>Employer / Recruiter</option><option>Other</option></select></div>
+          <div class="cf-row" style="margin-bottom:1rem">
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-students">No. of students</label><input type="text" id="cf-students" name="student_count" placeholder="e.g. 1,200"/></div>
+            <div class="cf-field" style="margin-bottom:0"><label for="cf-role">Your role</label><select id="cf-role" name="role"><option value="">Select role</option><option>TPO / Placement Head</option><option>Principal / Director</option><option>Dean</option><option>Faculty</option><option>Student</option><option>Employer / Recruiter</option><option>Other</option></select></div>
           </div>
-          <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="requirement" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
+          <div class="cf-field"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="requirement" rows="4" placeholder="Tell us about your institution, what you're looking to solve, or any questions about the platform..."></textarea></div>
           <div class="g-recaptcha" data-sitekey="6Lcz9XQtAAAAAGviv0x4nLmzWJyXzutL5DqQTT0f" style="margin-bottom:1rem"></div>
-          <button type="submit" class="btn btn-grad btn-xl" style="width:100%">Send message →</button>
-          <p style="font-size:.75rem;color:var(--txt3);text-align:center;margin-top:.875rem;font-weight:600">We respond within 1 business day · Your data stays confidential</p>
+          <button type="submit" class="btn btn-grad btn-xl" style="width:100%;font-size:1rem">Send message →</button>
+          <p style="font-size:.72rem;color:var(--txt3);text-align:center;margin-top:.875rem;font-weight:600">We respond within 1 business day · Your data stays confidential</p>
           <div class="form-success" id="cf-success" role="status" aria-live="polite" hidden>Thank you — your message has been received. We'll respond within one business day.</div>
         </form>
       </div>
