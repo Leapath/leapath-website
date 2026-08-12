@@ -11,22 +11,6 @@ permalink: pretty
 collections_dir: _data
 
 collections:
-  content:
-    output: false
-  product_cards:
-    output: false
-  steps:
-    output: false
-  training_cards:
-    output: false
-  powers_cards:
-    output: false
-  insight_cards:
-    output: false
-  testimonial_cards:
-    output: false
-  onboarding_steps:
-    output: false
   v2_content:
     output: false
   v2_roles:
@@ -44,8 +28,6 @@ collections:
   v2_careers_values:
     output: false
   v2_careers_process:
-    output: false
-  v2_careers_pride:
     output: false
   v2_blog:
     output: true

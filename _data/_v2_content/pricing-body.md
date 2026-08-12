@@ -6,52 +6,19 @@ slug: "pricing-body"
     <div class="ip-eyebrow" style="text-align:center">Choose your plan</div>
     <h1 class="ip-h2" style="text-align:center;margin-bottom:3.5rem">Pricing that scales <em>with your students, not your headcount.</em></h1>
     <div class="ip-3col" style="align-items:stretch">
-
-      <div class="feat-card" style="display:flex;flex-direction:column">
-        <div class="ip-eyebrow" style="margin-bottom:.5rem">Pilot</div>
-        <div style="font-size:2.2rem;font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:.25rem">Free</div>
-        <div style="font-size:.82rem;color:var(--txt3);font-weight:600;margin-bottom:1.5rem">For qualifying institutions, one semester</div>
-        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;flex:1">
-          <div class="how__bullet"><div class="how__bico">✓</div>Up to 200 students</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Basic job readiness dashboard</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Early alerts for at-risk students</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Email support</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Full access at no cost for your pilot term</div>
+      {% for tier in site.v2_pricing_tiers %}
+      <div class="feat-card pt-card{% if tier.featured %} pt-card--featured{% endif %}">
+        {% if tier.badge %}<div class="pt-badge">{{ tier.badge }}</div>{% endif %}
+        <div class="ip-eyebrow pt-name">{{ tier.name }}</div>
+        <div class="pt-price">{{ tier.price }}{% if tier.price_suffix %}<span class="pt-price-suffix">{{ tier.price_suffix }}</span>{% endif %}</div>
+        <div class="pt-tagline">{{ tier.tagline }}</div>
+        <div class="pt-features">
+          {% for f in tier.features %}<div class="how__bullet"><div class="how__bico">✓</div>{{ f }}</div>
+          {% endfor %}
         </div>
-        <a href="/partnership/" class="btn btn-out btn-lg" style="width:100%;justify-content:center">Apply for free pilot</a>
+        <a href="{{ tier.cta_href }}" class="btn btn-{{ tier.cta_style }} btn-lg" style="width:100%;justify-content:center">{{ tier.cta_text }}</a>
       </div>
-
-      <div class="feat-card" style="display:flex;flex-direction:column;border-color:var(--purple);box-shadow:0 16px 48px rgba(91,45,158,.18);position:relative;transform:translateY(-8px)">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.35rem 1rem;border-radius:20px;box-shadow:0 6px 18px rgba(240,66,255,.3)">Most Popular</div>
-        <div class="ip-eyebrow" style="margin-bottom:.5rem;margin-top:.5rem">Growth</div>
-        <div style="font-size:2.2rem;font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:.25rem">$250<span style="font-size:1rem;font-weight:700;color:var(--txt3)">/month per 100 students</span></div>
-        <div style="font-size:.82rem;color:var(--txt3);font-weight:600;margin-bottom:1.5rem">For Career Services teams ready to scale</div>
-        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;flex:1">
-          <div class="how__bullet"><div class="how__bico">✓</div>Everything in Pilot, plus:</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Unlimited students</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Employer portal access</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Role-to-skill matching, with shortlists built automatically</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Priority support</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>API access</div>
-        </div>
-        <a href="/contact/" class="btn btn-grad btn-lg" style="width:100%;justify-content:center">Talk to our Team</a>
-      </div>
-
-      <div class="feat-card" style="display:flex;flex-direction:column">
-        <div class="ip-eyebrow" style="margin-bottom:.5rem">Enterprise</div>
-        <div style="font-size:2.2rem;font-weight:900;color:var(--navy);letter-spacing:-.04em;margin-bottom:.25rem">Custom pricing</div>
-        <div style="font-size:.82rem;color:var(--txt3);font-weight:600;margin-bottom:1.5rem">For large institutions and networks</div>
-        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;flex:1">
-          <div class="how__bullet"><div class="how__bico">✓</div>Everything in Growth, plus:</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Multi-campus dashboard</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Custom integrations and LMS sync</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Dedicated success manager</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>Guaranteed response times (SLA)</div>
-          <div class="how__bullet"><div class="how__bico">✓</div>White-label options</div>
-        </div>
-        <a href="/contact/" class="btn btn-out btn-lg" style="width:100%;justify-content:center">Talk to our experts</a>
-      </div>
-
+      {% endfor %}
     </div>
   </div>
 </section>
