@@ -9,8 +9,8 @@ category: research
 eyebrow: "Research · 2026 Annual Report"
 h1: "The India Placement Readiness Report 2026"
 sub: "What 2,500 students revealed about the gap between education and employment — and what placement cells can do about it before next season opens."
-author: "Leapath Research"
-author_role: "Research Team"
+author: "Leapath Team"
+author_role: "Leapath Team"
 read_time: "12 min read"
 date: 2026-06-01
 featured: true

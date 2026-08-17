@@ -9,8 +9,8 @@ category: playbook
 eyebrow: "TPO Playbook"
 h1: "How to run a 90-day placement readiness sprint before season opens"
 sub: "A week-by-week playbook for closing readiness gaps while there's still time to act on them."
-author: "Ankit Mehta"
-author_role: "Head of Partnerships"
+author: "Leapath Team"
+author_role: "Leapath Team"
 read_time: "5 min read"
 date: 2026-05-10
 blog_img_class: bc__img--3

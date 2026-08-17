@@ -2,15 +2,15 @@
 layout: v2/post
 og_type: article
 permalink: /blog/uae-skill-gap-online-platforms/
-title: "How Online Platforms Help Reduce the Skill Gap in the UAE — Leapath Research"
+title: "How Online Platforms Help Reduce the Skill Gap in the UAE — Leapath"
 description: "How online career-readiness platforms are helping UAE universities close the gap between what students learn and what employers need."
 og_image: "/assets/v2/images/hero-bg.jpg"
 category: research
 eyebrow: "Research"
 h1: "How can online platforms help reduce the skill gap among students in the UAE?"
 sub: "Employers in the UAE keep hiring the same profile of graduate for very different roles, because there's no consistent, comparable way to see what a graduating class can actually do. Here's where online platforms are starting to close that gap."
-author: "Leapath Research"
-author_role: "Research Team"
+author: "Leapath Team"
+author_role: "Leapath Team"
 read_time: "6 min read"
 date: 2026-03-01
 blog_img_class: bc__img--4
