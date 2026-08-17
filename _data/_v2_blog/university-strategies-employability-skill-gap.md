@@ -97,8 +97,8 @@ Here is how universities can build real experience into the degree:
 
 When internships and companies aren't within reach, the following platforms step in.
 
-- Forage, an online platform for students who cannot access in-person placements, offers free virtual job simulations designed by real employers. Students get real project experience without geographic barriers.
-- Parker Dewey, an online platform for short-term paid professional experience, lets students complete micro-internships that fit around a university schedule. They gain real work exposure before graduation.
+- [Forage](https://www.theforage.com/){:target="_blank" rel="noopener"}, an online platform for students who cannot access in-person placements, offers free virtual job simulations designed by real employers. Students get real project experience without geographic barriers.
+- [Parker Dewey](https://www.parkerdewey.com/){:target="_blank" rel="noopener"}, an online platform for short-term paid professional experience, lets students complete micro-internships that fit around a university schedule. They gain real work exposure before graduation.
 
 ![Four ways to build real experience into degrees: mandatory internships, capstone projects, job simulations via Forage, micro-internships via Parker Dewey](/assets/v2/images/blogs/university-strategies-employability-skill-gap/experiential-learning-programs.png){:loading="lazy"}
 
@@ -111,8 +111,8 @@ Most career services teams are reactive. The most effective ones are not. The st
 
 Building that head start at scale is where the right platforms come in:
 
-- PeopleGrove connects students with working graduates. It matches students with alumni for career conversations, informational interviews, and ongoing guidance — the kind of network that leads to referrals.
-- VMock gives students instant, scored feedback on their resume before they submit a single application. Students see exactly what is holding them back without waiting for a human advisor.
+- [PeopleGrove](https://www.peoplegrove.com/){:target="_blank" rel="noopener"} connects students with working graduates. It matches students with alumni for career conversations, informational interviews, and ongoing guidance — the kind of network that leads to referrals.
+- [VMock](https://www.vmock.com/){:target="_blank" rel="noopener"} gives students instant, scored feedback on their resume before they submit a single application. Students see exactly what is holding them back without waiting for a human advisor.
 - Leapath gives career services teams a live dashboard showing exactly where every student stands, so advisors see who needs help before a rejection does. That same insight works for other stakeholders as well. Students get a public profile that turns their skills, certifications, and live projects into something recruiters and alumni can actually see, not just a line on a resume.
 
 ![Four steps of proactive career guidance: start planning early, connect with alumni, get resume feedback, monitor readiness](/assets/v2/images/blogs/university-strategies-employability-skill-gap/proactive-career-guidance.png){:loading="lazy"}
@@ -132,7 +132,7 @@ Here is how universities can build industry partnerships that actually work:
 
 Running this many partnerships at once is where things usually fall apart, and that is where the right platforms come in:
 
-- 12twenty manages employer relationships and recruitment in one place. It centralises job postings, student appointments, employer engagement, and outcome reporting.
+- [12twenty](https://12twenty.com/){:target="_blank" rel="noopener"} manages employer relationships and recruitment in one place. It centralises job postings, student appointments, employer engagement, and outcome reporting.
 - Leapath connects employers directly to pre-assessed student shortlists. Hiring decisions are based on verified skill data, not unverified applications.
 
 ![Bridging the employability gap: mismatch between skills and employer needs versus employability alignment where skills match employer requirements](/assets/v2/images/blogs/university-strategies-employability-skill-gap/industry-partnerships.png){:loading="lazy"}
