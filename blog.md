@@ -7,16 +7,16 @@ canonical: "https://www.leapath.tech/blog/"
 extra_css: /css/v2/blog.css
 ---
 
-{% assign featured = site.v2_blog | where: "permalink", "/blog/uae-skill-gap-online-platforms/" | first %}
+{% assign featured = site.v2_blog | where: "permalink", "/blog/university-strategies-employability-skill-gap/" | first %}
 
-{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/v2/images/insights/case-study.jpg')" eyebrow="Insights &amp; resources" title='For <em>Career Services teams</em> who think ahead.' sub="Research, playbooks, case studies, and tools, written by practitioners who've been inside Career Services teams, not consultants who observe from the outside." btn1_text="Request a Demo" btn1_href="/contact/" btn2_text="See Pricing" btn2_href="/pricing/" stat1_n="4" stat1_l="Articles &amp; guides" stat2_n="5" stat2_l="Institutions featured" stat3_n="3" stat3_l="Continents covered" %}
+{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/v2/images/insights/case-study.jpg')" eyebrow="Insights &amp; resources" title='For <em>Career Services teams</em> who think ahead.' sub="Research, playbooks, case studies, and tools, written by practitioners who've been inside Career Services teams, not consultants who observe from the outside." btn1_text="Request a Demo" btn1_href="/contact/" btn2_text="See Pricing" btn2_href="/pricing/" stat1_n="5" stat1_l="Articles &amp; guides" stat2_n="5" stat2_l="Institutions featured" stat3_n="3" stat3_l="Continents covered" %}
 
 <section class="ip-section">
   <div class="container">
     <a href="{{ featured.url }}" class="bfeat">
-      <img class="bfeat__img" src="/assets/v2/images/hero-bg.jpg" alt="University campus building in the UAE">
+      <img class="bfeat__img" src="/assets/v2/images/blogs/university-strategies-employability-skill-gap/hero.jpg" alt="University lecture hall with students, representing curriculum and employability strategy">
       <div class="bfeat__body">
-        <span class="bfeat__tag">Featured · Research</span>
+        <span class="bfeat__tag">Featured · Guide</span>
         <div class="bfeat__t">{{ featured.title | remove: " — Leapath" }}</div>
         <p class="bfeat__d">{{ featured.description }}</p>
         <div class="bfeat__meta"><span>{{ featured.author }}</span><span>·</span><span>{{ featured.read_time }}</span><span>·</span><span>{{ featured.date | date: "%B %Y" }}</span></div>
