@@ -70,7 +70,7 @@ The strategies that work span four areas. Embedding soft and technical skills di
 
 The fastest way to close the skill gap is to stop treating skills as an add-on and start building them into the curriculum itself.
 
-Only 30% of 2025 graduates find jobs in their dream fields. The gap is not about effort. It is about what is being taught and how. Universities focus on soft skills. Employers want practical, job-specific ones. Until both are built into the curriculum itself, graduates will keep leaving underprepared.
+Only 30% of 2025 graduates find jobs in their dream fields. The gap is not about effort. It is about what is being taught and how. Universities focus on soft skills. Employers want practical, job-specific ones. Until both are built into the curriculum itself, graduates will keep leaving underprepared. Curriculum reform is one half of closing that divide. The other half is giving students access to [online platforms that help close the same skill gap](/blog/how-can-online-platforms-help-reduce-skill-gap-uae/) in parallel, while coursework catches up.
 
 Here is what universities can do to fix that:
 
@@ -117,7 +117,7 @@ Together, these approaches mean no student has to graduate without ever testing 
 
 Most career services teams are reactive. The most effective ones are not.
 
-The students who get hired fastest are rarely the ones who waited until final year to start. The networks a student builds during university shape their outcomes more than most universities acknowledge, and personal referrals are the most decisive factor in securing employment for 25% of graduates. Starting that process from year one, not the final semester, makes the difference.
+The students who get hired fastest are rarely the ones who waited until final year to start. The networks a student builds during university shape their outcomes more than most universities acknowledge, and personal referrals are the most decisive factor in securing employment for 25% of graduates. Starting that process from year one, not the final semester, makes the difference. That early start usually begins with something simple: an [AI-driven career aptitude test](/blog/what-services-offer-AI-driven-career-aptitude-tests-tailored-for-university-students-in-UAE/) that shows a first-year student where their strengths actually point, well before they have to pick a specialisation.
 
 Building that head start at scale is where the right platforms come in:
 
@@ -145,7 +145,7 @@ Here is how universities can build industry partnerships that actually work:
 Running this many partnerships at once is where things usually fall apart, and that is where the right platforms come in:
 
 - Use [12twenty](https://12twenty.com/){:target="_blank" rel="noopener"}, an online tool to manage employer relationships and recruitment in one place. It centralises job postings, student appointments, employer engagement, and outcome reporting.
-- Use Leapath, an AI SaaS platform, to connect employers directly to pre-assessed student shortlists. Hiring decisions are based on verified skill data, not unverified applications.
+- Use Leapath, an AI SaaS platform, to connect employers directly to pre-assessed student shortlists. It's one of a handful of [AI-powered job matching platforms now active in the UAE](/blog/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/) built for exactly this stage. Hiring decisions are based on verified skill data, not unverified applications.
 
 Partnerships work when they run on structure, not goodwill. These tools are what make that structure possible.
 

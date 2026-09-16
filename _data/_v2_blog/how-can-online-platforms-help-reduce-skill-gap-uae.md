@@ -57,7 +57,7 @@ None of it replaces the student's own work. The platforms make the gap visible a
 
 Your students are graduating into a market with more open roles than qualified applicants to fill them.
 
-Companies across the UAE are hiring hard in AI, cybersecurity, data science, and finance. [Recent GCC hiring reports](https://www.saviorhire.com/post/uae-tech-hiring-trends){:target="_blank" rel="noopener"} put the share of employers who can't find the right skills between 45% and 75%. The UAE's push to place more Emirati nationals into private-sector roles, through programs like Nafis, adds another layer. Your team is often preparing two different groups for the same market: Emirati students navigating nationalization-linked opportunities, and expatriate students competing on skills alone.
+Companies across the UAE are hiring hard in AI, cybersecurity, data science, and finance. [Recent GCC hiring reports](https://www.saviorhire.com/post/uae-tech-hiring-trends){:target="_blank" rel="noopener"} put the share of employers who can't find the right skills between 45% and 75%. The UAE's push to place more Emirati nationals into private-sector roles, through programs like Nafis, adds another layer. Your team is often preparing two different groups for the same market: Emirati students navigating nationalization-linked opportunities, and expatriate students competing on skills alone. Closing that gap isn't only a platform problem, though. It's just as much about how the degree itself is structured, which is why more career services teams are also pushing for [curriculum and career-guidance changes at the university level](/blog/university-strategies-employability-skill-gap/) alongside whatever tool they bring in.
 
 Online platforms won't close that gap by themselves, but they can make it visible to a student before rejection does it for you.
 
@@ -84,7 +84,7 @@ Your students need a plan for both, not just the technical half.
 
 Free content isn't the problem. Your students already have more of it than they can use.
 
-Even when a student knows they have a gap, most don't know which specific skill matters for the role they want. And knowing isn't the same as proving it. Anyone can write "good at Excel" on a resume, but employers can't act on that, they need proof. Watching a video on public speaking doesn't make someone good at interviews either, only a scored mock interview and fixing what fell flat does that.
+Even when a student knows they have a gap, most don't know which specific skill matters for the role they want. This is usually where a structured [AI-driven career aptitude test](/blog/what-services-offer-AI-driven-career-aptitude-tests-tailored-for-university-students-in-UAE/) helps first, since it gives a student a real answer instead of a guess. But knowing isn't the same as proving it. Anyone can write "good at Excel" on a resume, but employers can't act on that, they need proof. Watching a video on public speaking doesn't make someone good at interviews either, only a scored mock interview and fixing what fell flat does that.
 
 Online platforms close that specific gap by putting a student through a real, scored test until the skill holds up under pressure.
 
@@ -121,7 +121,7 @@ Here's what a student gets on the platform:
 - Curated courses mapped to each student's specific skill gaps, tied to a short-term and long-term plan
 - A shareable public profile showing readiness scores and verified skills, so a student can see who's viewed their profile and which employers have shortlisted them
 
-Once a student is ready, Leapath connects them directly with employers hiring for the exact roles they're targeting. Career Services teams run this system, but it's built around the student's readiness, not the team's workflow. Pricing is custom, based on the size and needs of the institution.
+Once a student is ready, Leapath connects them directly with employers hiring for the exact roles they're targeting. It's one of a few [AI-powered job matching platforms available to UAE career services teams](/blog/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/) built for exactly this stage. Career Services teams run this system, but it's built around the student's readiness, not the team's workflow. Pricing is custom, based on the size and needs of the institution.
 
 If you want to see what this would look like for your own students, Leapath offers a [free consultation](/contact/).
 

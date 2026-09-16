@@ -81,9 +81,9 @@ Four platforms currently offer AI-powered job matching for university students i
 
 [Leapath](/contact/) is an AI SaaS platform built for university Career Services teams.
 
-Instead of a student guessing which skills they're missing for their target job role, Leapath points the exact skill gaps and builds a sequenced plan to close them. Thus, career services teams can see, for every student in the cohort, exactly which roles they're ready for and which skills are still missing.
+Instead of a student guessing which skills they're missing for their target job role, Leapath points out the exact gaps and builds a sequenced plan to close them. It's part of a broader push across [online platforms working to close the UAE's student skill gap](/blog/how-can-online-platforms-help-reduce-skill-gap-uae/). Thus, career services teams can see, for every student in the cohort, exactly which roles they're ready for and which skills are still missing.
 
-When an employer posts a role, Leapath checks it against verified skill data across the whole cohort. It sends back a shortlist of students who genuinely match the job description, not everyone who clicked apply.
+When an employer posts a role, Leapath checks it against verified skill data across the whole cohort. It sends back a shortlist of students who genuinely match the job description, not everyone who clicked apply. That verified skill data usually starts further back, with a structured [AI-driven career aptitude test](/blog/what-services-offer-AI-driven-career-aptitude-tests-tailored-for-university-students-in-UAE/) that maps a student's strengths before any job posting even enters the picture.
 
 What the platform's AI actually does
 
@@ -163,7 +163,7 @@ Symplicity is more than a job-matching tool. It offers virtual career fairs, app
 
 AI is rarely the deciding factor. These three questions usually are.
 
-**Who does it need to match?** If Emiratisation compliance for your national students is the immediate priority, the UAE Skills Platform covers that slice specifically. If you need matching across your entire student body, including students who aren't Emirati nationals, none of the government tools will get you there alone.
+**Who does it need to match?** If Emiratisation compliance for your national students is the immediate priority, the UAE Skills Platform covers that slice specifically. If you need matching across your entire student body, including students who aren't Emirati nationals, none of the government tools will get you there alone. That question usually comes back to a bigger decision: [how the university addresses employability skill deficits](/blog/university-strategies-employability-skill-gap/) in the first place, since matching only really works once students are ready to be matched.
 
 **What will it cost to run?** Government platforms are free to the institutions that qualify. Symplicity's pricing reflects a full operations platform. Leapath charges based on student numbers, not a flat fee. Smaller and mid-sized teams pay only for what they use. This makes rollout faster and more cost efficient. Confirm final numbers directly with each vendor.
 
