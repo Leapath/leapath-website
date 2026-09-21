@@ -41,6 +41,26 @@
     });
   }
 
+  // Spam submissions carry links (t.me/..., http...) in name/phone fields.
+  // The server must enforce this too; this just stops honest typos early.
+  const LINK_RE = /https?:|www\.|t\.me|telegram|:\/\//i;
+
+  function findLinkField(form) {
+    return Array.from(form.querySelectorAll('input[type="text"], input[type="tel"]'))
+      .find((el) => el.name !== 'website' && LINK_RE.test(el.value));
+  }
+
+  function stampForm(form) {
+    let ts = form.querySelector('input[name="form_ts"]');
+    if (!ts) {
+      ts = document.createElement('input');
+      ts.type = 'hidden';
+      ts.name = 'form_ts';
+      form.appendChild(ts);
+    }
+    ts.value = String(Date.now());
+  }
+
   function showSuccess(form) {
     form.reset();
     const successEl = form.querySelector('.form-success');
@@ -81,6 +101,13 @@
       return;
     }
 
+    const linkField = findLinkField(form);
+    if (linkField) {
+      showError(form, 'Links are not allowed in this field. Please enter plain text.');
+      linkField.focus();
+      return;
+    }
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalLabel = submitBtn ? submitBtn.dataset.originalLabel || submitBtn.textContent : '';
     if (submitBtn) {
@@ -108,6 +135,7 @@
 
       if (response.ok) {
         showSuccess(form);
+        stampForm(form);
         resetButton();
       } else {
         let msg = 'Something went wrong. Please try again or email us directly.';
@@ -149,6 +177,7 @@
       form.setAttribute('novalidate', 'novalidate');
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.dataset.originalLabel = submitBtn.textContent;
+      stampForm(form);
       form.addEventListener('submit', (e) => handleSubmit(e, form));
     });
   }
