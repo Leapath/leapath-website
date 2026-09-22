@@ -17,6 +17,32 @@
     return fetch(url, { ...options, signal: controller.signal }).finally(() => clearTimeout(timer));
   }
 
+  // Mirrors js/forms.js: server enforces both, this just stops honest
+  // typos early and gives spam bots one more field to trip over.
+  const LINK_RE = /https?:|www\.|t\.me|telegram|:\/\//i;
+
+  function findLinkField(form) {
+    return Array.from(form.querySelectorAll('input[type="text"], input[type="tel"]'))
+      .find((el) => el.name !== 'website' && LINK_RE.test(el.value));
+  }
+
+  // Mirrors js/forms.js's stampForm(). Sets/refreshes the hidden form_ts
+  // input to the current Date.now() — the server (Forms/app/core/spam_guard.py)
+  // compares this to submit time and drops anything under MIN_SUBMIT_MS as
+  // spam, so this must be called when the form becomes visible to the
+  // visitor, NOT immediately before every submit (that would zero out the
+  // elapsed time and get every real submission flagged as "too fast").
+  function stampForm(form) {
+    let ts = form.querySelector('input[name="form_ts"]');
+    if (!ts) {
+      ts = document.createElement('input');
+      ts.type = 'hidden';
+      ts.name = 'form_ts';
+      form.appendChild(ts);
+    }
+    ts.value = String(Date.now());
+  }
+
   /* ── Role data from Jekyll ────────────────────────────── */
   let ROLES = [];
   try {
@@ -75,6 +101,10 @@
 
   /* App form */
   const appForm = document.getElementById('careers-app-form');
+
+  /* Open application form (static section, not behind the drawer) */
+  const oaForm = document.getElementById('open-apply-form');
+  const oaSuccess = document.getElementById('oa-success');
 
   /* ── Helpers ──────────────────────────────────────────── */
   function show(el) { if (el) { el.hidden = false; el.removeAttribute('hidden'); } }
@@ -329,6 +359,10 @@
     if (drawerFormWrap) {
       show(drawerFormWrap);
     }
+    // form_ts marks when the form actually became visible — the drawer
+    // opens well after page load, and resetFormState()'s appForm.reset()
+    // clears any earlier stamp, so this is the right moment to (re)set it.
+    if (appForm) stampForm(appForm);
     state.formStep = 1;
     setFormStep(1);
     drawerBody.scrollTop = 0;
@@ -473,6 +507,13 @@
         e.preventDefault();
         if (!validateStep(3)) return;
 
+        const linkField = findLinkField(appForm);
+        if (linkField) {
+          showFormError(appForm, 'Links are not allowed in this field. Please enter plain text.');
+          linkField.focus();
+          return;
+        }
+
         const recaptchaField = appForm.querySelector('[name="g-recaptcha-response"]');
         if (recaptchaField && !recaptchaField.value) {
           showFormError(appForm, "Please verify you're not a robot.");
@@ -517,8 +558,6 @@
     }
 
     /* Open application form */
-    const oaForm = document.getElementById('open-apply-form');
-    const oaSuccess = document.getElementById('oa-success');
     if (oaForm) {
       oaForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -550,6 +589,13 @@
           return;
         }
 
+        const linkField = findLinkField(oaForm);
+        if (linkField) {
+          showFormError(oaForm, 'Links are not allowed in this field. Please enter plain text.');
+          linkField.focus();
+          return;
+        }
+
         const recaptchaField = oaForm.querySelector('[name="g-recaptcha-response"]');
         if (recaptchaField && !recaptchaField.value) {
           showFormError(oaForm, "Please verify you're not a robot.");
@@ -572,6 +618,10 @@
 
           if (res.ok) {
             oaForm.reset();
+            // reset() clears the hidden form_ts value — refresh it so a
+            // second submission in this same session (the form stays
+            // interactive) still carries a valid timestamp.
+            stampForm(oaForm);
             resetUploadZone('oa-upload-zone', 'oa-upload-inner', 'oa-upload-preview', 'oa-upload-filename', 'oa-resume');
             if (window.Leapath && window.Leapath.thankYou) {
               window.Leapath.thankYou.open({
@@ -779,6 +829,9 @@
     initFormSubmit();
     initFileUpload();
     initRoleCards();
+    // oaForm is a static section already visible at page load (unlike
+    // appForm, which is stamped when the drawer's form panel opens).
+    if (oaForm) stampForm(oaForm);
   }
 
   if (document.readyState === 'loading') {
