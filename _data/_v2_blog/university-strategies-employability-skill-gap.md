@@ -5,6 +5,7 @@ permalink: /blog/university-strategies-employability-skill-gap/
 title: "What Are Effective Strategies for Universities to Address Student Employability Skill Deficits? — Leapath"
 description: "Universities can close the gap by embedding industry-relevant skills in coursework, mandating internships and starting career guidance early on in the degrees."
 og_image: "/assets/v2/images/blogs/university-strategies-employability-skill-gap/hero.jpg"
+card_image: "/assets/v2/images/blogs/university-strategies-employability-skill-gap/card.jpg"
 category: guide
 eyebrow: "Guide"
 h1: "What Are Effective Strategies for Universities to Address Student Employability Skill Deficits?"
@@ -40,7 +41,7 @@ cta:
 related_grid_eyebrow: "Keep reading"
 related_grid_heading: "Related insights"
 related_grid:
-  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/blogs/how-can-online-platforms-help-reduce-skill-gap-uae/hero.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
+  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/roles/students.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
   - {url: /blog/india-placement-readiness-report-2026/, img: /assets/v2/images/blogs/india-placement-readiness-report-2026/research-report.jpg, tag: "Research", title: "The India Placement Readiness Report 2026", meta: "12 min read"}
   - {url: /case-studies/psg-tech-case-study/, img: /assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg, tag: "Case Study", title: "How PSG Tech improved placement rate by 34% in a single season", meta: "6 min read"}
 ---

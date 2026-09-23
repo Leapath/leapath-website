@@ -5,6 +5,7 @@ permalink: /blog/what-platforms-offer-targeted-skill-gap-remediation-program-spe
 title: "What platforms offer targeted skill gap remediation programs specifically designed for students in the UAE? — Leapath"
 description: "See how Leapath, Talentorial, UAE Skills Platform, and Udacity help UAE students close skill gaps with targeted remediation programs."
 og_image: "/assets/v2/images/blogs/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/hero.jpg"
+card_image: "/assets/v2/images/blogs/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/card.jpg"
 category: guide
 eyebrow: "Guide"
 h1: "What platforms offer targeted skill gap remediation programs specifically designed for students in the UAE?"
@@ -42,7 +43,7 @@ related_grid_eyebrow: "Keep reading"
 related_grid_heading: "Related insights"
 related_grid:
   - {url: /blog/what-services-offer-AI-driven-career-aptitude-tests-tailored-for-university-students-in-UAE/, img: /assets/v2/images/blogs/what-services-offer-AI-driven-career-aptitude-tests-tailored-for-university-students-in-UAE/hero.jpg, tag: "Guide", title: "What services offer AI-driven career aptitude tests for UAE university students?", meta: "8 min read"}
-  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/blogs/how-can-online-platforms-help-reduce-skill-gap-uae/hero.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
+  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/roles/students.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
   - {url: /blog/university-strategies-employability-skill-gap/, img: /assets/v2/images/blogs/university-strategies-employability-skill-gap/hero.jpg, tag: "Guide", title: "What are effective strategies for universities to address employability skill deficits?", meta: "7 min read"}
 ---
 ## Summary

@@ -4,7 +4,8 @@ og_type: article
 permalink: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/
 title: "How Can Online Platforms Help Reduce the Skill Gap Among Students in the UAE? — Leapath"
 description: "Online platforms help UAE students close skill gaps by identifying what is missing, building it, and connecting them to the right employers."
-og_image: "/assets/v2/images/blogs/how-can-online-platforms-help-reduce-skill-gap-uae/hero.jpg"
+og_image: "/assets/v2/images/roles/students.jpg"
+card_image: "/assets/v2/images/blogs/how-can-online-platforms-help-reduce-skill-gap-uae/card.jpg"
 category: guide
 eyebrow: "Guide"
 h1: "How Can Online Platforms Help Reduce the Skill Gap Among Students in the UAE?"

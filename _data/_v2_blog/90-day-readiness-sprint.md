@@ -5,6 +5,7 @@ permalink: /blog/90-day-readiness-sprint/
 title: "How to Run a 90-Day Placement Readiness Sprint — Leapath"
 description: "A week-by-week playbook for placement cells to close readiness gaps before recruiters arrive on campus."
 og_image: "/assets/v2/images/blogs/90-day-readiness-sprint/tpo-playbook.jpg"
+card_image: "/assets/v2/images/blogs/90-day-readiness-sprint/card.jpg"
 category: playbook
 eyebrow: "TPO Playbook"
 h1: "How to run a 90-day placement readiness sprint before season opens"

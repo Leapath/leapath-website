@@ -5,6 +5,7 @@ permalink: /blog/india-placement-readiness-report-2026/
 title: "The India Placement Readiness Report 2026 — Leapath"
 description: "What 2,500 students across 40+ institutions revealed about the gap between education and employment readiness."
 og_image: "/assets/v2/images/blogs/india-placement-readiness-report-2026/research-report.jpg"
+card_image: "/assets/v2/images/blogs/india-placement-readiness-report-2026/card.jpg"
 category: research
 eyebrow: "Research · 2026 Annual Report"
 h1: "The India Placement Readiness Report 2026"

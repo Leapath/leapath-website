@@ -4,7 +4,8 @@ og_type: article
 permalink: /blog/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/
 title: "Which Career Readiness Platforms Offer AI-Powered Job Matching Services for University Students in UAE? — Leapath"
 description: "Learn how Leapath, Handshake, Symplicity, and the UAE Skills Platform help match students to the right jobs in the UAE quicker, using AI."
-og_image: "/assets/v2/images/blogs/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/hero.jpg"
+og_image: "/assets/v2/images/roles/career-services.jpg"
+card_image: "/assets/v2/images/blogs/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/card.jpg"
 category: guide
 eyebrow: "Guide"
 h1: "Which Career Readiness Platforms Offer AI-Powered Job Matching Services for University Students in UAE?"
@@ -42,7 +43,7 @@ cta:
 related_grid_eyebrow: "Keep reading"
 related_grid_heading: "Related insights"
 related_grid:
-  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/blogs/how-can-online-platforms-help-reduce-skill-gap-uae/hero.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
+  - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/roles/students.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
   - {url: /blog/university-strategies-employability-skill-gap/, img: /assets/v2/images/blogs/university-strategies-employability-skill-gap/hero.jpg, tag: "Guide", title: "What are effective strategies for universities to address employability skill deficits?", meta: "7 min read"}
   - {url: /case-studies/psg-tech-case-study/, img: /assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg, tag: "Case Study", title: "How PSG Tech improved placement rate by 34% in a single season", meta: "6 min read"}
 ---

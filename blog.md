@@ -15,7 +15,7 @@ extra_css: /css/v2/blog.css
 <section class="ip-section">
   <div class="container">
     <a href="{{ featured.url }}" class="bfeat">
-      <img class="bfeat__img" src="/assets/v2/images/blogs/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/hero.jpg" alt="University students working with a career advisor on a targeted skill gap remediation plan">
+      <img class="bfeat__img{% if featured.card_image %} bfeat__img--card{% endif %}" src="{{ featured.card_image | default: featured.og_image }}" alt="{{ featured.card_alt | default: featured.h1 }}">
       <div class="bfeat__body">
         <span class="bfeat__tag">Featured · Guide</span>
         <div class="bfeat__t">{{ featured.title | remove: " — Leapath" }}</div>
@@ -27,7 +27,7 @@ extra_css: /css/v2/blog.css
     <div class="bgrid ip-3col" style="margin-top:1.5rem">
       {% for post in other_posts %}
       <a href="{{ post.url }}" class="bc">
-        <div class="bc__img" style="background-image:url('{{ post.og_image }}');background-size:cover;background-position:center"></div>
+        {% if post.card_image %}<div class="bc__img bc__img--card" style="--card:url('{{ post.card_image }}')"></div>{% else %}<div class="bc__img" style="background-image:url('{{ post.og_image }}');background-size:cover;background-position:center"></div>{% endif %}
         <div class="bc__body">
           <div class="bc__tag">{{ post.eyebrow }}</div>
           <div class="bc__t">{{ post.h1 }}</div>

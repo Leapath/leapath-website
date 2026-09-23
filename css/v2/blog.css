@@ -1,6 +1,9 @@
 .bfeat{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--surf);border:1.5px solid var(--bd);border-radius:26px;overflow:hidden;text-decoration:none;transition:all .22s}
 .bfeat:hover{box-shadow:var(--sl);transform:translateY(-3px);border-color:transparent}
 .bfeat__img{width:100%;height:100%;min-height:360px;object-fit:cover;display:block}
+/* Card images are 16:9 title graphics: show whole, letterboxed on a gradient matching their edges */
+.bfeat__img--card{object-fit:contain;background:linear-gradient(90deg,#1f1e27,#372046)}
+.bc__img--card{background:var(--card) center/contain no-repeat,linear-gradient(90deg,#1f1e27,#372046)}
 .bfeat__body{padding:3rem 3.25rem;display:flex;flex-direction:column;justify-content:center}
 .bfeat__tag{font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:.9rem}
 .bfeat__t{font-size:1.85rem;font-weight:900;color:var(--navy);line-height:1.22;letter-spacing:-.03em;margin-bottom:.9rem}

@@ -1,7 +1,7 @@
 /* Blog article page — loaded after theme.css.
    Reuses .ph/.ip-* design system; adds the bits specific to a single post. */
 
-.bp__back{display:inline-block;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:1.75rem;transition:color .15s}
+.bp__back{display:flex;width:fit-content;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:1.25rem;transition:color .15s}
 .bp__back:hover{color:#fff}
 .bp__byline{display:flex;align-items:center;gap:.7rem;margin-top:.5rem}
 .bp__byline-name{font-size:.85rem;font-weight:800;color:#fff}
