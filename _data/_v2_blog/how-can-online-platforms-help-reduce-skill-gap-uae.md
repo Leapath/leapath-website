@@ -25,9 +25,9 @@ toc:
   - {anchor: platforms, label: "4 Platforms Your Career Services Team Can Put to Work"}
   - {anchor: takeaway, label: "What This Means for Your Career Services Team"}
 related:
-  - {url: /blog/uae-skill-gap-online-platforms/, icon: ic-globe, title: "How online platforms reduce the skill gap in the UAE", meta: "6 min read"}
-  - {url: /blog/india-placement-readiness-report-2026/, icon: ic-bar-chart, title: "The India Placement Readiness Report 2026", meta: "8 min read"}
-  - {url: /blog/90-day-readiness-sprint/, icon: ic-target, title: "Run a 90-day placement readiness sprint", meta: "5 min read"}
+  - {url: /blog/university-strategies-employability-skill-gap/, icon: ic-grad-cap, title: "What are effective strategies for universities to address employability skill deficits?", meta: "7 min read"}
+  - {url: /blog/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/, icon: ic-globe, title: "Which career readiness platforms offer AI-powered job matching for university students in the UAE?", meta: "8 min read"}
+  - {url: /blog/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/, icon: ic-target, title: "What platforms offer targeted skill gap remediation programs for students in the UAE?", meta: "7 min read"}
 cta:
   eyebrow: "Ready when you are"
   title: 'See your own job readiness <em>numbers.</em>'
@@ -38,8 +38,8 @@ cta:
 related_grid_eyebrow: "Keep reading"
 related_grid_heading: "Related insights"
 related_grid:
-  - {url: /blog/uae-skill-gap-online-platforms/, img: /assets/v2/images/hero-bg.jpg, tag: "Research", title: "How online platforms reduce the skill gap in the UAE", meta: "6 min read"}
-  - {url: /blog/india-placement-readiness-report-2026/, img: /assets/v2/images/blogs/india-placement-readiness-report-2026/research-report.jpg, tag: "Research", title: "The India Placement Readiness Report 2026", meta: "8 min read"}
+  - {url: /blog/university-strategies-employability-skill-gap/, img: /assets/v2/images/blogs/university-strategies-employability-skill-gap/hero.jpg, tag: "Guide", title: "What are effective strategies for universities to address employability skill deficits?", meta: "7 min read"}
+  - {url: /blog/which-career-readiness-platforms-offer-AI-powered-job-matching-services-for-university-students-in-UAE/, img: /assets/v2/images/roles/career-services.jpg, tag: "Guide", title: "Which career readiness platforms offer AI-powered job matching for university students in the UAE?", meta: "8 min read"}
   - {url: /case-studies/psg-tech-case-study/, img: /assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg, tag: "Case Study", title: "How PSG Tech improved placement rate by 34% in a single season", meta: "6 min read"}
 ---
 ## Summary

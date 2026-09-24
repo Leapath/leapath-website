@@ -12,5 +12,13 @@
 /case-studies.html     /case-studies/       301
 /blog.html             /blog/               301
 
+# Removed blog posts
+/blog/india-placement-readiness-report-2026/ /blog/ 301
+/blog/india-placement-readiness-report-2026  /blog/ 301
+/blog/90-day-readiness-sprint/               /blog/ 301
+/blog/90-day-readiness-sprint                /blog/ 301
+/blog/uae-skill-gap-online-platforms/        /blog/ 301
+/blog/uae-skill-gap-online-platforms         /blog/ 301
+
 # Enforce www (configure in DNS/CDN, not here — kept as reference)
 # http://leapath.tech/*    https://www.leapath.tech/:splat    301

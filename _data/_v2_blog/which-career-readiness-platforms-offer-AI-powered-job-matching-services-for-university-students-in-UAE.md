@@ -31,7 +31,7 @@ toc:
 related:
   - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, icon: ic-globe, title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
   - {url: /blog/university-strategies-employability-skill-gap/, icon: ic-grad-cap, title: "What are effective strategies for universities to address employability skill deficits?", meta: "7 min read"}
-  - {url: /blog/india-placement-readiness-report-2026/, icon: ic-bar-chart, title: "The India Placement Readiness Report 2026", meta: "12 min read"}
+  - {url: /blog/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/, icon: ic-target, title: "What platforms offer targeted skill gap remediation programs for students in the UAE?", meta: "7 min read"}
 cta:
   bg_img: /assets/v2/images/roles/employers.jpg
   eyebrow: "Ready when you are"

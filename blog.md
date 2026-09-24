@@ -10,7 +10,7 @@ extra_css: /css/v2/blog.css
 {% assign featured = site.v2_blog | where: "permalink", "/blog/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/" | first %}
 {% assign other_posts = site.v2_blog | where_exp: "p", "p.permalink != featured.permalink" | sort: "date" | reverse %}
 
-{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/v2/images/insights/case-study.jpg')" eyebrow="Insights &amp; resources" title='For <em>Career Services teams</em> who think ahead.' sub="Research, playbooks, case studies, and tools, written by practitioners who've been inside Career Services teams, not consultants who observe from the outside." btn1_text="Request a Demo" btn1_href="/contact/" btn2_text="See Pricing" btn2_href="/pricing/" stat1_n="8" stat1_l="Articles &amp; guides" stat2_n="5" stat2_l="Institutions featured" stat3_n="3" stat3_l="Continents covered" %}
+{% include v2/sections/page-hero.html tone="photo" style="background-image:url('/assets/v2/images/insights/case-study.jpg')" eyebrow="Insights &amp; resources" title='For <em>Career Services teams</em> who think ahead.' sub="Research, playbooks, case studies, and tools, written by practitioners who've been inside Career Services teams, not consultants who observe from the outside." %}
 
 <section class="ip-section">
   <div class="container">

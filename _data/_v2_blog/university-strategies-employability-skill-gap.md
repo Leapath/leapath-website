@@ -28,7 +28,7 @@ toc:
   - {anchor: conclusion, label: "Conclusion"}
 related:
   - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, icon: ic-globe, title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
-  - {url: /blog/india-placement-readiness-report-2026/, icon: ic-bar-chart, title: "The India Placement Readiness Report 2026", meta: "12 min read"}
+  - {url: /blog/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/, icon: ic-target, title: "What platforms offer targeted skill gap remediation programs for students in the UAE?", meta: "7 min read"}
   - {url: /case-studies/psg-tech-case-study/, icon: ic-trophy, title: "How PSG Tech improved placement rate by 34%", meta: "6 min read"}
 cta:
   bg_img: /assets/v2/images/roles/career-services.jpg
@@ -42,7 +42,7 @@ related_grid_eyebrow: "Keep reading"
 related_grid_heading: "Related insights"
 related_grid:
   - {url: /blog/how-can-online-platforms-help-reduce-skill-gap-uae/, img: /assets/v2/images/roles/students.jpg, tag: "Guide", title: "How online platforms help reduce the skill gap among students in the UAE", meta: "9 min read"}
-  - {url: /blog/india-placement-readiness-report-2026/, img: /assets/v2/images/blogs/india-placement-readiness-report-2026/research-report.jpg, tag: "Research", title: "The India Placement Readiness Report 2026", meta: "12 min read"}
+  - {url: /blog/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/, img: /assets/v2/images/blogs/what-platforms-offer-targeted-skill-gap-remediation-program-specifically-designed-for-students-in-the-UAE/hero.jpg, tag: "Guide", title: "What platforms offer targeted skill gap remediation programs for students in the UAE?", meta: "7 min read"}
   - {url: /case-studies/psg-tech-case-study/, img: /assets/v2/images/case-studies/psg-tech-case-study/psg-tech.jpg, tag: "Case Study", title: "How PSG Tech improved placement rate by 34% in a single season", meta: "6 min read"}
 ---
 ## Summary
